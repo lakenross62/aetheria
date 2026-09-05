@@ -1,1 +1,1174 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
+:root {
+  --black: #090b0c;
+  --deep-black: #050607;
+  --paper: #e8e1d2;
+  --paper-dark: #d8cfbc;
+  --text: #d9d2c3;
+  --dark-text: #292823;
+  --gold: #b99a5b;
+  --gold-light: #d7bd7c;
+  --gray: #77766e;
+  --line: rgba(185, 154, 91, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 6%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 6, 7, 0.97),
+      rgba(5, 6, 7, 0.88)
+    );
+
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-family: "Cinzel", serif;
+  font-size: 22px;
+  letter-spacing: 5px;
+  color: var(--gold-light);
+}
+
+.brand-subtitle {
+  margin-top: 4px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #aaa398;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a {
+  position: relative;
+
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  color: #c7c0b2;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--gold-light);
+
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+
+  background: none;
+  border: none;
+
+  color: var(--gold-light);
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+
+/* ================================
+   GENERAL BACKGROUNDS
+================================ */
+
+.hero,
+.dark-section,
+.character-section,
+.final-section,
+.timeline-section {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(185, 154, 91, 0.09),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 255, 255, 0.025),
+      transparent 30%
+    ),
+    var(--black);
+}
+
+.paper-section {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(120, 100, 70, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(90, 75, 50, 0.05),
+      transparent 35%
+    ),
+    var(--paper);
+
+  color: var(--dark-text);
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  padding: 140px 20px 100px;
+
+  text-align: center;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(5, 6, 7, 0.1),
+      rgba(5, 6, 7, 0.45)
+    );
+
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+}
+
+.eyebrow {
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: var(--gold-light);
+
+  text-transform: uppercase;
+
+  margin-bottom: 22px;
+}
+
+.eyebrow.dark {
+  color: #806832;
+}
+
+.hero h1 {
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(60px, 10vw, 125px);
+
+  line-height: 0.95;
+  letter-spacing: 8px;
+
+  font-weight: 600;
+
+  color: #eee8db;
+
+  text-shadow:
+    0 0 25px rgba(185, 154, 91, 0.08),
+    0 0 60px rgba(185, 154, 91, 0.12);
+}
+
+.hero-name {
+  margin-top: 28px;
+
+  font-family: "Cinzel", serif;
+
+  letter-spacing: 8px;
+  font-size: 19px;
+
+  color: var(--gold-light);
+}
+
+.gold-rule {
+  color: var(--gold-light);
+
+  margin: 28px auto;
+
+  font-size: 22px;
+
+  letter-spacing: 12px;
+}
+
+.intro {
+  font-size: 24px;
+
+  color: #c5beb0;
+
+  margin-bottom: 35px;
+}
+
+.gold-button {
+  display: inline-block;
+
+  border: 1px solid var(--gold);
+
+  padding: 13px 30px;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: var(--gold-light);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.gold-button:hover {
+  background: var(--gold);
+
+  color: var(--black);
+
+  box-shadow:
+    0 0 20px rgba(185, 154, 91, 0.2);
+
+  transform: translateY(-2px);
+}
+
+.scroll-hint {
+  position: absolute;
+
+  bottom: 30px;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+
+  color: #77746c;
+
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+.paper-section,
+.dark-section,
+.character-section,
+.timeline-section {
+  padding: 110px 7%;
+}
+
+.section-frame {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section-heading {
+  max-width: 950px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.section-heading h2,
+.section-frame h2 {
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(35px, 5vw, 62px);
+
+  line-height: 1.15;
+
+  font-weight: 500;
+
+  margin-bottom: 25px;
+}
+
+.section-heading p {
+  color: #aaa398;
+}
+
+.section-frame p {
+  margin-bottom: 22px;
+}
+
+.section-frame .lead {
+  font-size: 25px;
+
+  line-height: 1.6;
+}
+
+.dark-rule {
+  color: #806832;
+}
+
+.quote {
+  margin: 45px auto 10px;
+
+  padding: 30px 35px;
+
+  max-width: 800px;
+
+  text-align: center;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  font-size: 25px;
+
+  font-style: italic;
+
+  color: #806832;
+}
+
+
+/* ================================
+   CHARACTER INFORMATION
+================================ */
+
+.character-section {
+  text-align: center;
+}
+
+.info-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.info-card {
+  padding: 30px 20px;
+
+  border: 1px solid rgba(185, 154, 91, 0.3);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(215, 189, 124, 0.65);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(185, 154, 91, 0.07),
+      rgba(255, 255, 255, 0.015)
+    );
+}
+
+.info-card span {
+  display: block;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: var(--gold);
+
+  margin-bottom: 8px;
+}
+
+.info-card strong {
+  display: block;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: #ddd6c9;
+}
+
+
+/* ================================
+   HERITAGE
+================================ */
+
+.heritage-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px;
+
+  margin: 50px 0;
+}
+
+.heritage-card {
+  padding: 40px;
+
+  border: 1px solid rgba(80, 70, 50, 0.25);
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.heritage-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(128, 104, 50, 0.55);
+}
+
+.heritage-icon {
+  display: block;
+
+  font-size: 42px;
+
+  margin-bottom: 15px;
+}
+
+.heritage-card h3,
+.lore-columns h3,
+.personality-grid h3 {
+  font-family: "Cinzel", serif;
+
+  color: #806832;
+
+  font-size: 20px;
+
+  margin-bottom: 12px;
+}
+
+.heritage-ending {
+  text-align: center;
+
+  font-style: italic;
+
+  font-size: 23px;
+}
+
+
+/* ================================
+   DARK LORE
+================================ */
+
+.lore-columns {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 35px;
+}
+
+.lore-columns > div {
+  border-top: 1px solid var(--line);
+
+  padding-top: 25px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.lore-columns > div:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--gold-light);
+}
+
+.lore-columns h3 {
+  color: var(--gold-light);
+}
+
+
+/* ================================
+   ABILITIES
+================================ */
+
+.ability-grid {
+  max-width: 1150px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 18px;
+}
+
+.ability-card {
+  padding: 28px 18px;
+
+  text-align: center;
+
+  border: 1px solid rgba(185, 154, 91, 0.25);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ability-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(215, 189, 124, 0.65);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.ability-card span {
+  display: block;
+
+  font-size: 30px;
+
+  margin-bottom: 10px;
+}
+
+.ability-card h3 {
+  font-family: "Cinzel", serif;
+
+  font-size: 15px;
+
+  color: var(--gold-light);
+
+  margin-bottom: 10px;
+}
+
+.ability-card p {
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  color: #aaa398;
+}
+
+
+/* ================================
+   WEAPON
+================================ */
+
+.weapon-box {
+  max-width: 850px;
+
+  margin: 50px auto 0;
+
+  text-align: center;
+}
+
+.weapon-symbol {
+  font-size: 55px;
+
+  color: #806832;
+
+  display: block;
+
+  margin-bottom: 20px;
+
+  text-shadow:
+    0 0 20px rgba(128, 104, 50, 0.2);
+}
+
+
+/* ================================
+   TIMELINE
+================================ */
+
+.timeline {
+  max-width: 900px;
+
+  margin: auto;
+
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 31px;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 1px;
+
+  background: var(--line);
+}
+
+.timeline-item {
+  display: grid;
+
+  grid-template-columns: 64px 1fr;
+
+  gap: 35px;
+
+  margin-bottom: 55px;
+
+  position: relative;
+}
+
+.timeline-item > span {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 50%;
+
+  background: var(--black);
+
+  font-family: "Cinzel", serif;
+
+  color: var(--gold-light);
+
+  z-index: 2;
+
+  box-shadow:
+    0 0 0 6px rgba(9, 11, 12, 0.85);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.timeline-item:hover > span {
+  background: #151719;
+
+  transform: scale(1.05);
+}
+
+.timeline-item h3 {
+  font-family: "Cinzel", serif;
+
+  color: var(--gold-light);
+
+  font-size: 23px;
+
+  margin-bottom: 8px;
+}
+
+
+/* ================================
+   VEYRA
+================================ */
+
+.veyra-box {
+  max-width: 800px;
+
+  margin: auto;
+
+  text-align: center;
+
+  padding: 55px 45px;
+
+  border: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(185, 154, 91, 0.045),
+      transparent 60%
+    );
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.veyra-box:hover {
+  border-color: rgba(215, 189, 124, 0.65);
+
+  box-shadow:
+    0 0 40px rgba(185, 154, 91, 0.06);
+}
+
+.veyra-symbol {
+  font-size: 70px;
+
+  margin-bottom: 10px;
+
+  filter:
+    drop-shadow(0 0 12px rgba(185, 154, 91, 0.15));
+}
+
+.veyra-box h3 {
+  font-family: "Cinzel", serif;
+
+  font-size: 38px;
+
+  color: var(--gold-light);
+}
+
+.veyra-subtitle {
+  font-family: "Cinzel", serif;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  color: #88847b;
+
+  margin-bottom: 30px;
+}
+
+
+/* ================================
+   PERSONALITY
+================================ */
+
+.personality-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+
+  margin-top: 45px;
+}
+
+.personality-grid > div {
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(80, 70, 50, 0.3);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.personality-grid > div:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(128, 104, 50, 0.65);
+}
+
+
+/* ================================
+   FINAL SECTION
+================================ */
+
+.final-section {
+  min-height: 80vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 100px 20px;
+
+  position: relative;
+}
+
+.final-content {
+  max-width: 800px;
+}
+
+.final-content h2 {
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(45px, 8vw, 90px);
+
+  color: #eee8db;
+
+  letter-spacing: 5px;
+}
+
+.final-content p {
+  color: #aaa398;
+
+  font-size: 22px;
+
+  margin-bottom: 18px;
+}
+
+.final-content .final-line {
+  color: var(--gold-light);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 25px;
+
+  letter-spacing: 4px;
+
+  margin-top: 45px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  padding: 65px 20px;
+
+  text-align: center;
+
+  background: var(--deep-black);
+
+  border-top: 1px solid var(--line);
+}
+
+.footer-ornament {
+  color: var(--gold);
+
+  font-size: 25px;
+
+  margin-bottom: 15px;
+}
+
+footer h2 {
+  font-family: "Cinzel", serif;
+
+  letter-spacing: 6px;
+
+  color: var(--gold-light);
+}
+
+footer p {
+  color: #77746c;
+
+  letter-spacing: 3px;
+
+  font-size: 13px;
+}
+
+footer small {
+  display: block;
+
+  margin-top: 20px;
+
+  color: #5f5d57;
+
+  letter-spacing: 3px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 1100px) {
+
+  .nav {
+    gap: 18px;
+  }
+
+  .nav a {
+    font-size: 10px;
+  }
+
+  .ability-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .info-grid,
+  .heritage-grid,
+  .lore-columns,
+  .personality-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  body {
+    font-size: 17px;
+  }
+
+  .site-header {
+    padding: 16px 5%;
+  }
+
+  .brand-name {
+    font-size: 17px;
+
+    letter-spacing: 3px;
+  }
+
+  .brand-subtitle {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .hero {
+    padding:
+      120px 20px
+      90px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+
+    letter-spacing: 4px;
+  }
+
+  .hero-name {
+    font-size: 15px;
+
+    letter-spacing: 5px;
+  }
+
+  .intro {
+    font-size: 20px;
+  }
+
+  .gold-button {
+    padding: 12px 22px;
+  }
+
+  .paper-section,
+  .dark-section,
+  .character-section,
+  .timeline-section {
+    padding: 80px 6%;
+  }
+
+  .section-frame h2,
+  .section-heading h2 {
+    font-size: 35px;
+  }
+
+  .section-frame .lead {
+    font-size: 21px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+  .info-grid,
+  .heritage-grid,
+  .lore-columns,
+  .personality-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ability-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heritage-card {
+    padding: 30px 22px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 48px 1fr;
+
+    gap: 20px;
+  }
+
+  .timeline::before {
+    left: 23px;
+  }
+
+  .timeline-item > span {
+    width: 48px;
+    height: 48px;
+
+    font-size: 13px;
+  }
+
+  .veyra-box {
+    padding: 35px 22px;
+  }
+
+  .veyra-box h3 {
+    font-size: 32px;
+  }
+
+  .quote {
+    padding: 25px 18px;
+
+    font-size: 21px;
+  }
+
+  .final-content p {
+    font-size: 19px;
+  }
+
+  .final-content .final-line {
+    font-size: 21px;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+  .ability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+
+    letter-spacing: 3px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+}
