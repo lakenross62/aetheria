@@ -1,3 +1,8 @@
+/* ═══════════════════════════════════════
+   AETHERIA — NORTHERN SNOWLANDS
+   FULLY CENTERED CSS
+═══════════════════════════════════════ */
+
 :root {
   --navy: #06111f;
   --deep-blue: #091a2d;
@@ -15,9 +20,9 @@
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    BASIC
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 * {
   box-sizing: border-box;
@@ -36,7 +41,6 @@ body {
   font-size: 19px;
   line-height: 1.7;
   overflow-x: hidden;
-  text-align: center;
 }
 
 a {
@@ -45,9 +49,9 @@ a {
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    HEADER
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .site-header {
   position: fixed;
@@ -58,14 +62,13 @@ a {
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
 
-  padding: 15px 30px;
+  padding: 18px 5%;
 
-  background: rgba(4, 15, 28, .94);
+  background: rgba(4, 15, 28, 0.94);
 
-  border-bottom: 1px solid rgba(158, 220, 255, .28);
+  border-bottom: 1px solid rgba(158, 220, 255, 0.28);
 
   backdrop-filter: blur(12px);
 }
@@ -74,10 +77,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
   text-align: center;
-
   line-height: 1;
 }
 
@@ -85,20 +85,20 @@ a {
   color: var(--ice-glow);
 
   font-family: "Cinzel", serif;
-  font-size: 1.15rem;
-  letter-spacing: .3em;
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
 
   text-shadow:
-    0 0 15px rgba(158, 220, 255, .25);
+    0 0 15px rgba(158, 220, 255, 0.25);
 }
 
 .brand-subtitle {
   color: var(--silver);
 
   font-family: "Cinzel", serif;
-  font-size: .5rem;
+  font-size: 0.5rem;
 
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 
   margin-top: 7px;
 }
@@ -107,36 +107,31 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 25px;
-
-  margin-top: 13px;
+  gap: 28px;
 }
 
 .nav a {
   color: var(--frost);
 
   font-family: "Cinzel", serif;
-  font-size: .62rem;
+  font-size: 0.62rem;
 
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
 
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .nav a:hover {
   color: var(--ice-glow);
 
   text-shadow:
-    0 0 15px rgba(158, 220, 255, .6);
+    0 0 15px rgba(158, 220, 255, 0.6);
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    HERO
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .snow-hero {
   position: relative;
@@ -153,8 +148,8 @@ a {
 
   background:
     linear-gradient(
-      rgba(5, 18, 32, .38),
-      rgba(4, 15, 28, .94)
+      rgba(5, 18, 32, 0.38),
+      rgba(4, 15, 28, 0.94)
     ),
     url("https://i.ibb.co/qFr4xT7D/IMG-7288.png")
     center / cover no-repeat;
@@ -169,7 +164,7 @@ a {
   background:
     radial-gradient(
       circle at center,
-      rgba(120, 184, 220, .28),
+      rgba(120, 184, 220, 0.28),
       transparent 50%
     );
 
@@ -185,7 +180,11 @@ a {
 
   margin: 0 auto;
 
-  padding: 170px 25px 100px;
+  padding: 150px 25px 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   text-align: center;
 }
@@ -196,21 +195,21 @@ a {
   margin-bottom: 20px;
 
   filter:
-    drop-shadow(0 0 20px rgba(158, 220, 255, .65));
+    drop-shadow(0 0 20px rgba(158, 220, 255, 0.65));
 }
 
 .eyebrow {
   color: var(--ice-glow);
 
   font-family: "Cinzel", serif;
-  font-size: .65rem;
+  font-size: 0.65rem;
 
-  letter-spacing: .3em;
-
-  text-shadow:
-    0 0 12px rgba(158, 220, 255, .3);
+  letter-spacing: 0.3em;
 
   text-align: center;
+
+  text-shadow:
+    0 0 12px rgba(158, 220, 255, 0.3);
 }
 
 .hero-content h1 {
@@ -222,30 +221,32 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
 
-  line-height: .98;
+  line-height: 0.98;
 
   margin-top: 20px;
 
-  text-shadow:
-    0 5px 35px rgba(0, 0, 0, .8),
-    0 0 35px rgba(158, 220, 255, .25);
-
   text-align: center;
+
+  text-shadow:
+    0 5px 35px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(158, 220, 255, 0.25);
 }
 
 .gold-rule {
   color: var(--ice-glow);
 
-  margin: 27px auto;
+  width: 100%;
 
-  letter-spacing: .4em;
+  margin: 27px auto;
 
   text-align: center;
 
+  letter-spacing: 0.4em;
+
   text-shadow:
-    0 0 12px rgba(158, 220, 255, .35);
+    0 0 12px rgba(158, 220, 255, 0.35);
 }
 
 .motto {
@@ -265,9 +266,9 @@ a {
 
   font-family: "Cinzel", serif;
 
-  font-size: .55rem;
+  font-size: 0.55rem;
 
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 
   margin-top: 28px;
 
@@ -282,34 +283,36 @@ a {
 
   width: 100%;
 
-  color: rgba(220, 236, 245, .65);
+  color: rgba(220, 236, 245, 0.65);
 
   font-family: "Cinzel", serif;
 
-  font-size: .55rem;
+  font-size: 0.55rem;
 
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    PAPER / ICE SECTIONS
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .paper-section {
+  width: 100%;
+
   padding: 110px 6%;
 
   background:
     radial-gradient(
       circle at 15% 15%,
-      rgba(255,255,255,.8),
+      rgba(255, 255, 255, 0.8),
       transparent 25%
     ),
     radial-gradient(
       circle at 85% 80%,
-      rgba(120,184,220,.12),
+      rgba(120, 184, 220, 0.12),
       transparent 30%
     ),
     var(--snow);
@@ -327,11 +330,11 @@ a {
 
   padding: 60px;
 
-  border: 1px solid rgba(46, 96, 136, .25);
+  border: 1px solid rgba(46, 96, 136, 0.25);
 
   box-shadow:
-    inset 0 0 70px rgba(46, 96, 136, .05),
-    0 20px 60px rgba(5, 25, 45, .12);
+    inset 0 0 70px rgba(46, 96, 136, 0.05),
+    0 20px 60px rgba(5, 25, 45, 0.12);
 
   text-align: center;
 }
@@ -381,17 +384,19 @@ a {
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    DARK LORE
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .dark-lore {
+  width: 100%;
+
   padding: 115px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(46, 96, 136, .32),
+      rgba(46, 96, 136, 0.32),
       transparent 55%
     ),
     var(--navy);
@@ -419,10 +424,10 @@ a {
 
   margin-top: 15px;
 
-  text-shadow:
-    0 0 25px rgba(158, 220, 255, .15);
-
   text-align: center;
+
+  text-shadow:
+    0 0 25px rgba(158, 220, 255, 0.15);
 }
 
 .lore-container > p:not(.eyebrow) {
@@ -430,41 +435,38 @@ a {
 
   margin: 0 auto 20px;
 
-  color: rgba(244, 249, 252, .78);
+  color: rgba(244, 249, 252, 0.78);
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    REGION CARDS
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .region-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(2, 1fr);
 
   gap: 22px;
 
-  width: 100%;
-  max-width: 1000px;
-
-  margin: 50px auto;
-
-  justify-items: stretch;
+  margin: 50px auto 0;
 }
 
 .region-card {
   padding: 35px 25px;
 
-  background: rgba(46, 96, 136, .16);
+  background: rgba(46, 96, 136, 0.16);
 
-  border: 1px solid rgba(158, 220, 255, .25);
-
-  transition: .3s;
+  border: 1px solid rgba(158, 220, 255, 0.25);
 
   text-align: center;
+
+  transition: 0.3s;
 }
 
 .region-card:hover {
@@ -472,19 +474,17 @@ a {
 
   border-color: var(--ice-glow);
 
-  background: rgba(46, 96, 136, .25);
+  background: rgba(46, 96, 136, 0.25);
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, .18);
+    0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .region-card span {
-  display: block;
-
   font-size: 2rem;
 
   filter:
-    drop-shadow(0 0 8px rgba(158, 220, 255, .35));
+    drop-shadow(0 0 8px rgba(158, 220, 255, 0.35));
 }
 
 .region-card h3 {
@@ -500,7 +500,7 @@ a {
 }
 
 .region-card p {
-  color: rgba(244, 249, 252, .68);
+  color: rgba(244, 249, 252, 0.68);
 
   font-size: 1rem;
 
@@ -508,9 +508,9 @@ a {
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    CLIMATE
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .section-heading {
   width: 100%;
@@ -522,62 +522,52 @@ a {
 }
 
 .section-heading h2 {
+  color: inherit;
+
   font-family: "Cinzel", serif;
 
-  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
 
   font-weight: 500;
-
-  margin: 15px 0;
 
   text-align: center;
 }
 
 .section-heading p:not(.eyebrow) {
-  max-width: 750px;
-
-  margin: 0 auto;
-
   text-align: center;
+
+  margin-top: 15px;
 }
 
 .climate-grid {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
   display: grid;
 
   grid-template-columns: repeat(2, 1fr);
 
   gap: 22px;
 
-  width: 100%;
-  max-width: 900px;
-
-  margin: 0 auto;
-
-  justify-items: stretch;
+  text-align: center;
 }
 
 .climate-card {
   padding: 35px 25px;
 
-  border: 1px solid rgba(46, 96, 136, .2);
+  border: 1px solid rgba(46, 96, 136, 0.22);
 
-  background: rgba(255,255,255,.45);
+  background: rgba(255, 255, 255, 0.45);
 
   text-align: center;
-
-  transition: .3s;
-}
-
-.climate-card:hover {
-  transform: translateY(-5px);
-
-  border-color: var(--ice-blue);
 }
 
 .climate-icon {
   display: block;
 
-  font-size: 2.4rem;
+  font-size: 2.5rem;
 
   margin-bottom: 10px;
 }
@@ -593,50 +583,49 @@ a {
 }
 
 .climate-card p {
+  color: var(--blue-dark);
+
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    PEOPLE
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .people-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
 
-  width: 100%;
-  max-width: 1050px;
-
   margin: 50px auto 0;
-
-  justify-items: stretch;
 }
 
 .people-card {
   padding: 35px 25px;
 
-  background: rgba(46, 96, 136, .16);
+  background: rgba(46, 96, 136, 0.16);
 
-  border: 1px solid rgba(158, 220, 255, .25);
-
-  transition: .3s;
+  border: 1px solid rgba(158, 220, 255, 0.25);
 
   text-align: center;
+
+  transition: 0.3s;
 }
 
 .people-card:hover {
   transform: translateY(-6px);
 
-  background: rgba(46, 96, 136, .27);
+  background: rgba(46, 96, 136, 0.27);
 
   border-color: var(--ice-glow);
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, .18);
+    0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .people-card > span {
@@ -645,7 +634,7 @@ a {
   font-size: 2.2rem;
 
   filter:
-    drop-shadow(0 0 8px rgba(158, 220, 255, .3));
+    drop-shadow(0 0 8px rgba(158, 220, 255, 0.3));
 }
 
 .people-card h3 {
@@ -661,7 +650,7 @@ a {
 }
 
 .people-card p {
-  color: rgba(244, 249, 252, .68);
+  color: rgba(244, 249, 252, 0.68);
 
   font-size: 1rem;
 
@@ -669,17 +658,19 @@ a {
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    CREATURES
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .creature-section {
+  width: 100%;
+
   padding: 115px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(46, 96, 136, .28),
+      rgba(46, 96, 136, 0.3),
       transparent 55%
     ),
     var(--navy);
@@ -688,30 +679,27 @@ a {
 }
 
 .creature-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
 
-  width: 100%;
-  max-width: 1050px;
-
   margin: 45px auto 0;
-
-  justify-items: stretch;
 }
 
 .creature-grid > div {
   padding: 30px 20px;
 
-  background: rgba(46, 96, 136, .16);
+  background: rgba(46, 96, 136, 0.16);
 
-  border: 1px solid rgba(158, 220, 255, .22);
-
-  transition: .3s;
+  border: 1px solid rgba(158, 220, 255, 0.22);
 
   text-align: center;
+
+  transition: 0.3s;
 }
 
 .creature-grid > div:hover {
@@ -724,8 +712,6 @@ a {
   display: block;
 
   font-size: 2rem;
-
-  margin-bottom: 10px;
 }
 
 .creature-grid h3 {
@@ -739,47 +725,36 @@ a {
 }
 
 .creature-grid p {
-  color: rgba(244, 249, 252, .68);
+  color: rgba(244, 249, 252, 0.68);
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    ANCIENT ICE / RUINS
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .ruin-grid {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
 
-  width: 100%;
-  max-width: 950px;
-
   margin: 45px auto;
-
-  justify-items: stretch;
 }
 
 .ruin-card {
   padding: 30px 20px;
 
-  border: 1px solid rgba(46, 96, 136, .2);
+  border: 1px solid rgba(46, 96, 136, 0.2);
 
-  background: rgba(46, 96, 136, .07);
+  background: rgba(46, 96, 136, 0.06);
 
   text-align: center;
-
-  transition: .3s;
-}
-
-.ruin-card:hover {
-  transform: translateY(-5px);
-
-  border-color: var(--ice-blue);
 }
 
 .ruin-card span {
@@ -801,21 +776,25 @@ a {
 }
 
 .ruin-card p {
+  color: var(--blue-dark);
+
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    MAGIC
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .magic-section {
+  width: 100%;
+
   padding: 130px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(86, 170, 210, .2),
+      rgba(86, 170, 210, 0.22),
       transparent 55%
     ),
     var(--deep-blue);
@@ -845,40 +824,37 @@ a {
 }
 
 .magic-content > p:not(.eyebrow) {
-  color: rgba(244, 249, 252, .72);
-
   max-width: 750px;
 
   margin: 0 auto 20px;
+
+  color: rgba(244, 249, 252, 0.75);
 
   text-align: center;
 }
 
 .magic-list {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns: repeat(2, 1fr);
 
   gap: 12px;
 
-  width: 100%;
-  max-width: 750px;
-
   margin: 40px auto;
-
-  justify-items: stretch;
 }
 
 .magic-list div {
   padding: 15px;
 
-  border: 1px solid rgba(158, 220, 255, .2);
+  border: 1px solid rgba(158, 220, 255, 0.2);
 
   color: var(--ice-glow);
 
   font-family: "Cinzel", serif;
 
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   text-align: center;
 }
@@ -890,16 +866,19 @@ a {
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    AURORA
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .aurora-section {
+  width: 100%;
+
   min-height: 700px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 110px 6%;
@@ -909,12 +888,12 @@ a {
   background:
     radial-gradient(
       ellipse at center,
-      rgba(86, 170, 210, .32),
+      rgba(86, 170, 210, 0.32),
       transparent 48%
     ),
     linear-gradient(
-      rgba(3, 14, 28, .65),
-      rgba(4, 15, 28, .97)
+      rgba(3, 14, 28, 0.65),
+      rgba(4, 15, 28, 0.97)
     ),
     url("https://i.ibb.co/qFr4xT7D/IMG-7288.png")
     center / cover fixed;
@@ -937,7 +916,7 @@ a {
   margin-bottom: 15px;
 
   filter:
-    drop-shadow(0 0 25px rgba(158, 220, 255, .7));
+    drop-shadow(0 0 25px rgba(158, 220, 255, 0.7));
 }
 
 .aurora-content h2 {
@@ -949,36 +928,36 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 
   text-align: center;
 }
 
 .aurora-content > p:not(.eyebrow) {
-  color: rgba(244, 249, 252, .76);
+  color: rgba(244, 249, 252, 0.76);
 
-  max-width: 700px;
-
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    FROST DRAGONS
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .dragon-section {
+  width: 100%;
+
   padding: 130px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(46, 96, 136, .32),
+      rgba(46, 96, 136, 0.3),
       transparent 55%
     ),
-    #040d18;
+    #030b15;
 
   text-align: center;
 }
@@ -1005,11 +984,9 @@ a {
 }
 
 .dragon-content > p:not(.eyebrow) {
-  max-width: 750px;
+  color: rgba(244, 249, 252, 0.75);
 
-  margin: 0 auto 20px;
-
-  color: rgba(244, 249, 252, .72);
+  margin-bottom: 20px;
 
   text-align: center;
 }
@@ -1017,41 +994,39 @@ a {
 .dragon-warning {
   max-width: 650px;
 
-  margin: 45px auto;
+  margin: 40px auto;
 
   padding: 30px;
 
-  border: 1px solid rgba(158, 220, 255, .3);
+  border: 1px solid rgba(158, 220, 255, 0.3);
 
-  background: rgba(46, 96, 136, .12);
-
-  color: var(--ice-glow);
+  background: rgba(46, 96, 136, 0.12);
 
   text-align: center;
 }
 
 .dragon-warning > p {
+  color: var(--frost);
+
   margin-top: 10px;
-}
 
-.final-warning {
-  color: var(--ice-glow) !important;
-
-  font-style: italic;
+  text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    WHITE SILENCE
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .deep-wilds {
-  padding: 140px 6%;
+  width: 100%;
+
+  padding: 130px 6%;
 
   background:
     linear-gradient(
-      rgba(4, 15, 28, .7),
-      rgba(3, 12, 22, .97)
+      rgba(5, 18, 32, 0.7),
+      rgba(4, 15, 28, 0.97)
     ),
     url("https://i.ibb.co/qFr4xT7D/IMG-7288.png")
     center / cover;
@@ -1061,7 +1036,7 @@ a {
 
 .deep-content {
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
 
   margin: 0 auto;
 
@@ -1073,15 +1048,15 @@ a {
 
   font-family: "Cinzel", serif;
 
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
 
   font-weight: 500;
 
   text-align: center;
 }
 
-.deep-content p {
-  color: rgba(244, 249, 252, .75);
+.deep-content > p:not(.eyebrow) {
+  color: rgba(244, 249, 252, 0.75);
 
   margin-bottom: 20px;
 
@@ -1095,9 +1070,8 @@ a {
 
   padding: 25px;
 
-  border-top: 1px solid rgba(158, 220, 255, .3);
-
-  border-bottom: 1px solid rgba(158, 220, 255, .3);
+  border-top: 1px solid rgba(158, 220, 255, 0.3);
+  border-bottom: 1px solid rgba(158, 220, 255, 0.3);
 
   color: var(--ice-glow);
 
@@ -1107,18 +1081,20 @@ a {
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    HEART OF WINTER
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .heart-section {
+  width: 100%;
+
   padding: 140px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(120, 184, 220, .25),
-      transparent 48%
+      rgba(120, 184, 220, 0.25),
+      transparent 50%
     ),
     var(--navy);
 
@@ -1127,7 +1103,7 @@ a {
 
 .heart-content {
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
 
   margin: 0 auto;
 
@@ -1142,7 +1118,7 @@ a {
   margin-bottom: 20px;
 
   filter:
-    drop-shadow(0 0 25px rgba(158, 220, 255, .7));
+    drop-shadow(0 0 25px rgba(158, 220, 255, 0.7));
 }
 
 .heart-content h2 {
@@ -1150,7 +1126,7 @@ a {
 
   font-family: "Cinzel", serif;
 
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
 
   font-weight: 500;
 
@@ -1162,7 +1138,7 @@ a {
 
   font-family: "Cinzel", serif;
 
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 
   margin: 25px 0;
 
@@ -1170,32 +1146,32 @@ a {
 }
 
 .heart-content > p:not(.eyebrow) {
-  max-width: 700px;
+  color: rgba(244, 249, 252, 0.75);
 
-  margin: 0 auto 20px;
-
-  color: rgba(244, 249, 252, .72);
+  margin-bottom: 20px;
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    LAWS
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .wild-law {
+  width: 100%;
+
   padding: 130px 6%;
+
+  text-align: center;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(46, 96, 136, .3),
+      rgba(46, 96, 136, 0.3),
       transparent 55%
     ),
     var(--navy);
-
-  text-align: center;
 }
 
 .law-content {
@@ -1224,20 +1200,22 @@ a {
   max-width: 650px;
 
   margin: 45px auto;
+
+  text-align: center;
 }
 
 .laws p {
   padding: 16px;
 
-  border-bottom: 1px solid rgba(158, 220, 255, .18);
+  border-bottom: 1px solid rgba(158, 220, 255, 0.18);
 
-  color: rgba(244, 249, 252, .75);
+  color: rgba(244, 249, 252, 0.75);
 
   font-family: "Cinzel", serif;
 
-  font-size: .8rem;
+  font-size: 0.8rem;
 
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 
   text-align: center;
 }
@@ -1247,9 +1225,9 @@ a {
 
   padding: 35px;
 
-  border: 1px solid rgba(158, 220, 255, .35);
+  border: 1px solid rgba(158, 220, 255, 0.35);
 
-  background: rgba(46, 96, 136, .1);
+  background: rgba(46, 96, 136, 0.1);
 
   text-align: center;
 }
@@ -1261,9 +1239,9 @@ a {
 
   font-family: "Cinzel", serif;
 
-  font-size: .55rem;
+  font-size: 0.55rem;
 
-  letter-spacing: .25em;
+  letter-spacing: 0.25em;
 
   margin-bottom: 15px;
 
@@ -1285,29 +1263,32 @@ a {
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    ENDING
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 .wild-ending {
+  width: 100%;
+
   min-height: 650px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 100px 6%;
 
+  text-align: center;
+
   background:
     radial-gradient(
       circle at center,
-      rgba(86, 170, 210, .3),
+      rgba(86, 170, 210, 0.3),
       transparent 45%
     ),
     #030b15;
-
-  text-align: center;
 }
 
 .ending-content {
@@ -1319,8 +1300,18 @@ a {
   text-align: center;
 }
 
+.final-symbol {
+  margin: 25px auto;
+
+  color: var(--ice-glow);
+
+  font-size: 1.5rem;
+
+  text-align: center;
+}
+
 .ending-content > p {
-  color: rgba(244, 249, 252, .65);
+  color: rgba(244, 249, 252, 0.65);
 
   text-align: center;
 }
@@ -1348,35 +1339,34 @@ a {
 
   font-weight: 500;
 
+  text-align: center;
+
   text-shadow:
-    0 0 15px rgba(158, 220, 255, .25);
-
-  text-align: center;
-}
-
-.final-symbol {
-  margin-top: 40px;
-
-  color: var(--ice-glow);
-
-  font-size: 1.5rem;
-
-  text-align: center;
+    0 0 15px rgba(158, 220, 255, 0.25);
 }
 
 
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════
    FOOTER
-═══════════════════════════════════════ */
+═══════════════════════════════ */
 
 footer {
+  width: 100%;
+
   padding: 70px 20px;
 
   text-align: center;
 
   background: #020810;
 
-  border-top: 1px solid rgba(158, 220, 255, .22);
+  border-top: 1px solid rgba(158, 220, 255, 0.22);
+}
+
+footer > div,
+footer h2,
+footer p,
+footer small {
+  text-align: center;
 }
 
 footer > div {
@@ -1392,9 +1382,7 @@ footer h2 {
 
   font-weight: 500;
 
-  letter-spacing: .3em;
-
-  text-align: center;
+  letter-spacing: 0.3em;
 }
 
 footer p {
@@ -1402,89 +1390,77 @@ footer p {
 
   font-family: "Cinzel", serif;
 
-  font-size: .6rem;
+  font-size: 0.6rem;
 
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 
-  margin: 8px auto 18px;
-
-  text-align: center;
+  margin: 8px 0 18px;
 }
 
 footer small {
-  color: rgba(220, 236, 245, .45);
+  color: rgba(220, 236, 245, 0.45);
 
   font-family: "Cinzel", serif;
 
-  font-size: .5rem;
+  font-size: 0.5rem;
 
-  letter-spacing: .15em;
-
-  text-align: center;
+  letter-spacing: 0.15em;
 }
 
 
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
+/* ═══════════════════════════════
+   MOBILE
+═══════════════════════════════ */
 
 @media (max-width: 900px) {
 
-  .people-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .nav {
+    gap: 14px;
   }
 
-  .creature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .region-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .people-grid,
+  .creature-grid,
   .ruin-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .region-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .climate-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-
-/* ═══════════════════════════════════════
-   MOBILE
-═══════════════════════════════════════ */
 
 @media (max-width: 600px) {
 
   body {
     font-size: 17px;
+    text-align: center;
   }
 
   .site-header {
-    padding: 12px 15px;
+    padding: 15px 20px;
+
+    justify-content: center;
   }
 
-  .brand-name {
-    font-size: 1rem;
+  .brand {
+    width: 100%;
   }
 
   .nav {
-    gap: 10px;
-
-    margin-top: 10px;
-  }
-
-  .nav a {
-    font-size: .5rem;
+    display: none;
   }
 
   .hero-content {
-    padding: 180px 20px 100px;
+    padding: 130px 20px 90px;
   }
 
   .hero-content h1 {
     font-size: 3rem;
-
-    letter-spacing: .08em;
   }
 
   .motto {
@@ -1498,9 +1474,7 @@ footer small {
   .dragon-section,
   .deep-wilds,
   .heart-section,
-  .magic-section,
-  .wild-law,
-  .wild-ending {
+  .wild-law {
     padding: 80px 20px;
   }
 
@@ -1508,42 +1482,28 @@ footer small {
     padding: 35px 22px;
   }
 
-  .region-grid,
   .people-grid,
   .creature-grid,
-  .climate-grid,
   .ruin-grid,
+  .climate-grid,
   .magic-list {
     grid-template-columns: 1fr;
   }
 
-  .region-card,
-  .people-card,
-  .creature-grid > div,
-  .climate-card,
-  .ruin-card {
-    width: 100%;
+  .region-grid {
+    grid-template-columns: 1fr;
   }
 
-  .paper-section h2,
-  .lore-container h2 {
-    font-size: 2.2rem;
+  .section-heading {
+    padding: 0 10px;
   }
 
-  .magic-content h2,
-  .aurora-content h2,
-  .dragon-content h2,
-  .deep-content h2,
-  .heart-content h2 {
-    font-size: 2.5rem;
+  .paper-section p,
+  .lore-container > p:not(.eyebrow),
+  .aurora-content > p:not(.eyebrow),
+  .dragon-content > p:not(.eyebrow),
+  .deep-content > p:not(.eyebrow),
+  .heart-content > p:not(.eyebrow) {
+    text-align: center;
   }
-
-  .laws {
-    width: 100%;
-  }
-
-  .laws p {
-    font-size: .7rem;
-  }
-
 }
