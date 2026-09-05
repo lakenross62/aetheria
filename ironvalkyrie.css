@@ -4,13 +4,12 @@
   --black: #090b0c;
   --deep-black: #050607;
   --paper: #e8e1d2;
-  --paper-dark: #d8cfbc;
   --text: #d9d2c3;
   --dark-text: #292823;
   --gold: #b99a5b;
   --gold-light: #d7bd7c;
   --gray: #77766e;
-  --line: rgba(185, 154, 91, 0.45);
+  --line: rgba(185,154,91,0.45);
 }
 
 * {
@@ -21,34 +20,34 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  background: #050607;
 }
 
 body {
-  background: var(--black);
-  color: var(--text);
-  font-family: "Cormorant Garamond", serif;
+  background: #090b0c !important;
+  color: #d9d2c3 !important;
+  font-family: "Cormorant Garamond", serif !important;
   font-size: 19px;
   line-height: 1.8;
   overflow-x: hidden;
 }
 
-a {
+body a {
   color: inherit;
   text-decoration: none;
 }
 
-
-/* ================================
+/* =========================
    HEADER
-================================ */
+========================= */
 
 .site-header {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999;
 
   display: flex;
   align-items: center;
@@ -56,98 +55,62 @@ a {
 
   padding: 20px 6%;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5, 6, 7, 0.97),
-      rgba(5, 6, 7, 0.88)
-    );
+  background: rgba(5,6,7,0.96) !important;
+  border-bottom: 1px solid rgba(185,154,91,0.45);
 
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .brand {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  color: #d7bd7c !important;
 }
 
 .brand-name {
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", serif !important;
   font-size: 22px;
   letter-spacing: 5px;
-  color: var(--gold-light);
+  color: #d7bd7c !important;
 }
 
 .brand-subtitle {
-  margin-top: 4px;
+  font-family: "Cormorant Garamond", serif !important;
   font-size: 11px;
   letter-spacing: 3px;
-  color: #aaa398;
+  color: #aaa398 !important;
 }
 
 .nav {
   display: flex;
-  align-items: center;
   gap: 28px;
 }
 
 .nav a {
-  position: relative;
-
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", serif !important;
   font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-
-  color: #c7c0b2;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-
-  left: 50%;
-  bottom: -7px;
-
-  width: 0;
-  height: 1px;
-
-  background: var(--gold-light);
-
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
+  color: #d9d2c3 !important;
+  transition: all 0.3s ease;
 }
 
 .nav a:hover {
-  color: var(--gold-light);
-  transform: translateY(-1px);
-}
-
-.nav a:hover::after {
-  width: 100%;
+  color: #d7bd7c !important;
 }
 
 .menu-toggle {
   display: none;
-
-  background: none;
-  border: none;
-
-  color: var(--gold-light);
+  background: transparent !important;
+  border: none !important;
+  color: #d7bd7c !important;
   font-size: 25px;
-
-  cursor: pointer;
 }
 
-
-/* ================================
-   GENERAL BACKGROUNDS
-================================ */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .hero,
 .dark-section,
@@ -156,205 +119,118 @@ a {
 .timeline-section {
   background:
     radial-gradient(
-      circle at 50% 20%,
-      rgba(185, 154, 91, 0.09),
-      transparent 32%
+      circle at 50% 30%,
+      rgba(185,154,91,0.08),
+      transparent 35%
     ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(255, 255, 255, 0.025),
-      transparent 30%
-    ),
-    var(--black);
+    #090b0c !important;
 }
 
 .paper-section {
   background:
     radial-gradient(
       circle at 20% 20%,
-      rgba(120, 100, 70, 0.08),
+      rgba(120,100,70,0.08),
       transparent 30%
     ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(90, 75, 50, 0.05),
-      transparent 35%
-    ),
-    var(--paper);
+    #e8e1d2 !important;
 
-  color: var(--dark-text);
+  color: #292823 !important;
 }
-
-
-/* ================================
-   HERO
-================================ */
 
 .hero {
   min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: relative;
-
-  padding: 140px 20px 100px;
-
   text-align: center;
-
-  border-bottom: 1px solid var(--line);
-}
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      rgba(5, 6, 7, 0.1),
-      rgba(5, 6, 7, 0.45)
-    );
-
-  pointer-events: none;
+  position: relative;
+  padding: 140px 20px 100px;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-
   max-width: 900px;
+  width: 100%;
 }
 
 .eyebrow {
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", serif !important;
   font-size: 12px;
   letter-spacing: 5px;
-  color: var(--gold-light);
-
+  color: #d7bd7c !important;
   text-transform: uppercase;
-
   margin-bottom: 22px;
 }
 
 .eyebrow.dark {
-  color: #806832;
+  color: #806832 !important;
 }
 
 .hero h1 {
-  font-family: "Cinzel", serif;
-
-  font-size: clamp(60px, 10vw, 125px);
-
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(60px,10vw,125px);
   line-height: 0.95;
   letter-spacing: 8px;
-
   font-weight: 600;
-
-  color: #eee8db;
-
-  text-shadow:
-    0 0 25px rgba(185, 154, 91, 0.08),
-    0 0 60px rgba(185, 154, 91, 0.12);
+  color: #eee8db !important;
+  text-shadow: 0 0 40px rgba(185,154,91,0.15);
 }
 
 .hero-name {
   margin-top: 28px;
-
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   letter-spacing: 8px;
   font-size: 19px;
-
-  color: var(--gold-light);
+  color: #d7bd7c !important;
 }
 
 .gold-rule {
-  color: var(--gold-light);
-
+  color: #d7bd7c !important;
   margin: 28px auto;
-
   font-size: 22px;
-
   letter-spacing: 12px;
+}
+
+.dark-rule {
+  color: #806832 !important;
 }
 
 .intro {
   font-size: 24px;
-
-  color: #c5beb0;
-
+  color: #c5beb0 !important;
   margin-bottom: 35px;
 }
 
 .gold-button {
   display: inline-block;
-
-  border: 1px solid var(--gold);
-
+  border: 1px solid #b99a5b !important;
   padding: 13px 30px;
-
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   font-size: 12px;
   letter-spacing: 2px;
-
   text-transform: uppercase;
-
-  color: var(--gold-light);
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
+  color: #d7bd7c !important;
+  background: transparent !important;
+  transition: all 0.3s ease;
 }
 
 .gold-button:hover {
-  background: var(--gold);
-
-  color: var(--black);
-
-  box-shadow:
-    0 0 20px rgba(185, 154, 91, 0.2);
-
-  transform: translateY(-2px);
+  background: #b99a5b !important;
+  color: #090b0c !important;
 }
 
 .scroll-hint {
   position: absolute;
-
   bottom: 30px;
-
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   font-size: 10px;
   letter-spacing: 3px;
-
-  color: #77746c;
-
-  animation: scrollPulse 2.5s ease-in-out infinite;
+  color: #77746c !important;
 }
 
-@keyframes scrollPulse {
-  0%,
-  100% {
-    opacity: 0.45;
-    transform: translateY(0);
-  }
-
-  50% {
-    opacity: 1;
-    transform: translateY(5px);
-  }
-}
-
-
-/* ================================
+/* =========================
    SECTIONS
-================================ */
+========================= */
 
 .paper-section,
 .dark-section,
@@ -370,27 +246,35 @@ a {
 
 .section-heading {
   max-width: 950px;
-
   margin: 0 auto 60px;
-
   text-align: center;
 }
 
 .section-heading h2,
 .section-frame h2 {
-  font-family: "Cinzel", serif;
-
-  font-size: clamp(35px, 5vw, 62px);
-
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(35px,5vw,62px);
   line-height: 1.15;
-
   font-weight: 500;
-
   margin-bottom: 25px;
 }
 
+.dark-section .section-heading h2,
+.character-section .section-heading h2,
+.timeline-section .section-heading h2 {
+  color: #eee8db !important;
+}
+
+.paper-section .section-frame h2 {
+  color: #292823 !important;
+}
+
 .section-heading p {
-  color: #aaa398;
+  color: #aaa398 !important;
+}
+
+.paper-section .section-heading p {
+  color: #292823 !important;
 }
 
 .section-frame p {
@@ -399,37 +283,26 @@ a {
 
 .section-frame .lead {
   font-size: 25px;
-
   line-height: 1.6;
-}
-
-.dark-rule {
-  color: #806832;
 }
 
 .quote {
   margin: 45px auto 10px;
-
   padding: 30px 35px;
-
   max-width: 800px;
-
   text-align: center;
 
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid rgba(185,154,91,0.45);
+  border-bottom: 1px solid rgba(185,154,91,0.45);
 
   font-size: 25px;
-
   font-style: italic;
-
-  color: #806832;
+  color: #806832 !important;
 }
 
-
-/* ================================
-   CHARACTER INFORMATION
-================================ */
+/* =========================
+   CHARACTER INFO
+========================= */
 
 .character-section {
   text-align: center;
@@ -437,304 +310,184 @@ a {
 
 .info-grid {
   max-width: 1100px;
-
   margin: auto;
 
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
+  grid-template-columns: repeat(3,1fr);
   gap: 20px;
 }
 
 .info-card {
   padding: 30px 20px;
 
-  border: 1px solid rgba(185, 154, 91, 0.3);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.035),
-      rgba(255, 255, 255, 0.01)
-    );
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-4px);
-
-  border-color: rgba(215, 189, 124, 0.65);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(185, 154, 91, 0.07),
-      rgba(255, 255, 255, 0.015)
-    );
+  border: 1px solid rgba(185,154,91,0.3) !important;
+  background: rgba(255,255,255,0.025) !important;
 }
 
 .info-card span {
   display: block;
-
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   font-size: 10px;
-
   letter-spacing: 3px;
-
-  color: var(--gold);
-
+  color: #b99a5b !important;
   margin-bottom: 8px;
 }
 
 .info-card strong {
   display: block;
-
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   font-size: 15px;
-
   font-weight: 500;
-
-  color: #ddd6c9;
+  color: #ddd6c9 !important;
 }
 
-
-/* ================================
+/* =========================
    HERITAGE
-================================ */
+========================= */
 
 .heritage-grid {
   display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-template-columns: repeat(2,1fr);
   gap: 30px;
-
   margin: 50px 0;
 }
 
 .heritage-card {
   padding: 40px;
-
-  border: 1px solid rgba(80, 70, 50, 0.25);
-
+  border: 1px solid rgba(80,70,50,0.25);
   text-align: center;
-
-  background: rgba(255, 255, 255, 0.08);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.heritage-card:hover {
-  transform: translateY(-5px);
-
-  border-color: rgba(128, 104, 50, 0.55);
+  background: rgba(255,255,255,0.05);
 }
 
 .heritage-icon {
   display: block;
-
   font-size: 42px;
-
   margin-bottom: 15px;
 }
 
 .heritage-card h3,
 .lore-columns h3,
 .personality-grid h3 {
-  font-family: "Cinzel", serif;
-
-  color: #806832;
-
+  font-family: "Cinzel", serif !important;
+  color: #806832 !important;
   font-size: 20px;
-
   margin-bottom: 12px;
 }
 
 .heritage-ending {
   text-align: center;
-
   font-style: italic;
-
   font-size: 23px;
 }
 
-
-/* ================================
-   DARK LORE
-================================ */
+/* =========================
+   APPEARANCE
+========================= */
 
 .lore-columns {
   max-width: 1100px;
-
   margin: auto;
 
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
+  grid-template-columns: repeat(3,1fr);
   gap: 35px;
 }
 
 .lore-columns > div {
-  border-top: 1px solid var(--line);
-
+  border-top: 1px solid rgba(185,154,91,0.45);
   padding-top: 25px;
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.lore-columns > div:hover {
-  transform: translateY(-4px);
-
-  border-color: var(--gold-light);
 }
 
 .lore-columns h3 {
-  color: var(--gold-light);
+  color: #d7bd7c !important;
 }
 
+.lore-columns p {
+  color: #aaa398 !important;
+}
 
-/* ================================
+/* =========================
    ABILITIES
-================================ */
+========================= */
 
 .ability-grid {
   max-width: 1150px;
-
   margin: auto;
 
   display: grid;
-
-  grid-template-columns: repeat(5, 1fr);
-
+  grid-template-columns: repeat(5,1fr);
   gap: 18px;
 }
 
 .ability-card {
   padding: 28px 18px;
-
   text-align: center;
 
-  border: 1px solid rgba(185, 154, 91, 0.25);
-
-  background: rgba(255, 255, 255, 0.02);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.ability-card:hover {
-  transform: translateY(-5px);
-
-  border-color: rgba(215, 189, 124, 0.65);
-
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(185,154,91,0.25) !important;
+  background: rgba(255,255,255,0.02) !important;
 }
 
 .ability-card span {
   display: block;
-
   font-size: 30px;
-
   margin-bottom: 10px;
 }
 
 .ability-card h3 {
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   font-size: 15px;
-
-  color: var(--gold-light);
-
+  color: #d7bd7c !important;
   margin-bottom: 10px;
 }
 
 .ability-card p {
   font-size: 16px;
-
   line-height: 1.5;
-
-  color: #aaa398;
+  color: #aaa398 !important;
 }
 
-
-/* ================================
+/* =========================
    WEAPON
-================================ */
+========================= */
 
 .weapon-box {
   max-width: 850px;
-
   margin: 50px auto 0;
-
   text-align: center;
 }
 
 .weapon-symbol {
   font-size: 55px;
-
-  color: #806832;
-
+  color: #806832 !important;
   display: block;
-
   margin-bottom: 20px;
-
-  text-shadow:
-    0 0 20px rgba(128, 104, 50, 0.2);
 }
 
-
-/* ================================
+/* =========================
    TIMELINE
-================================ */
+========================= */
 
 .timeline {
   max-width: 900px;
-
   margin: auto;
-
   position: relative;
 }
 
 .timeline::before {
   content: "";
-
   position: absolute;
-
   left: 31px;
-
   top: 0;
-
   bottom: 0;
-
   width: 1px;
-
-  background: var(--line);
+  background: rgba(185,154,91,0.45);
 }
 
 .timeline-item {
   display: grid;
-
   grid-template-columns: 64px 1fr;
-
   gap: 35px;
-
   margin-bottom: 55px;
-
   position: relative;
 }
 
@@ -743,160 +496,102 @@ a {
   height: 64px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  border: 1px solid var(--gold);
-
+  border: 1px solid #b99a5b !important;
   border-radius: 50%;
 
-  background: var(--black);
+  background: #090b0c !important;
 
-  font-family: "Cinzel", serif;
-
-  color: var(--gold-light);
+  font-family: "Cinzel", serif !important;
+  color: #d7bd7c !important;
 
   z-index: 2;
-
-  box-shadow:
-    0 0 0 6px rgba(9, 11, 12, 0.85);
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.timeline-item:hover > span {
-  background: #151719;
-
-  transform: scale(1.05);
 }
 
 .timeline-item h3 {
-  font-family: "Cinzel", serif;
-
-  color: var(--gold-light);
-
+  font-family: "Cinzel", serif !important;
+  color: #d7bd7c !important;
   font-size: 23px;
-
   margin-bottom: 8px;
 }
 
+.timeline-item p {
+  color: #aaa398 !important;
+}
 
-/* ================================
+/* =========================
    VEYRA
-================================ */
+========================= */
 
 .veyra-box {
   max-width: 800px;
-
   margin: auto;
-
   text-align: center;
 
   padding: 55px 45px;
 
-  border: 1px solid var(--line);
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(185, 154, 91, 0.045),
-      transparent 60%
-    );
-
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.veyra-box:hover {
-  border-color: rgba(215, 189, 124, 0.65);
-
-  box-shadow:
-    0 0 40px rgba(185, 154, 91, 0.06);
+  border: 1px solid rgba(185,154,91,0.45) !important;
+  background: rgba(255,255,255,0.015);
 }
 
 .veyra-symbol {
   font-size: 70px;
-
   margin-bottom: 10px;
-
-  filter:
-    drop-shadow(0 0 12px rgba(185, 154, 91, 0.15));
 }
 
 .veyra-box h3 {
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   font-size: 38px;
-
-  color: var(--gold-light);
+  color: #d7bd7c !important;
 }
 
 .veyra-subtitle {
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   font-size: 12px;
-
   letter-spacing: 2px;
-
-  color: #88847b;
-
+  color: #88847b !important;
   margin-bottom: 30px;
 }
 
+.veyra-box p {
+  color: #aaa398 !important;
+}
 
-/* ================================
+/* =========================
    PERSONALITY
-================================ */
+========================= */
 
 .personality-grid {
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
+  grid-template-columns: repeat(3,1fr);
   gap: 30px;
-
   margin-top: 45px;
 }
 
 .personality-grid > div {
   padding-top: 25px;
-
-  border-top: 1px solid rgba(80, 70, 50, 0.3);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+  border-top: 1px solid rgba(80,70,50,0.3);
 }
 
-.personality-grid > div:hover {
-  transform: translateY(-4px);
-
-  border-color: rgba(128, 104, 50, 0.65);
+.personality-grid h3 {
+  color: #806832 !important;
 }
 
-
-/* ================================
-   FINAL SECTION
-================================ */
+/* =========================
+   FINAL
+========================= */
 
 .final-section {
   min-height: 80vh;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   text-align: center;
-
   padding: 100px 20px;
-
-  position: relative;
 }
 
 .final-content {
@@ -904,105 +599,66 @@ a {
 }
 
 .final-content h2 {
-  font-family: "Cinzel", serif;
-
-  font-size: clamp(45px, 8vw, 90px);
-
-  color: #eee8db;
-
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(45px,8vw,90px);
+  color: #eee8db !important;
   letter-spacing: 5px;
 }
 
 .final-content p {
-  color: #aaa398;
-
+  color: #aaa398 !important;
   font-size: 22px;
-
   margin-bottom: 18px;
 }
 
 .final-content .final-line {
-  color: var(--gold-light);
-
-  font-family: "Cinzel", serif;
-
+  color: #d7bd7c !important;
+  font-family: "Cinzel", serif !important;
   font-size: 25px;
-
   letter-spacing: 4px;
-
   margin-top: 45px;
 }
 
-
-/* ================================
+/* =========================
    FOOTER
-================================ */
+========================= */
 
 footer {
   padding: 65px 20px;
-
   text-align: center;
 
-  background: var(--deep-black);
-
-  border-top: 1px solid var(--line);
+  background: #050607 !important;
+  border-top: 1px solid rgba(185,154,91,0.45);
 }
 
 .footer-ornament {
-  color: var(--gold);
-
+  color: #b99a5b !important;
   font-size: 25px;
-
   margin-bottom: 15px;
 }
 
 footer h2 {
-  font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif !important;
   letter-spacing: 6px;
-
-  color: var(--gold-light);
+  color: #d7bd7c !important;
 }
 
 footer p {
-  color: #77746c;
-
+  color: #77746c !important;
   letter-spacing: 3px;
-
   font-size: 13px;
 }
 
 footer small {
   display: block;
-
   margin-top: 20px;
-
-  color: #5f5d57;
-
+  color: #5f5d57 !important;
   letter-spacing: 3px;
 }
 
-
-/* ================================
+/* =========================
    MOBILE
-================================ */
-
-@media (max-width: 1100px) {
-
-  .nav {
-    gap: 18px;
-  }
-
-  .nav a {
-    font-size: 10px;
-  }
-
-  .ability-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
+========================= */
 
 @media (max-width: 900px) {
 
@@ -1022,16 +678,14 @@ footer small {
   }
 
   .ability-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
   }
-
 }
-
 
 @media (max-width: 600px) {
 
   body {
-    font-size: 17px;
+    font-size: 17px !important;
   }
 
   .site-header {
@@ -1040,40 +694,25 @@ footer small {
 
   .brand-name {
     font-size: 17px;
-
     letter-spacing: 3px;
   }
 
   .brand-subtitle {
     font-size: 8px;
-
-    letter-spacing: 2px;
-  }
-
-  .hero {
-    padding:
-      120px 20px
-      90px;
   }
 
   .hero h1 {
     font-size: 50px;
-
     letter-spacing: 4px;
   }
 
   .hero-name {
     font-size: 15px;
-
     letter-spacing: 5px;
   }
 
   .intro {
     font-size: 20px;
-  }
-
-  .gold-button {
-    padding: 12px 22px;
   }
 
   .paper-section,
@@ -1092,12 +731,6 @@ footer small {
     font-size: 21px;
   }
 
-  .eyebrow {
-    font-size: 9px;
-
-    letter-spacing: 3px;
-  }
-
   .info-grid,
   .heritage-grid,
   .lore-columns,
@@ -1109,13 +742,8 @@ footer small {
     grid-template-columns: 1fr 1fr;
   }
 
-  .heritage-card {
-    padding: 30px 22px;
-  }
-
   .timeline-item {
     grid-template-columns: 48px 1fr;
-
     gap: 20px;
   }
 
@@ -1126,7 +754,6 @@ footer small {
   .timeline-item > span {
     width: 48px;
     height: 48px;
-
     font-size: 13px;
   }
 
@@ -1134,41 +761,8 @@ footer small {
     padding: 35px 22px;
   }
 
-  .veyra-box h3 {
-    font-size: 32px;
-  }
-
   .quote {
     padding: 25px 18px;
-
     font-size: 21px;
   }
-
-  .final-content p {
-    font-size: 19px;
-  }
-
-  .final-content .final-line {
-    font-size: 21px;
-  }
-
-}
-
-
-@media (max-width: 380px) {
-
-  .ability-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-
-    letter-spacing: 3px;
-  }
-
-  .brand-name {
-    font-size: 15px;
-  }
-
 }
