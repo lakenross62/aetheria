@@ -1,29 +1,31 @@
 /* ═══════════════════════════════════════════════
    AETHERIA — THE VERDANT PLAINS
-   FULLY CENTERED WEBSITE CSS
+   FULLY CENTERED CSS
 ═══════════════════════════════════════════════ */
 
 :root {
-  --green-dark: #07150d;
-  --forest: #0d2416;
-  --deep-green: #14351f;
-  --green: #315d38;
-  --sage: #789b70;
-  --leaf: #9fbd91;
+  --forest: #102d1d;
+  --deep-green: #071a10;
+  --green: #214d31;
+  --sage: #668b68;
 
-  --cream: #f5f1df;
+  --gold: #d8b96c;
+  --light-gold: #f0d995;
+
+  --cream: #f5f0df;
+  --paper: #f8f5e9;
   --white: #ffffff;
-  --gold: #d6b96a;
-  --gold-light: #ecd88e;
 
-  --text-dark: #243326;
-  --text-light: rgba(245, 241, 223, 0.78);
+  --dark-text: #183321;
+  --soft-text: #52634f;
+
+  --glow: rgba(216, 185, 108, 0.35);
 }
 
 
-/* ═══════════════════════════════
-   RESET
-═══════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   BASIC
+═══════════════════════════════════════════════ */
 
 * {
   box-sizing: border-box;
@@ -39,10 +41,11 @@ body {
   width: 100%;
   overflow-x: hidden;
 
-  background: var(--green-dark);
+  background: var(--deep-green);
   color: var(--cream);
 
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 19px;
   line-height: 1.7;
 
@@ -55,29 +58,29 @@ a {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    HEADER
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .site-header {
   position: fixed;
-  z-index: 1000;
 
   top: 0;
   left: 0;
 
+  z-index: 1000;
+
   width: 100%;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  padding: 18px 25px;
+  padding: 18px 5%;
 
-  background: rgba(5, 18, 10, 0.94);
+  background: rgba(5, 20, 12, 0.94);
 
-  border-bottom: 1px solid rgba(214, 185, 106, 0.3);
+  border-bottom: 1px solid rgba(216, 185, 108, 0.25);
 
   backdrop-filter: blur(12px);
 
@@ -85,50 +88,51 @@ a {
 }
 
 .brand {
+  position: absolute;
+
+  left: 5%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   text-align: center;
+
+  line-height: 1;
 }
 
 .brand-name {
-  color: var(--gold-light);
+  color: var(--light-gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 
   letter-spacing: 0.3em;
 
-  text-align: center;
+  text-shadow:
+    0 0 15px rgba(216, 185, 108, 0.25);
 }
 
 .brand-subtitle {
-  margin-top: 5px;
+  color: rgba(245, 240, 223, 0.65);
 
-  color: var(--sage);
+  font-family: "Cinzel", Georgia, serif;
 
-  font-family: "Cinzel", serif;
+  font-size: 0.48rem;
 
-  font-size: 0.52rem;
+  letter-spacing: 0.18em;
 
-  letter-spacing: 0.22em;
-
-  text-align: center;
+  margin-top: 7px;
 }
 
 .nav {
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  flex-wrap: wrap;
-
-  gap: 25px;
-
-  margin-top: 14px;
+  gap: 30px;
 
   text-align: center;
 }
@@ -136,28 +140,28 @@ a {
 .nav a {
   color: var(--cream);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.62rem;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 
   text-align: center;
 }
 
 .nav a:hover {
-  color: var(--gold-light);
+  color: var(--light-gold);
 
   text-shadow:
-    0 0 15px rgba(236, 216, 142, 0.6);
+    0 0 15px rgba(216, 185, 108, 0.6);
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    HERO
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .mountain-hero {
   position: relative;
@@ -166,32 +170,34 @@ a {
   min-height: 100vh;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   overflow: hidden;
 
+  text-align: center;
+
   background:
     linear-gradient(
-      rgba(7, 21, 13, 0.4),
-      rgba(4, 14, 8, 0.95)
+      rgba(6, 24, 14, 0.38),
+      rgba(4, 16, 9, 0.95)
     ),
-    url("https://i.ibb.co/Fbr9KHkq/IMG-7231.png")
+    url("https://i.ibb.co/qFr4xT7D/IMG-7288.png")
     center / cover no-repeat;
-
-  text-align: center;
 }
 
 .mountain-hero::before {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(120, 155, 112, 0.25),
+      rgba(112, 150, 84, 0.25),
       transparent 55%
     );
 
@@ -200,6 +206,7 @@ a {
 
 .hero-content {
   position: relative;
+
   z-index: 2;
 
   width: 100%;
@@ -207,10 +214,12 @@ a {
 
   margin: 0 auto;
 
-  padding: 180px 25px 110px;
+  padding: 150px 25px 100px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
@@ -223,13 +232,13 @@ a {
   margin-bottom: 20px;
 
   filter:
-    drop-shadow(0 0 20px rgba(214, 185, 106, 0.6));
+    drop-shadow(0 0 18px rgba(216, 185, 108, 0.45));
 }
 
 .eyebrow {
-  color: var(--gold-light);
+  color: var(--light-gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.65rem;
 
@@ -239,25 +248,25 @@ a {
 }
 
 .hero-content h1 {
-  margin-top: 20px;
-
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(3.5rem, 9vw, 8rem);
 
   font-weight: 500;
 
+  letter-spacing: 0.1em;
+
   line-height: 0.98;
 
-  letter-spacing: 0.1em;
+  margin-top: 20px;
 
   text-align: center;
 
   text-shadow:
     0 5px 35px rgba(0, 0, 0, 0.8),
-    0 0 30px rgba(214, 185, 106, 0.2);
+    0 0 35px rgba(216, 185, 108, 0.2);
 }
 
 .gold-rule {
@@ -265,14 +274,14 @@ a {
 
   margin: 28px auto;
 
-  color: var(--gold-light);
+  color: var(--light-gold);
 
   text-align: center;
 
-  letter-spacing: 0.3em;
+  letter-spacing: 0.35em;
 
   text-shadow:
-    0 0 15px rgba(214, 185, 106, 0.35);
+    0 0 12px rgba(216, 185, 108, 0.35);
 }
 
 .motto {
@@ -288,11 +297,11 @@ a {
 .location {
   display: block;
 
-  margin-top: 25px;
+  margin-top: 28px;
 
-  color: var(--leaf);
+  color: var(--gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.55rem;
 
@@ -305,13 +314,14 @@ a {
   position: absolute;
 
   bottom: 25px;
+
   left: 0;
 
   width: 100%;
 
-  color: rgba(245, 241, 223, 0.65);
+  color: rgba(245, 240, 223, 0.6);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.55rem;
 
@@ -321,29 +331,29 @@ a {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    PAPER SECTIONS
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .paper-section {
   width: 100%;
 
-  padding: 120px 6%;
+  padding: 115px 6%;
 
   background:
     radial-gradient(
       circle at 15% 15%,
-      rgba(255, 255, 255, 0.8),
-      transparent 25%
+      rgba(255, 255, 255, 0.85),
+      transparent 28%
     ),
     radial-gradient(
       circle at 85% 80%,
-      rgba(120, 155, 112, 0.15),
+      rgba(102, 139, 104, 0.12),
       transparent 30%
     ),
-    var(--cream);
+    var(--paper);
 
-  color: var(--text-dark);
+  color: var(--dark-text);
 
   text-align: center;
 }
@@ -356,19 +366,19 @@ a {
 
   padding: 60px;
 
-  border: 1px solid rgba(49, 93, 56, 0.25);
+  border: 1px solid rgba(33, 77, 49, 0.2);
 
   box-shadow:
-    inset 0 0 70px rgba(49, 93, 56, 0.05),
-    0 20px 60px rgba(5, 25, 12, 0.12);
+    inset 0 0 70px rgba(33, 77, 49, 0.04),
+    0 20px 60px rgba(10, 35, 18, 0.1);
 
   text-align: center;
 }
 
 .paper-section h2 {
-  color: var(--deep-green);
+  color: var(--forest);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2rem, 5vw, 3.6rem);
 
@@ -391,66 +401,30 @@ a {
   font-size: 1.35rem;
 }
 
-.dark {
-  color: var(--green);
+.eyebrow.dark {
+  color: var(--sage);
 }
 
 .dark-rule {
-  color: var(--green);
+  color: var(--sage);
 }
 
 .emphasis {
-  color: var(--deep-green);
+  color: var(--forest);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.5rem;
-
-  text-align: center;
-}
-
-
-/* ═══════════════════════════════
-   SECTION HEADINGS
-═══════════════════════════════ */
-
-.section-heading {
-  width: 100%;
-  max-width: 900px;
-
-  margin: 0 auto 50px;
-
-  text-align: center;
-}
-
-.section-heading h2 {
-  color: inherit;
-
-  font-family: "Cinzel", serif;
-
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: 1.45rem;
 
   font-weight: 500;
 
   text-align: center;
 }
 
-.section-heading p:not(.eyebrow) {
-  margin-top: 15px;
 
-  text-align: center;
-}
-
-.dark-heading {
-  color: var(--deep-green);
-
-  text-align: center;
-}
-
-
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    DARK LORE
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .dark-lore {
   width: 100%;
@@ -460,10 +434,10 @@ a {
   background:
     radial-gradient(
       circle at center,
-      rgba(49, 93, 56, 0.35),
+      rgba(55, 101, 61, 0.35),
       transparent 55%
     ),
-    var(--green-dark);
+    var(--deep-green);
 
   text-align: center;
 }
@@ -478,17 +452,20 @@ a {
 }
 
 .lore-container h2 {
-  margin-top: 15px;
-
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2.3rem, 5vw, 4rem);
 
   font-weight: 500;
 
+  margin-top: 15px;
+
   text-align: center;
+
+  text-shadow:
+    0 0 25px rgba(216, 185, 108, 0.15);
 }
 
 .lore-container > p:not(.eyebrow) {
@@ -496,21 +473,21 @@ a {
 
   margin: 0 auto 20px;
 
-  color: var(--text-light);
+  color: rgba(245, 240, 223, 0.76);
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════
-   GOLDEN SEA GRID
-═══════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   GOLDEN SEA / RUIN GRID
+═══════════════════════════════════════════════ */
 
 .ruin-grid {
   width: 100%;
   max-width: 950px;
 
-  margin: 50px auto;
+  margin: 50px auto 0;
 
   display: grid;
 
@@ -524,13 +501,13 @@ a {
 .ruin-card {
   padding: 35px 25px;
 
-  border: 1px solid rgba(214, 185, 106, 0.25);
+  border: 1px solid rgba(216, 185, 108, 0.25);
 
-  background: rgba(49, 93, 56, 0.12);
+  background: rgba(216, 185, 108, 0.07);
 
   text-align: center;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .ruin-card:hover {
@@ -538,46 +515,51 @@ a {
 
   border-color: var(--gold);
 
-  background: rgba(49, 93, 56, 0.2);
+  background: rgba(216, 185, 108, 0.12);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .ruin-card span {
-  color: var(--gold-light);
+  color: var(--gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 1.5rem;
 }
 
 .ruin-card h3 {
+  color: var(--light-gold);
+
+  font-family: "Cinzel", Georgia, serif;
+
+  font-size: 1rem;
+
   margin: 10px 0;
 
-  color: var(--cream);
+  text-align: center;
+}
 
-  font-family: "Cinzel", serif;
+.ruin-card p {
+  color: rgba(245, 240, 223, 0.68);
 
   font-size: 1rem;
 
   text-align: center;
 }
 
-.ruin-card p {
-  color: rgba(245, 241, 223, 0.68);
-
-  text-align: center;
-}
-
-blockquote {
-  max-width: 700px;
+.dark-lore blockquote {
+  max-width: 750px;
 
   margin: 45px auto 0;
 
   padding: 25px;
 
-  border-top: 1px solid rgba(214, 185, 106, 0.3);
-  border-bottom: 1px solid rgba(214, 185, 106, 0.3);
+  border-top: 1px solid rgba(216, 185, 108, 0.3);
+  border-bottom: 1px solid rgba(216, 185, 108, 0.3);
 
-  color: var(--gold-light);
+  color: var(--light-gold);
 
   font-style: italic;
 
@@ -585,9 +567,43 @@ blockquote {
 }
 
 
-/* ═══════════════════════════════
-   FLOWERS / CLIMATE
-═══════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   SECTION HEADING
+═══════════════════════════════════════════════ */
+
+.section-heading {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-family: "Cinzel", Georgia, serif;
+
+  font-size: clamp(2.2rem, 5vw, 4rem);
+
+  font-weight: 500;
+
+  text-align: center;
+}
+
+.section-heading p:not(.eyebrow) {
+  margin-top: 15px;
+
+  text-align: center;
+}
+
+.dark-heading h2 {
+  color: var(--forest);
+}
+
+
+/* ═══════════════════════════════════════════════
+   WILDFLOWER / CLIMATE CARDS
+═══════════════════════════════════════════════ */
 
 .climate-grid {
   width: 100%;
@@ -605,54 +621,58 @@ blockquote {
 }
 
 .climate-card {
-  padding: 35px 25px;
+  padding: 38px 28px;
+
+  border: 1px solid rgba(33, 77, 49, 0.18);
 
   background: rgba(255, 255, 255, 0.45);
 
-  border: 1px solid rgba(49, 93, 56, 0.22);
-
   text-align: center;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .climate-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
-  border-color: var(--sage);
+  border-color: rgba(33, 77, 49, 0.4);
+
+  box-shadow:
+    0 12px 30px rgba(20, 55, 30, 0.1);
 }
 
 .climate-icon {
   display: block;
 
-  margin-bottom: 10px;
+  font-size: 2.7rem;
 
-  font-size: 2.5rem;
+  margin-bottom: 12px;
 }
 
 .climate-card h3 {
+  color: var(--forest);
+
+  font-family: "Cinzel", Georgia, serif;
+
   margin-bottom: 10px;
-
-  color: var(--deep-green);
-
-  font-family: "Cinzel", serif;
 
   text-align: center;
 }
 
 .climate-card p {
-  color: var(--text-dark);
+  color: var(--soft-text);
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    PEOPLE
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .people-grid {
   width: 100%;
+  max-width: 1050px;
 
   margin: 50px auto 0;
 
@@ -668,43 +688,48 @@ blockquote {
 .people-card {
   padding: 35px 25px;
 
-  background: rgba(49, 93, 56, 0.14);
+  background: rgba(255, 255, 255, 0.055);
 
-  border: 1px solid rgba(214, 185, 106, 0.2);
+  border: 1px solid rgba(216, 185, 108, 0.2);
 
   text-align: center;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .people-card:hover {
   transform: translateY(-6px);
 
+  background: rgba(216, 185, 108, 0.08);
+
   border-color: var(--gold);
 
-  background: rgba(49, 93, 56, 0.24);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .people-card > span {
   display: block;
 
-  font-size: 2.2rem;
+  font-size: 2.3rem;
+
+  margin-bottom: 10px;
 }
 
 .people-card h3 {
-  margin: 12px 0;
+  color: var(--light-gold);
 
-  color: var(--cream);
-
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 1rem;
+
+  margin: 10px 0;
 
   text-align: center;
 }
 
 .people-card p {
-  color: rgba(245, 241, 223, 0.68);
+  color: rgba(245, 240, 223, 0.68);
 
   font-size: 1rem;
 
@@ -712,9 +737,9 @@ blockquote {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    WILD HERDS
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .star-iron {
   width: 100%;
@@ -724,10 +749,10 @@ blockquote {
   background:
     radial-gradient(
       circle at center,
-      rgba(120, 155, 112, 0.3),
+      rgba(92, 132, 75, 0.3),
       transparent 55%
     ),
-    #07140b;
+    #06150c;
 
   text-align: center;
 }
@@ -744,18 +769,18 @@ blockquote {
 .star-symbol {
   display: block;
 
-  margin-bottom: 20px;
+  font-size: 3.8rem;
 
-  font-size: 4rem;
+  margin-bottom: 18px;
 
   filter:
-    drop-shadow(0 0 20px rgba(214, 185, 106, 0.5));
+    drop-shadow(0 0 20px rgba(216, 185, 108, 0.35));
 }
 
 .star-content h2 {
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2.5rem, 6vw, 4.5rem);
 
@@ -765,15 +790,17 @@ blockquote {
 }
 
 .subtitle {
-  color: var(--gold-light);
+  color: var(--light-gold);
 
   font-style: italic;
+
+  margin-top: 15px;
 
   text-align: center;
 }
 
 .star-content > p:not(.eyebrow):not(.subtitle) {
-  color: var(--text-light);
+  color: rgba(245, 240, 223, 0.75);
 
   margin-bottom: 20px;
 
@@ -787,9 +814,9 @@ blockquote {
 
   padding: 30px;
 
-  border: 1px solid rgba(214, 185, 106, 0.3);
+  border: 1px solid rgba(216, 185, 108, 0.3);
 
-  background: rgba(49, 93, 56, 0.12);
+  background: rgba(216, 185, 108, 0.07);
 
   text-align: center;
 }
@@ -803,14 +830,15 @@ blockquote {
 }
 
 
-/* ═══════════════════════════════
-   CREATURES
-═══════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   WILDLIFE
+═══════════════════════════════════════════════ */
 
 .hollow-grid {
   width: 100%;
+  max-width: 950px;
 
-  margin: 45px auto;
+  margin: 45px auto 30px;
 
   display: grid;
 
@@ -822,42 +850,50 @@ blockquote {
 }
 
 .hollow-grid > div {
-  padding: 30px 20px;
+  padding: 30px 22px;
 
-  border: 1px solid rgba(49, 93, 56, 0.2);
+  border: 1px solid rgba(33, 77, 49, 0.2);
 
-  background: rgba(49, 93, 56, 0.06);
+  background: rgba(33, 77, 49, 0.045);
 
   text-align: center;
+
+  transition: 0.3s ease;
+}
+
+.hollow-grid > div:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(33, 77, 49, 0.45);
 }
 
 .hollow-grid h3 {
+  color: var(--forest);
+
+  font-family: "Cinzel", Georgia, serif;
+
   margin: 10px 0;
-
-  color: var(--deep-green);
-
-  font-family: "Cinzel", serif;
 
   text-align: center;
 }
 
 .hollow-grid p {
-  color: var(--text-dark);
+  color: var(--soft-text);
 
   text-align: center;
 }
 
 .ancient-warning {
-  max-width: 700px;
+  max-width: 750px;
 
   margin: 40px auto 0;
 
   padding: 25px;
 
-  border-top: 1px solid rgba(49, 93, 56, 0.25);
-  border-bottom: 1px solid rgba(49, 93, 56, 0.25);
+  border-top: 1px solid rgba(33, 77, 49, 0.25);
+  border-bottom: 1px solid rgba(33, 77, 49, 0.25);
 
-  color: var(--green);
+  color: var(--forest);
 
   font-style: italic;
 
@@ -865,9 +901,9 @@ blockquote {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    WINDROADS
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .dragon-section {
   width: 100%;
@@ -877,10 +913,10 @@ blockquote {
   background:
     radial-gradient(
       circle at center,
-      rgba(49, 93, 56, 0.35),
+      rgba(69, 116, 67, 0.3),
       transparent 55%
     ),
-    var(--forest);
+    var(--deep-green);
 
   text-align: center;
 }
@@ -897,7 +933,7 @@ blockquote {
 .dragon-content h2 {
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2.5rem, 6vw, 4.5rem);
 
@@ -906,8 +942,8 @@ blockquote {
   text-align: center;
 }
 
-.dragon-content > p:not(.eyebrow) {
-  color: var(--text-light);
+.dragon-content > p:not(.eyebrow):not(.final-warning) {
+  color: rgba(245, 240, 223, 0.75);
 
   margin-bottom: 20px;
 
@@ -921,9 +957,9 @@ blockquote {
 
   padding: 30px;
 
-  border: 1px solid rgba(214, 185, 106, 0.3);
+  border: 1px solid rgba(216, 185, 108, 0.28);
 
-  background: rgba(49, 93, 56, 0.12);
+  background: rgba(216, 185, 108, 0.07);
 
   text-align: center;
 }
@@ -937,15 +973,17 @@ blockquote {
 }
 
 .final-warning {
-  color: var(--gold-light) !important;
+  color: var(--light-gold) !important;
 
-  font-style: italic;
+  font-family: "Cinzel", Georgia, serif;
+
+  text-align: center;
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    STANDING STONES
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .watchers {
   width: 100%;
@@ -955,10 +993,10 @@ blockquote {
   background:
     radial-gradient(
       circle at center,
-      rgba(120, 155, 112, 0.22),
+      rgba(77, 109, 69, 0.28),
       transparent 55%
     ),
-    #08170d;
+    #081a0e;
 
   text-align: center;
 }
@@ -975,18 +1013,15 @@ blockquote {
 .watcher-eye {
   display: block;
 
-  margin-bottom: 20px;
+  font-size: 3.5rem;
 
-  font-size: 4rem;
-
-  filter:
-    drop-shadow(0 0 20px rgba(214, 185, 106, 0.5));
+  margin-bottom: 18px;
 }
 
 .watchers-content h2 {
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2.5rem, 6vw, 4.5rem);
 
@@ -996,7 +1031,7 @@ blockquote {
 }
 
 .watchers-content > p:not(.eyebrow) {
-  color: var(--text-light);
+  color: rgba(245, 240, 223, 0.75);
 
   margin-bottom: 20px;
 
@@ -1012,52 +1047,72 @@ blockquote {
 
   flex-direction: column;
 
-  gap: 12px;
+  align-items: center;
 
   text-align: center;
 }
 
 .watcher-facts div {
+  width: 100%;
+
+  max-width: 650px;
+
   padding: 18px;
 
-  border: 1px solid rgba(214, 185, 106, 0.2);
-
-  background: rgba(49, 93, 56, 0.12);
-
-  text-align: center;
-}
-
-.watcher-facts strong,
-.watcher-facts span {
-  display: block;
+  border-bottom: 1px solid rgba(216, 185, 108, 0.18);
 
   text-align: center;
 }
 
 .watcher-facts strong {
-  color: var(--gold-light);
+  display: block;
 
-  font-family: "Cinzel", serif;
+  color: var(--light-gold);
+
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.7rem;
 
   letter-spacing: 0.12em;
+
+  text-align: center;
 }
 
 .watcher-facts span {
-  color: var(--cream);
+  display: block;
+
+  color: rgba(245, 240, 223, 0.65);
 
   margin-top: 4px;
+
+  text-align: center;
+}
+
+.watchers-content blockquote {
+  max-width: 700px;
+
+  margin: 35px auto 0;
+
+  padding: 25px;
+
+  border-top: 1px solid rgba(216, 185, 108, 0.3);
+  border-bottom: 1px solid rgba(216, 185, 108, 0.3);
+
+  color: var(--light-gold);
+
+  font-style: italic;
+
+  text-align: center;
 }
 
 
-/* ═══════════════════════════════
-   SILVER RIVER / MAGIC LIST
-═══════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   SILVER RIVER
+═══════════════════════════════════════════════ */
 
 .magic-list {
   width: 100%;
-  max-width: 900px;
+  max-width: 850px;
 
   margin: 45px auto;
 
@@ -1071,21 +1126,33 @@ blockquote {
 }
 
 .magic-list div {
-  padding: 15px;
+  padding: 16px;
 
-  border: 1px solid rgba(49, 93, 56, 0.2);
+  border: 1px solid rgba(33, 77, 49, 0.18);
 
-  color: var(--green);
+  background: rgba(33, 77, 49, 0.045);
 
-  font-family: "Cinzel", serif;
+  color: var(--forest);
+
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.8rem;
 
+  letter-spacing: 0.04em;
+
   text-align: center;
+
+  transition: 0.3s ease;
+}
+
+.magic-list div:hover {
+  background: rgba(33, 77, 49, 0.09);
+
+  border-color: rgba(33, 77, 49, 0.35);
 }
 
 .mystery {
-  color: var(--green) !important;
+  color: var(--forest) !important;
 
   font-style: italic;
 
@@ -1093,22 +1160,22 @@ blockquote {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    COLESIN
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .valkyrie {
   width: 100%;
 
-  padding: 140px 6%;
+  padding: 135px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(49, 93, 56, 0.4),
+      rgba(34, 112, 58, 0.28),
       transparent 55%
     ),
-    #061109;
+    #04100a;
 
   text-align: center;
 }
@@ -1123,42 +1190,44 @@ blockquote {
 }
 
 .owl-mark {
-  margin-bottom: 20px;
+  font-size: 3.8rem;
 
-  font-size: 4rem;
+  margin-bottom: 18px;
 
   filter:
-    drop-shadow(0 0 25px rgba(159, 189, 145, 0.55));
+    drop-shadow(0 0 20px rgba(216, 185, 108, 0.4));
 }
 
 .valkyrie-content h2 {
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2.5rem, 6vw, 4.5rem);
 
   font-weight: 500;
 
+  letter-spacing: 0.05em;
+
   text-align: center;
 }
 
 .valkyrie-content h3 {
+  color: var(--light-gold);
+
+  font-family: "Cinzel", Georgia, serif;
+
+  font-size: 1.35rem;
+
+  letter-spacing: 0.12em;
+
   margin-top: 15px;
-
-  color: var(--gold-light);
-
-  font-family: "Cinzel", serif;
-
-  font-size: 1.4rem;
-
-  letter-spacing: 0.1em;
 
   text-align: center;
 }
 
 .valkyrie-content > p:not(.eyebrow):not(.final-legend) {
-  color: var(--text-light);
+  color: rgba(245, 240, 223, 0.75);
 
   margin-bottom: 20px;
 
@@ -1166,19 +1235,16 @@ blockquote {
 }
 
 .legend-words {
-  width: 100%;
-
-  margin: 40px auto;
-
   display: flex;
 
-  align-items: center;
-
   justify-content: center;
+  align-items: center;
 
   flex-wrap: wrap;
 
   gap: 12px;
+
+  margin: 35px auto;
 
   text-align: center;
 }
@@ -1186,35 +1252,35 @@ blockquote {
 .legend-words span {
   padding: 10px 18px;
 
-  border: 1px solid rgba(214, 185, 106, 0.3);
+  border: 1px solid rgba(216, 185, 108, 0.3);
 
-  color: var(--gold-light);
+  color: var(--light-gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.65rem;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
 
   text-align: center;
 }
 
 .final-legend {
-  color: var(--gold-light) !important;
+  color: var(--light-gold) !important;
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 
-  font-style: italic;
+  font-weight: 500;
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    LAWS
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .mountain-law {
   width: 100%;
@@ -1224,17 +1290,17 @@ blockquote {
   background:
     radial-gradient(
       circle at center,
-      rgba(49, 93, 56, 0.3),
+      rgba(65, 108, 61, 0.3),
       transparent 55%
     ),
-    var(--green-dark);
+    var(--deep-green);
 
   text-align: center;
 }
 
 .law-content {
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
 
   margin: 0 auto;
 
@@ -1244,7 +1310,7 @@ blockquote {
 .mountain-law h2 {
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2.3rem, 5vw, 4rem);
 
@@ -1255,7 +1321,7 @@ blockquote {
 
 .laws {
   width: 100%;
-  max-width: 650px;
+  max-width: 700px;
 
   margin: 45px auto;
 
@@ -1265,11 +1331,11 @@ blockquote {
 .laws p {
   padding: 16px;
 
-  border-bottom: 1px solid rgba(214, 185, 106, 0.18);
+  border-bottom: 1px solid rgba(216, 185, 108, 0.18);
 
-  color: var(--text-light);
+  color: rgba(245, 240, 223, 0.75);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.8rem;
 
@@ -1279,13 +1345,15 @@ blockquote {
 }
 
 .final-law {
-  margin-top: 50px;
+  max-width: 700px;
+
+  margin: 50px auto 0;
 
   padding: 35px;
 
-  border: 1px solid rgba(214, 185, 106, 0.35);
+  border: 1px solid rgba(216, 185, 108, 0.3);
 
-  background: rgba(49, 93, 56, 0.1);
+  background: rgba(216, 185, 108, 0.07);
 
   text-align: center;
 }
@@ -1293,15 +1361,15 @@ blockquote {
 .final-law span {
   display: block;
 
-  margin-bottom: 15px;
+  color: rgba(245, 240, 223, 0.55);
 
-  color: var(--sage);
-
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.55rem;
 
   letter-spacing: 0.25em;
+
+  margin-bottom: 15px;
 
   text-align: center;
 }
@@ -1309,11 +1377,11 @@ blockquote {
 .final-law strong {
   display: block;
 
-  color: var(--gold-light);
+  color: var(--light-gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 
   font-weight: 500;
 
@@ -1321,19 +1389,18 @@ blockquote {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    ENDING
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 .mountain-ending {
   width: 100%;
 
-  min-height: 650px;
+  min-height: 700px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   padding: 110px 6%;
@@ -1341,10 +1408,10 @@ blockquote {
   background:
     radial-gradient(
       circle at center,
-      rgba(120, 155, 112, 0.3),
-      transparent 45%
+      rgba(91, 139, 74, 0.3),
+      transparent 48%
     ),
-    #040c07;
+    #030c07;
 
   text-align: center;
 }
@@ -1359,40 +1426,38 @@ blockquote {
 }
 
 .final-owl {
-  margin: 25px auto;
-
   font-size: 3.5rem;
 
-  text-align: center;
+  margin-bottom: 20px;
 
   filter:
-    drop-shadow(0 0 20px rgba(214, 185, 106, 0.55));
+    drop-shadow(0 0 20px rgba(216, 185, 108, 0.4));
 }
 
 .ending-content > p {
-  color: rgba(245, 241, 223, 0.65);
+  color: rgba(245, 240, 223, 0.65);
 
   text-align: center;
 }
 
 .ending-content h2 {
-  margin: 20px auto;
-
   color: var(--white);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: clamp(2rem, 5vw, 3.5rem);
 
   font-weight: 500;
 
+  margin: 20px auto;
+
   text-align: center;
 }
 
 .ending-content h3 {
-  color: var(--gold-light);
+  color: var(--light-gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 1.2rem;
 
@@ -1401,13 +1466,13 @@ blockquote {
   text-align: center;
 
   text-shadow:
-    0 0 15px rgba(214, 185, 106, 0.25);
+    0 0 15px rgba(216, 185, 108, 0.25);
 }
 
 .final-symbol {
-  margin: 25px auto;
+  margin: 30px auto;
 
-  color: var(--gold-light);
+  color: var(--light-gold);
 
   font-size: 1.5rem;
 
@@ -1415,18 +1480,18 @@ blockquote {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    FOOTER
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 footer {
   width: 100%;
 
   padding: 70px 20px;
 
-  background: #020703;
+  background: #020806;
 
-  border-top: 1px solid rgba(214, 185, 106, 0.22);
+  border-top: 1px solid rgba(216, 185, 108, 0.2);
 
   text-align: center;
 }
@@ -1439,15 +1504,15 @@ footer small {
 }
 
 footer > div {
-  margin-bottom: 15px;
-
   color: var(--gold);
+
+  margin-bottom: 15px;
 }
 
 footer h2 {
-  color: var(--gold-light);
+  color: var(--light-gold);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-weight: 500;
 
@@ -1455,21 +1520,21 @@ footer h2 {
 }
 
 footer p {
-  margin: 8px 0 18px;
+  color: rgba(245, 240, 223, 0.55);
 
-  color: var(--sage);
-
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.6rem;
 
   letter-spacing: 0.2em;
+
+  margin: 8px 0 18px;
 }
 
 footer small {
-  color: rgba(245, 241, 223, 0.45);
+  color: rgba(245, 240, 223, 0.4);
 
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.5rem;
 
@@ -1477,26 +1542,49 @@ footer small {
 }
 
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════════════
    MOBILE
-═══════════════════════════════ */
+═══════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
 
-  .nav {
-    gap: 14px;
+  .site-header {
+    justify-content: center;
   }
 
-  .people-grid,
-  .ruin-grid,
-  .hollow-grid {
+  .brand {
+    position: static;
+
+    margin-bottom: 10px;
+  }
+
+  .site-header {
+    flex-direction: column;
+  }
+
+  .nav {
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+    margin-top: 12px;
+  }
+
+  .people-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ruin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hollow-grid {
+    grid-template-columns: 1fr;
   }
 
   .climate-grid {
     grid-template-columns: 1fr;
   }
-
 }
 
 
@@ -1512,10 +1600,16 @@ footer small {
     padding: 14px 15px;
   }
 
-  .nav {
-    gap: 10px;
+  .brand {
+    width: 100%;
+  }
 
-    margin-top: 10px;
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .nav {
+    gap: 10px 15px;
   }
 
   .nav a {
@@ -1523,7 +1617,7 @@ footer small {
   }
 
   .hero-content {
-    padding: 160px 20px 90px;
+    padding: 140px 20px 90px;
   }
 
   .hero-content h1 {
@@ -1542,13 +1636,12 @@ footer small {
   .dragon-section,
   .watchers,
   .valkyrie,
-  .mountain-law,
-  .mountain-ending {
-    padding: 85px 20px;
+  .mountain-law {
+    padding: 80px 20px;
   }
 
   .section-frame {
-    padding: 35px 20px;
+    padding: 35px 22px;
   }
 
   .people-grid,
@@ -1563,20 +1656,32 @@ footer small {
     padding: 0 10px;
   }
 
+  .paper-section .lead {
+    font-size: 1.15rem;
+  }
+
+  .owl-symbol,
+  .star-symbol,
+  .watcher-eye,
+  .owl-mark,
+  .final-owl {
+    font-size: 3rem;
+  }
+
   .legend-words {
     flex-direction: column;
   }
 
   .legend-words span {
     width: 100%;
+    max-width: 250px;
   }
 
-  .paper-section p,
-  .lore-container > p:not(.eyebrow),
-  .star-content > p:not(.eyebrow),
-  .dragon-content > p:not(.eyebrow),
-  .watchers-content > p:not(.eyebrow),
-  .valkyrie-content > p:not(.eyebrow) {
-    text-align: center;
+  .final-law {
+    padding: 25px 18px;
+  }
+
+  .ending-content h3 {
+    font-size: 1rem;
   }
 }
