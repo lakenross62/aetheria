@@ -54,33 +54,29 @@ a {
 
 
 /* ═══════════════════════════════
-   HEADER
+   AZURE COAST — HEADER
 ═══════════════════════════════ */
 
 .site-header {
   position: fixed;
+  z-index: 1000;
 
   top: 0;
   left: 0;
 
   width: 100%;
 
-  z-index: 1000;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 70px;
+  padding: 20px;
 
-  padding: 18px 5%;
+  background: rgba(4, 18, 28, 0.88);
 
-  background: rgba(2, 15, 23, 0.88);
+  border-bottom: 1px solid rgba(150, 220, 235, 0.25);
 
-  border-bottom:
-    1px solid rgba(142, 232, 237, 0.25);
-
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
 
   text-align: center;
 }
@@ -89,66 +85,49 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  line-height: 1;
+  justify-content: center;
 
   text-align: center;
+
+  line-height: 1;
 }
 
 .brand-name {
-  color: var(--sea-glow);
+  color: #b9edf5;
 
   font-family: "Cinzel", serif;
 
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 
-  letter-spacing: 0.3em;
+  letter-spacing: 0.35em;
+
+  text-align: center;
 
   text-shadow:
-    0 0 15px rgba(142, 232, 237, 0.35);
+    0 0 15px rgba(120, 220, 240, 0.35);
 }
 
 .brand-subtitle {
-  color: var(--silver);
+  color: #9bbcc5;
 
   font-family: "Cinzel", serif;
 
   font-size: 0.5rem;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
 
-  margin-top: 7px;
-}
-
-.nav {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 28px;
+  margin-top: 8px;
 
   text-align: center;
 }
 
-.nav a {
-  color: var(--mist);
 
-  font-family: "Cinzel", serif;
+/* Hide navigation completely */
 
-  font-size: 0.62rem;
-
-  letter-spacing: 0.12em;
-
-  transition: 0.3s;
+.nav {
+  display: none !important;
 }
 
-.nav a:hover {
-  color: var(--sea-glow);
-
-  text-shadow:
-    0 0 15px rgba(142, 232, 237, 0.65);
-}
 
 
 /* ═══════════════════════════════
