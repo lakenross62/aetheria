@@ -1,31 +1,31 @@
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    AETHERIA — THE VERDANT PLAINS
-   FULLY CENTERED CSS
-═══════════════════════════════════════════════ */
+   FULLY CENTERED STYLESHEET
+═══════════════════════════════════════════════════════ */
 
 :root {
-  --forest: #102d1d;
-  --deep-green: #071a10;
-  --green: #214d31;
-  --sage: #668b68;
+  --green-dark: #07150e;
+  --green-deep: #0b2115;
+  --green: #173d25;
+  --forest: #285c35;
+  --sage: #6f9b68;
 
-  --gold: #d8b96c;
-  --light-gold: #f0d995;
+  --grass: #a8c98a;
+  --leaf: #87b477;
+  --gold: #d8bd72;
+  --gold-light: #f0d994;
 
-  --cream: #f5f0df;
-  --paper: #f8f5e9;
+  --cream: #f5f1df;
   --white: #ffffff;
+  --text-light: rgba(245, 241, 223, 0.78);
 
-  --dark-text: #183321;
-  --soft-text: #52634f;
-
-  --glow: rgba(216, 185, 108, 0.35);
+  --border: rgba(216, 189, 114, 0.3);
 }
 
 
-/* ═══════════════════════════════════════════════
-   BASIC
-═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   RESET
+═══════════════════════════════════════════════════════ */
 
 * {
   box-sizing: border-box;
@@ -39,13 +39,13 @@ html {
 
 body {
   width: 100%;
+  min-height: 100%;
   overflow-x: hidden;
 
-  background: var(--deep-green);
+  background: var(--green-dark);
   color: var(--cream);
 
   font-family: "Cormorant Garamond", Georgia, serif;
-
   font-size: 19px;
   line-height: 1.7;
 
@@ -57,18 +57,65 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
 
-/* ═══════════════════════════════════════════════
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL CENTERING
+═══════════════════════════════════════════════════════ */
+
+main,
+section,
+article,
+div,
+header,
+footer {
+  text-align: center;
+}
+
+.hero-content,
+.section-frame,
+.lore-container,
+.star-content,
+.watchers-content,
+.dragon-content,
+.valkyrie-content,
+.law-content,
+.ending-content,
+.section-heading {
+  width: 100%;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+span,
+blockquote,
+strong,
+small {
+  text-align: center;
+}
+
+
+/* ═══════════════════════════════════════════════════════
    HEADER
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .site-header {
   position: fixed;
+  z-index: 1000;
 
   top: 0;
   left: 0;
-
-  z-index: 1000;
 
   width: 100%;
 
@@ -76,11 +123,11 @@ a {
   align-items: center;
   justify-content: center;
 
-  padding: 18px 5%;
+  padding: 18px 30px;
 
-  background: rgba(5, 20, 12, 0.94);
+  background: rgba(5, 20, 11, 0.94);
 
-  border-bottom: 1px solid rgba(216, 185, 108, 0.25);
+  border-bottom: 1px solid var(--border);
 
   backdrop-filter: blur(12px);
 
@@ -88,53 +135,49 @@ a {
 }
 
 .brand {
-  position: absolute;
-
-  left: 5%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
   text-align: center;
-
-  line-height: 1;
 }
 
 .brand-name {
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 
   letter-spacing: 0.3em;
 
   text-shadow:
-    0 0 15px rgba(216, 185, 108, 0.25);
+    0 0 15px rgba(240, 217, 148, 0.25);
 }
 
 .brand-subtitle {
-  color: rgba(245, 240, 223, 0.65);
+  color: var(--grass);
 
   font-family: "Cinzel", Georgia, serif;
 
-  font-size: 0.48rem;
+  font-size: 0.5rem;
 
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
 
-  margin-top: 7px;
+  margin-top: 6px;
 }
 
 .nav {
+  position: absolute;
+
+  right: 30px;
+
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  gap: 30px;
-
-  text-align: center;
+  gap: 25px;
 }
 
 .nav a {
@@ -144,24 +187,22 @@ a {
 
   font-size: 0.62rem;
 
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
 
-  transition: 0.3s ease;
-
-  text-align: center;
+  transition: 0.3s;
 }
 
 .nav a:hover {
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   text-shadow:
-    0 0 15px rgba(216, 185, 108, 0.6);
+    0 0 12px rgba(240, 217, 148, 0.6);
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    HERO
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .mountain-hero {
   position: relative;
@@ -174,17 +215,19 @@ a {
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
+  padding: 130px 25px 100px;
 
-  text-align: center;
+  overflow: hidden;
 
   background:
     linear-gradient(
-      rgba(6, 24, 14, 0.38),
-      rgba(4, 16, 9, 0.95)
+      rgba(5, 20, 11, 0.35),
+      rgba(4, 15, 8, 0.94)
     ),
     url("https://i.ibb.co/qFr4xT7D/IMG-7288.png")
     center / cover no-repeat;
+
+  text-align: center;
 }
 
 .mountain-hero::before {
@@ -197,24 +240,16 @@ a {
   background:
     radial-gradient(
       circle at center,
-      rgba(112, 150, 84, 0.25),
+      rgba(125, 174, 101, 0.25),
       transparent 55%
     );
 
   pointer-events: none;
 }
 
-.hero-content {
+.mountain-hero .hero-content {
   position: relative;
-
   z-index: 2;
-
-  width: 100%;
-  max-width: 950px;
-
-  margin: 0 auto;
-
-  padding: 150px 25px 100px;
 
   display: flex;
 
@@ -229,14 +264,14 @@ a {
 .owl-symbol {
   font-size: 4rem;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   filter:
-    drop-shadow(0 0 18px rgba(216, 185, 108, 0.45));
+    drop-shadow(0 0 20px rgba(216, 189, 114, 0.5));
 }
 
 .eyebrow {
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -256,32 +291,32 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: 0.1em;
-
   line-height: 0.98;
 
-  margin-top: 20px;
+  letter-spacing: 0.1em;
+
+  margin: 20px auto;
 
   text-align: center;
 
   text-shadow:
-    0 5px 35px rgba(0, 0, 0, 0.8),
-    0 0 35px rgba(216, 185, 108, 0.2);
+    0 5px 30px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(216, 189, 114, 0.2);
 }
 
 .gold-rule {
   width: 100%;
 
-  margin: 28px auto;
+  margin: 25px auto;
 
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   text-align: center;
 
-  letter-spacing: 0.35em;
+  letter-spacing: 0.3em;
 
   text-shadow:
-    0 0 12px rgba(216, 185, 108, 0.35);
+    0 0 12px rgba(216, 189, 114, 0.4);
 }
 
 .motto {
@@ -297,9 +332,9 @@ a {
 .location {
   display: block;
 
-  margin-top: 28px;
+  margin-top: 25px;
 
-  color: var(--gold);
+  color: var(--grass);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -319,7 +354,7 @@ a {
 
   width: 100%;
 
-  color: rgba(245, 240, 223, 0.6);
+  color: rgba(245, 241, 223, 0.65);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -331,9 +366,9 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    PAPER SECTIONS
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .paper-section {
   width: 100%;
@@ -343,44 +378,39 @@ a {
   background:
     radial-gradient(
       circle at 15% 15%,
-      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.8),
       transparent 28%
     ),
     radial-gradient(
       circle at 85% 80%,
-      rgba(102, 139, 104, 0.12),
+      rgba(112, 155, 104, 0.12),
       transparent 30%
     ),
-    var(--paper);
+    var(--cream);
 
-  color: var(--dark-text);
+  color: var(--green-deep);
 
   text-align: center;
 }
 
 .section-frame {
-  width: 100%;
-  max-width: 1050px;
-
-  margin: 0 auto;
-
   padding: 60px;
 
-  border: 1px solid rgba(33, 77, 49, 0.2);
+  border: 1px solid rgba(40, 92, 53, 0.25);
 
   box-shadow:
-    inset 0 0 70px rgba(33, 77, 49, 0.04),
-    0 20px 60px rgba(10, 35, 18, 0.1);
+    inset 0 0 70px rgba(40, 92, 53, 0.05),
+    0 20px 60px rgba(10, 40, 20, 0.12);
 
   text-align: center;
 }
 
 .paper-section h2 {
-  color: var(--forest);
+  color: var(--green-deep);
 
   font-family: "Cinzel", Georgia, serif;
 
-  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
 
   font-weight: 500;
 
@@ -401,30 +431,69 @@ a {
   font-size: 1.35rem;
 }
 
-.eyebrow.dark {
-  color: var(--sage);
+.dark {
+  color: var(--forest);
 }
 
 .dark-rule {
-  color: var(--sage);
+  color: var(--forest);
 }
 
 .emphasis {
-  color: var(--forest);
+  color: var(--green-deep);
 
   font-family: "Cinzel", Georgia, serif;
 
   font-size: 1.45rem;
 
-  font-weight: 500;
+  margin-top: 30px !important;
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
+   SECTION HEADINGS
+═══════════════════════════════════════════════════════ */
+
+.section-heading {
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.section-heading h2 {
+  color: inherit;
+
+  font-family: "Cinzel", Georgia, serif;
+
+  font-size: clamp(2.2rem, 5vw, 4rem);
+
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  margin: 15px auto;
+
+  text-align: center;
+}
+
+.section-heading p:not(.eyebrow) {
+  max-width: 750px;
+
+  margin: 15px auto;
+
+  text-align: center;
+}
+
+.dark-heading {
+  color: var(--green-deep);
+}
+
+
+/* ═══════════════════════════════════════════════════════
    DARK LORE
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .dark-lore {
   width: 100%;
@@ -434,20 +503,17 @@ a {
   background:
     radial-gradient(
       circle at center,
-      rgba(55, 101, 61, 0.35),
+      rgba(40, 92, 53, 0.35),
       transparent 55%
     ),
-    var(--deep-green);
+    var(--green-dark);
+
+  color: var(--cream);
 
   text-align: center;
 }
 
 .lore-container {
-  width: 100%;
-  max-width: 1050px;
-
-  margin: 0 auto;
-
   text-align: center;
 }
 
@@ -460,12 +526,9 @@ a {
 
   font-weight: 500;
 
-  margin-top: 15px;
+  margin: 15px auto;
 
   text-align: center;
-
-  text-shadow:
-    0 0 25px rgba(216, 185, 108, 0.15);
 }
 
 .lore-container > p:not(.eyebrow) {
@@ -473,56 +536,43 @@ a {
 
   margin: 0 auto 20px;
 
-  color: rgba(245, 240, 223, 0.76);
+  color: var(--text-light);
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════════════
-   GOLDEN SEA / RUIN GRID
-═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   GOLDEN SEA / RUINS
+═══════════════════════════════════════════════════════ */
 
 .ruin-grid {
   width: 100%;
-  max-width: 950px;
+  max-width: 1000px;
 
-  margin: 50px auto 0;
+  margin: 45px auto;
 
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 22px;
+  gap: 20px;
 
   text-align: center;
 }
 
 .ruin-card {
-  padding: 35px 25px;
+  padding: 32px 22px;
 
-  border: 1px solid rgba(216, 185, 108, 0.25);
+  border: 1px solid var(--border);
 
-  background: rgba(216, 185, 108, 0.07);
+  background: rgba(40, 92, 53, 0.13);
 
   text-align: center;
-
-  transition: 0.3s ease;
-}
-
-.ruin-card:hover {
-  transform: translateY(-6px);
-
-  border-color: var(--gold);
-
-  background: rgba(216, 185, 108, 0.12);
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .ruin-card span {
-  color: var(--gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -530,36 +580,32 @@ a {
 }
 
 .ruin-card h3 {
-  color: var(--light-gold);
+  color: var(--cream);
 
   font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1rem;
-
-  margin: 10px 0;
+  margin: 10px auto;
 
   text-align: center;
 }
 
 .ruin-card p {
-  color: rgba(245, 240, 223, 0.68);
-
-  font-size: 1rem;
+  color: var(--text-light);
 
   text-align: center;
 }
 
-.dark-lore blockquote {
-  max-width: 750px;
+blockquote {
+  max-width: 700px;
 
-  margin: 45px auto 0;
+  margin: 40px auto 0;
 
   padding: 25px;
 
-  border-top: 1px solid rgba(216, 185, 108, 0.3);
-  border-bottom: 1px solid rgba(216, 185, 108, 0.3);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-style: italic;
 
@@ -567,43 +613,9 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
-   SECTION HEADING
-═══════════════════════════════════════════════ */
-
-.section-heading {
-  width: 100%;
-  max-width: 900px;
-
-  margin: 0 auto 50px;
-
-  text-align: center;
-}
-
-.section-heading h2 {
-  font-family: "Cinzel", Georgia, serif;
-
-  font-size: clamp(2.2rem, 5vw, 4rem);
-
-  font-weight: 500;
-
-  text-align: center;
-}
-
-.section-heading p:not(.eyebrow) {
-  margin-top: 15px;
-
-  text-align: center;
-}
-
-.dark-heading h2 {
-  color: var(--forest);
-}
-
-
-/* ═══════════════════════════════════════════════
-   WILDFLOWER / CLIMATE CARDS
-═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   FLOWERS / CLIMATE CARDS
+═══════════════════════════════════════════════════════ */
 
 .climate-grid {
   width: 100%;
@@ -621,36 +633,36 @@ a {
 }
 
 .climate-card {
-  padding: 38px 28px;
-
-  border: 1px solid rgba(33, 77, 49, 0.18);
+  padding: 35px 25px;
 
   background: rgba(255, 255, 255, 0.45);
 
+  border: 1px solid rgba(40, 92, 53, 0.2);
+
   text-align: center;
 
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .climate-card:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(33, 77, 49, 0.4);
+  border-color: var(--forest);
 
   box-shadow:
-    0 12px 30px rgba(20, 55, 30, 0.1);
+    0 10px 30px rgba(20, 60, 30, 0.12);
 }
 
 .climate-icon {
   display: block;
 
-  font-size: 2.7rem;
+  font-size: 2.5rem;
 
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .climate-card h3 {
-  color: var(--forest);
+  color: var(--green-deep);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -660,21 +672,21 @@ a {
 }
 
 .climate-card p {
-  color: var(--soft-text);
+  color: var(--green);
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    PEOPLE
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .people-grid {
   width: 100%;
   max-width: 1050px;
 
-  margin: 50px auto 0;
+  margin: 45px auto 0;
 
   display: grid;
 
@@ -688,48 +700,45 @@ a {
 .people-card {
   padding: 35px 25px;
 
-  background: rgba(255, 255, 255, 0.055);
+  background: rgba(40, 92, 53, 0.15);
 
-  border: 1px solid rgba(216, 185, 108, 0.2);
+  border: 1px solid var(--border);
 
   text-align: center;
 
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .people-card:hover {
   transform: translateY(-6px);
 
-  background: rgba(216, 185, 108, 0.08);
+  background: rgba(40, 92, 53, 0.25);
 
-  border-color: var(--gold);
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--gold-light);
 }
 
 .people-card > span {
   display: block;
 
-  font-size: 2.3rem;
+  font-size: 2.2rem;
 
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .people-card h3 {
-  color: var(--light-gold);
+  color: var(--cream);
 
   font-family: "Cinzel", Georgia, serif;
 
   font-size: 1rem;
 
-  margin: 10px 0;
+  margin: 10px auto;
 
   text-align: center;
 }
 
 .people-card p {
-  color: rgba(245, 240, 223, 0.68);
+  color: var(--text-light);
 
   font-size: 1rem;
 
@@ -737,44 +746,39 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    WILD HERDS
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .star-iron {
   width: 100%;
 
-  padding: 130px 6%;
+  padding: 125px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(92, 132, 75, 0.3),
+      rgba(90, 130, 65, 0.32),
       transparent 55%
     ),
-    #06150c;
+    var(--green-deep);
 
   text-align: center;
 }
 
 .star-content {
-  width: 100%;
-  max-width: 850px;
-
-  margin: 0 auto;
-
   text-align: center;
 }
 
 .star-symbol {
   display: block;
 
-  font-size: 3.8rem;
+  font-size: 3.5rem;
 
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 
   filter:
-    drop-shadow(0 0 20px rgba(216, 185, 108, 0.35));
+    drop-shadow(0 0 18px rgba(216, 189, 114, 0.5));
 }
 
 .star-content h2 {
@@ -790,19 +794,21 @@ a {
 }
 
 .subtitle {
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-style: italic;
 
-  margin-top: 15px;
+  margin: 15px auto;
 
   text-align: center;
 }
 
 .star-content > p:not(.eyebrow):not(.subtitle) {
-  color: rgba(245, 240, 223, 0.75);
+  max-width: 800px;
 
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+
+  color: var(--text-light);
 
   text-align: center;
 }
@@ -814,31 +820,31 @@ a {
 
   padding: 30px;
 
-  border: 1px solid rgba(216, 185, 108, 0.3);
+  border: 1px solid var(--border);
 
-  background: rgba(216, 185, 108, 0.07);
+  background: rgba(40, 92, 53, 0.15);
 
   text-align: center;
 }
 
 .warning p {
-  margin-top: 10px;
-
   color: var(--cream);
+
+  margin-top: 10px;
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════════════
-   WILDLIFE
-═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   CREATURES
+═══════════════════════════════════════════════════════ */
 
 .hollow-grid {
   width: 100%;
-  max-width: 950px;
+  max-width: 1000px;
 
-  margin: 45px auto 30px;
+  margin: 45px auto;
 
   display: grid;
 
@@ -850,48 +856,56 @@ a {
 }
 
 .hollow-grid > div {
-  padding: 30px 22px;
+  padding: 30px 20px;
 
-  border: 1px solid rgba(33, 77, 49, 0.2);
+  border: 1px solid rgba(40, 92, 53, 0.2);
 
-  background: rgba(33, 77, 49, 0.045);
+  background: rgba(40, 92, 53, 0.06);
+
+  color: var(--green-deep);
 
   text-align: center;
 
-  transition: 0.3s ease;
+  font-size: 2rem;
+
+  transition: 0.3s;
 }
 
 .hollow-grid > div:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(33, 77, 49, 0.45);
+  border-color: var(--forest);
 }
 
 .hollow-grid h3 {
-  color: var(--forest);
+  color: var(--green-deep);
 
   font-family: "Cinzel", Georgia, serif;
 
-  margin: 10px 0;
+  font-size: 1.1rem;
+
+  margin: 10px auto;
 
   text-align: center;
 }
 
 .hollow-grid p {
-  color: var(--soft-text);
+  color: var(--green);
+
+  font-size: 1rem;
 
   text-align: center;
 }
 
 .ancient-warning {
-  max-width: 750px;
+  max-width: 700px;
 
   margin: 40px auto 0;
 
   padding: 25px;
 
-  border-top: 1px solid rgba(33, 77, 49, 0.25);
-  border-bottom: 1px solid rgba(33, 77, 49, 0.25);
+  border-top: 1px solid rgba(40, 92, 53, 0.25);
+  border-bottom: 1px solid rgba(40, 92, 53, 0.25);
 
   color: var(--forest);
 
@@ -901,32 +915,27 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    WINDROADS
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .dragon-section {
   width: 100%;
 
-  padding: 130px 6%;
+  padding: 125px 6%;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(69, 116, 67, 0.3),
+      rgba(70, 120, 65, 0.3),
       transparent 55%
     ),
-    var(--deep-green);
+    var(--green-dark);
 
   text-align: center;
 }
 
 .dragon-content {
-  width: 100%;
-  max-width: 850px;
-
-  margin: 0 auto;
-
   text-align: center;
 }
 
@@ -943,9 +952,11 @@ a {
 }
 
 .dragon-content > p:not(.eyebrow):not(.final-warning) {
-  color: rgba(245, 240, 223, 0.75);
+  max-width: 800px;
 
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+
+  color: var(--text-light);
 
   text-align: center;
 }
@@ -957,23 +968,23 @@ a {
 
   padding: 30px;
 
-  border: 1px solid rgba(216, 185, 108, 0.28);
+  border: 1px solid var(--border);
 
-  background: rgba(216, 185, 108, 0.07);
+  background: rgba(40, 92, 53, 0.12);
 
   text-align: center;
 }
 
 .dragon-warning p {
-  margin-top: 10px;
-
   color: var(--cream);
+
+  margin-top: 10px;
 
   text-align: center;
 }
 
 .final-warning {
-  color: var(--light-gold) !important;
+  color: var(--gold-light) !important;
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -981,9 +992,9 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    STANDING STONES
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .watchers {
   width: 100%;
@@ -991,22 +1002,16 @@ a {
   padding: 130px 6%;
 
   background:
-    radial-gradient(
-      circle at center,
-      rgba(77, 109, 69, 0.28),
-      transparent 55%
+    linear-gradient(
+      rgba(6, 20, 10, 0.7),
+      rgba(4, 15, 8, 0.96)
     ),
-    #081a0e;
+    var(--green-dark);
 
   text-align: center;
 }
 
 .watchers-content {
-  width: 100%;
-  max-width: 850px;
-
-  margin: 0 auto;
-
   text-align: center;
 }
 
@@ -1015,7 +1020,10 @@ a {
 
   font-size: 3.5rem;
 
-  margin-bottom: 18px;
+  margin-bottom: 15px;
+
+  filter:
+    drop-shadow(0 0 20px rgba(216, 189, 114, 0.4));
 }
 
 .watchers-content h2 {
@@ -1031,90 +1039,73 @@ a {
 }
 
 .watchers-content > p:not(.eyebrow) {
-  color: rgba(245, 240, 223, 0.75);
+  max-width: 800px;
 
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+
+  color: var(--text-light);
 
   text-align: center;
 }
 
 .watcher-facts {
   width: 100%;
+  max-width: 800px;
 
   margin: 45px auto;
 
-  display: flex;
+  display: grid;
 
-  flex-direction: column;
+  grid-template-columns: repeat(3, 1fr);
 
-  align-items: center;
+  gap: 15px;
 
   text-align: center;
 }
 
 .watcher-facts div {
-  width: 100%;
+  padding: 25px 15px;
 
-  max-width: 650px;
+  border: 1px solid var(--border);
 
-  padding: 18px;
+  background: rgba(40, 92, 53, 0.12);
 
-  border-bottom: 1px solid rgba(216, 185, 108, 0.18);
+  text-align: center;
+}
+
+.watcher-facts strong,
+.watcher-facts span {
+  display: block;
 
   text-align: center;
 }
 
 .watcher-facts strong {
-  display: block;
-
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.7rem;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 
-  text-align: center;
+  margin-bottom: 8px;
 }
 
 .watcher-facts span {
-  display: block;
-
-  color: rgba(245, 240, 223, 0.65);
-
-  margin-top: 4px;
-
-  text-align: center;
-}
-
-.watchers-content blockquote {
-  max-width: 700px;
-
-  margin: 35px auto 0;
-
-  padding: 25px;
-
-  border-top: 1px solid rgba(216, 185, 108, 0.3);
-  border-bottom: 1px solid rgba(216, 185, 108, 0.3);
-
-  color: var(--light-gold);
-
-  font-style: italic;
-
-  text-align: center;
+  color: var(--text-light);
 }
 
 
-/* ═══════════════════════════════════════════════
-   SILVER RIVER
-═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   SILVER RIVER / MAGIC LIST
+═══════════════════════════════════════════════════════ */
 
 .magic-list {
   width: 100%;
   max-width: 850px;
 
-  margin: 45px auto;
+  margin: 40px auto;
 
   display: grid;
 
@@ -1126,11 +1117,11 @@ a {
 }
 
 .magic-list div {
-  padding: 16px;
+  padding: 15px;
 
-  border: 1px solid rgba(33, 77, 49, 0.18);
+  border: 1px solid rgba(40, 92, 53, 0.2);
 
-  background: rgba(33, 77, 49, 0.045);
+  background: rgba(40, 92, 53, 0.06);
 
   color: var(--forest);
 
@@ -1138,17 +1129,7 @@ a {
 
   font-size: 0.8rem;
 
-  letter-spacing: 0.04em;
-
   text-align: center;
-
-  transition: 0.3s ease;
-}
-
-.magic-list div:hover {
-  background: rgba(33, 77, 49, 0.09);
-
-  border-color: rgba(33, 77, 49, 0.35);
 }
 
 .mystery {
@@ -1160,9 +1141,9 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    COLESIN
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .valkyrie {
   width: 100%;
@@ -1172,30 +1153,25 @@ a {
   background:
     radial-gradient(
       circle at center,
-      rgba(34, 112, 58, 0.28),
+      rgba(30, 110, 60, 0.3),
       transparent 55%
     ),
-    #04100a;
+    #030b06;
 
   text-align: center;
 }
 
 .valkyrie-content {
-  width: 100%;
-  max-width: 850px;
-
-  margin: 0 auto;
-
   text-align: center;
 }
 
 .owl-mark {
-  font-size: 3.8rem;
+  font-size: 4rem;
 
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 
   filter:
-    drop-shadow(0 0 20px rgba(216, 185, 108, 0.4));
+    drop-shadow(0 0 20px rgba(140, 210, 120, 0.45));
 }
 
 .valkyrie-content h2 {
@@ -1207,29 +1183,31 @@ a {
 
   font-weight: 500;
 
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 
   text-align: center;
 }
 
 .valkyrie-content h3 {
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.35rem;
+  font-size: 1.3rem;
 
-  letter-spacing: 0.12em;
+  margin: 15px auto;
 
-  margin-top: 15px;
+  letter-spacing: 0.1em;
 
   text-align: center;
 }
 
 .valkyrie-content > p:not(.eyebrow):not(.final-legend) {
-  color: rgba(245, 240, 223, 0.75);
+  max-width: 800px;
 
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+
+  color: var(--text-light);
 
   text-align: center;
 }
@@ -1244,17 +1222,15 @@ a {
 
   gap: 12px;
 
-  margin: 35px auto;
-
-  text-align: center;
+  margin: 40px auto;
 }
 
 .legend-words span {
   padding: 10px 18px;
 
-  border: 1px solid rgba(216, 185, 108, 0.3);
+  border: 1px solid var(--border);
 
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -1266,21 +1242,21 @@ a {
 }
 
 .final-legend {
-  color: var(--light-gold) !important;
+  color: var(--gold-light) !important;
 
   font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
-  font-weight: 500;
+  font-style: italic;
 
   text-align: center;
 }
 
 
-/* ═══════════════════════════════════════════════
-   LAWS
-═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   LAW
+═══════════════════════════════════════════════════════ */
 
 .mountain-law {
   width: 100%;
@@ -1290,20 +1266,15 @@ a {
   background:
     radial-gradient(
       circle at center,
-      rgba(65, 108, 61, 0.3),
+      rgba(40, 92, 53, 0.3),
       transparent 55%
     ),
-    var(--deep-green);
+    var(--green-dark);
 
   text-align: center;
 }
 
 .law-content {
-  width: 100%;
-  max-width: 850px;
-
-  margin: 0 auto;
-
   text-align: center;
 }
 
@@ -1331,9 +1302,9 @@ a {
 .laws p {
   padding: 16px;
 
-  border-bottom: 1px solid rgba(216, 185, 108, 0.18);
+  border-bottom: 1px solid rgba(216, 189, 114, 0.18);
 
-  color: rgba(245, 240, 223, 0.75);
+  color: var(--text-light);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -1351,9 +1322,9 @@ a {
 
   padding: 35px;
 
-  border: 1px solid rgba(216, 185, 108, 0.3);
+  border: 1px solid var(--border);
 
-  background: rgba(216, 185, 108, 0.07);
+  background: rgba(40, 92, 53, 0.1);
 
   text-align: center;
 }
@@ -1361,7 +1332,7 @@ a {
 .final-law span {
   display: block;
 
-  color: rgba(245, 240, 223, 0.55);
+  color: var(--sage);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -1377,11 +1348,11 @@ a {
 .final-law strong {
   display: block;
 
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
-  font-size: 1.25rem;
+  font-size: 1.3rem;
 
   font-weight: 500;
 
@@ -1389,14 +1360,14 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    ENDING
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 .mountain-ending {
   width: 100%;
 
-  min-height: 700px;
+  min-height: 650px;
 
   display: flex;
 
@@ -1408,20 +1379,15 @@ a {
   background:
     radial-gradient(
       circle at center,
-      rgba(91, 139, 74, 0.3),
+      rgba(80, 130, 70, 0.3),
       transparent 48%
     ),
-    #030c07;
+    #030b06;
 
   text-align: center;
 }
 
 .ending-content {
-  width: 100%;
-  max-width: 850px;
-
-  margin: 0 auto;
-
   text-align: center;
 }
 
@@ -1431,11 +1397,15 @@ a {
   margin-bottom: 20px;
 
   filter:
-    drop-shadow(0 0 20px rgba(216, 185, 108, 0.4));
+    drop-shadow(0 0 20px rgba(216, 189, 114, 0.5));
 }
 
 .ending-content > p {
-  color: rgba(245, 240, 223, 0.65);
+  max-width: 750px;
+
+  margin: 0 auto 20px;
+
+  color: var(--text-light);
 
   text-align: center;
 }
@@ -1455,7 +1425,7 @@ a {
 }
 
 .ending-content h3 {
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -1464,15 +1434,12 @@ a {
   font-weight: 500;
 
   text-align: center;
-
-  text-shadow:
-    0 0 15px rgba(216, 185, 108, 0.25);
 }
 
 .final-symbol {
   margin: 30px auto;
 
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-size: 1.5rem;
 
@@ -1480,47 +1447,44 @@ a {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    FOOTER
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 footer {
   width: 100%;
 
   padding: 70px 20px;
 
-  background: #020806;
+  background: #020804;
 
-  border-top: 1px solid rgba(216, 185, 108, 0.2);
+  border-top: 1px solid var(--border);
 
-  text-align: center;
-}
-
-footer > div,
-footer h2,
-footer p,
-footer small {
   text-align: center;
 }
 
 footer > div {
-  color: var(--gold);
+  color: var(--gold-light);
 
   margin-bottom: 15px;
+
+  text-align: center;
 }
 
 footer h2 {
-  color: var(--light-gold);
+  color: var(--gold-light);
 
   font-family: "Cinzel", Georgia, serif;
 
   font-weight: 500;
 
   letter-spacing: 0.3em;
+
+  text-align: center;
 }
 
 footer p {
-  color: rgba(245, 240, 223, 0.55);
+  color: var(--sage);
 
   font-family: "Cinzel", Georgia, serif;
 
@@ -1528,23 +1492,27 @@ footer p {
 
   letter-spacing: 0.2em;
 
-  margin: 8px 0 18px;
+  margin: 8px auto 18px;
+
+  text-align: center;
 }
 
 footer small {
-  color: rgba(245, 240, 223, 0.4);
+  color: rgba(245, 241, 223, 0.45);
 
   font-family: "Cinzel", Georgia, serif;
 
   font-size: 0.5rem;
 
   letter-spacing: 0.15em;
+
+  text-align: center;
 }
 
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    MOBILE
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
 
@@ -1552,33 +1520,21 @@ footer small {
     justify-content: center;
   }
 
-  .brand {
+  .nav {
     position: static;
 
-    margin-bottom: 10px;
+    margin-left: 25px;
+
+    gap: 14px;
   }
 
-  .site-header {
-    flex-direction: column;
-  }
-
-  .nav {
-    gap: 16px;
-
-    flex-wrap: wrap;
-
-    margin-top: 12px;
-  }
-
-  .people-grid {
+  .people-grid,
+  .hollow-grid,
+  .ruin-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ruin-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hollow-grid {
+  .watcher-facts {
     grid-template-columns: 1fr;
   }
 
@@ -1592,38 +1548,42 @@ footer small {
 
   body {
     font-size: 17px;
-
-    text-align: center;
   }
 
   .site-header {
-    padding: 14px 15px;
-  }
+    position: absolute;
 
-  .brand {
-    width: 100%;
-  }
+    padding: 15px 20px;
 
-  .brand-name {
-    font-size: 1rem;
+    flex-direction: column;
+
+    gap: 12px;
   }
 
   .nav {
-    gap: 10px 15px;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    margin-left: 0;
+
+    gap: 10px 16px;
   }
 
   .nav a {
-    font-size: 0.52rem;
+    font-size: 0.55rem;
   }
 
-  .hero-content {
-    padding: 140px 20px 90px;
+  .mountain-hero {
+    padding: 150px 20px 90px;
   }
 
   .hero-content h1 {
     font-size: 3rem;
 
-    letter-spacing: 0.07em;
+    letter-spacing: 0.08em;
   }
 
   .motto {
@@ -1636,17 +1596,18 @@ footer small {
   .dragon-section,
   .watchers,
   .valkyrie,
-  .mountain-law {
+  .mountain-law,
+  .mountain-ending {
     padding: 80px 20px;
   }
 
   .section-frame {
-    padding: 35px 22px;
+    padding: 35px 20px;
   }
 
   .people-grid,
-  .ruin-grid,
   .hollow-grid,
+  .ruin-grid,
   .climate-grid,
   .magic-list {
     grid-template-columns: 1fr;
@@ -1654,18 +1615,6 @@ footer small {
 
   .section-heading {
     padding: 0 10px;
-  }
-
-  .paper-section .lead {
-    font-size: 1.15rem;
-  }
-
-  .owl-symbol,
-  .star-symbol,
-  .watcher-eye,
-  .owl-mark,
-  .final-owl {
-    font-size: 3rem;
   }
 
   .legend-words {
@@ -1681,7 +1630,8 @@ footer small {
     padding: 25px 18px;
   }
 
-  .ending-content h3 {
-    font-size: 1rem;
+  .ending-content h2 {
+    font-size: 2.2rem;
   }
+
 }
