@@ -2,282 +2,314 @@
 
 :root {
   --black: #090b0c;
-  --deep-black: #050607;
+  --deep-black: #040506;
   --paper: #e8e1d2;
+  --paper-dark: #d8cfbc;
   --text: #d9d2c3;
   --dark-text: #292823;
   --gold: #b99a5b;
   --gold-light: #d7bd7c;
-  --gray: #77766e;
+  --gray: #77746c;
   --line: rgba(185,154,91,0.45);
 }
 
+/* RESET */
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
-  background: #050607;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: #090b0c !important;
-  color: #d9d2c3 !important;
-  font-family: "Cormorant Garamond", serif !important;
+  color: #d9d2c3;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 19px;
   line-height: 1.8;
-  overflow-x: hidden;
 }
 
-body a {
+body,
+body * {
+  box-sizing: border-box;
+}
+
+a {
   color: inherit;
   text-decoration: none;
 }
 
-/* =========================
-   HEADER
-========================= */
+
+/* HEADER */
 
 .site-header {
-  position: fixed !important;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
+  min-height: 75px;
   z-index: 9999;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px 6%;
+  padding: 18px 6%;
 
-  background: rgba(5,6,7,0.96) !important;
+  background: rgba(4,5,6,0.96);
   border-bottom: 1px solid rgba(185,154,91,0.45);
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .brand {
   display: flex;
   flex-direction: column;
-  color: #d7bd7c !important;
+  line-height: 1.2;
 }
 
 .brand-name {
-  font-family: "Cinzel", serif !important;
+  font-family: "Cinzel", Georgia, serif;
   font-size: 22px;
+  font-weight: 600;
   letter-spacing: 5px;
-  color: #d7bd7c !important;
+  color: #d7bd7c;
 }
 
 .brand-subtitle {
-  font-family: "Cormorant Garamond", serif !important;
+  margin-top: 5px;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 11px;
   letter-spacing: 3px;
-  color: #aaa398 !important;
+  color: #aaa398;
 }
 
 .nav {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 25px;
 }
 
 .nav a {
-  font-family: "Cinzel", serif !important;
-  font-size: 12px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #d9d2c3 !important;
+  color: #d9d2c3;
   transition: all 0.3s ease;
 }
 
 .nav a:hover {
-  color: #d7bd7c !important;
+  color: #d7bd7c;
 }
 
 .menu-toggle {
   display: none;
-  background: transparent !important;
-  border: none !important;
-  color: #d7bd7c !important;
-  font-size: 25px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #d7bd7c;
+  font-size: 26px;
+  cursor: pointer;
 }
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+
+/* GENERAL SECTIONS */
 
 .hero,
 .dark-section,
 .character-section,
-.final-section,
-.timeline-section {
+.timeline-section,
+.final-section {
   background:
     radial-gradient(
-      circle at 50% 30%,
-      rgba(185,154,91,0.08),
-      transparent 35%
+      circle at 50% 20%,
+      rgba(185,154,91,0.10),
+      transparent 40%
     ),
-    #090b0c !important;
+    #090b0c;
 }
 
 .paper-section {
   background:
     radial-gradient(
       circle at 20% 20%,
-      rgba(120,100,70,0.08),
-      transparent 30%
+      rgba(100,85,60,0.10),
+      transparent 35%
     ),
-    #e8e1d2 !important;
+    #e8e1d2;
 
-  color: #292823 !important;
+  color: #292823;
 }
 
+
+/* HERO */
+
 .hero {
+  position: relative;
+
   min-height: 100vh;
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
-  position: relative;
-  padding: 140px 20px 100px;
+
+  padding: 150px 25px 100px;
 }
 
 .hero-content {
-  max-width: 900px;
   width: 100%;
+  max-width: 950px;
 }
 
 .eyebrow {
-  font-family: "Cinzel", serif !important;
+  margin: 0 0 22px;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 12px;
+  font-weight: 500;
   letter-spacing: 5px;
-  color: #d7bd7c !important;
   text-transform: uppercase;
-  margin-bottom: 22px;
+
+  color: #d7bd7c;
 }
 
 .eyebrow.dark {
-  color: #806832 !important;
+  color: #806832;
 }
 
 .hero h1 {
-  font-family: "Cinzel", serif !important;
-  font-size: clamp(60px,10vw,125px);
+  margin: 0;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(58px, 10vw, 125px);
+  font-weight: 600;
   line-height: 0.95;
   letter-spacing: 8px;
-  font-weight: 600;
-  color: #eee8db !important;
-  text-shadow: 0 0 40px rgba(185,154,91,0.15);
+
+  color: #eee8db;
+
+  text-shadow:
+    0 0 20px rgba(185,154,91,0.08),
+    0 0 50px rgba(185,154,91,0.10);
 }
 
 .hero-name {
-  margin-top: 28px;
-  font-family: "Cinzel", serif !important;
-  letter-spacing: 8px;
+  margin: 30px 0 0;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 19px;
-  color: #d7bd7c !important;
+  letter-spacing: 8px;
+
+  color: #d7bd7c;
 }
 
 .gold-rule {
-  color: #d7bd7c !important;
   margin: 28px auto;
+
+  color: #d7bd7c;
   font-size: 22px;
   letter-spacing: 12px;
 }
 
-.dark-rule {
-  color: #806832 !important;
-}
-
 .intro {
+  margin: 0 0 35px;
+
   font-size: 24px;
-  color: #c5beb0 !important;
-  margin-bottom: 35px;
+  line-height: 1.7;
+
+  color: #c5beb0;
 }
 
 .gold-button {
   display: inline-block;
-  border: 1px solid #b99a5b !important;
+
   padding: 13px 30px;
-  font-family: "Cinzel", serif !important;
+
+  border: 1px solid #b99a5b;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #d7bd7c !important;
-  background: transparent !important;
+
+  color: #d7bd7c;
+
   transition: all 0.3s ease;
 }
 
 .gold-button:hover {
-  background: #b99a5b !important;
-  color: #090b0c !important;
+  background: #b99a5b;
+  color: #090b0c;
+  box-shadow: 0 0 25px rgba(185,154,91,0.25);
 }
 
 .scroll-hint {
   position: absolute;
-  bottom: 30px;
-  font-family: "Cinzel", serif !important;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 10px;
   letter-spacing: 3px;
-  color: #77746c !important;
+
+  color: #77746c;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+
+/* SECTION SPACING */
 
 .paper-section,
 .dark-section,
 .character-section,
 .timeline-section {
-  padding: 110px 7%;
+  padding: 115px 7%;
 }
 
 .section-frame {
+  width: 100%;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .section-heading {
+  width: 100%;
   max-width: 950px;
   margin: 0 auto 60px;
+
   text-align: center;
 }
 
 .section-heading h2,
 .section-frame h2 {
-  font-family: "Cinzel", serif !important;
-  font-size: clamp(35px,5vw,62px);
-  line-height: 1.15;
+  margin: 0 0 25px;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(36px, 5vw, 62px);
   font-weight: 500;
-  margin-bottom: 25px;
-}
-
-.dark-section .section-heading h2,
-.character-section .section-heading h2,
-.timeline-section .section-heading h2 {
-  color: #eee8db !important;
-}
-
-.paper-section .section-frame h2 {
-  color: #292823 !important;
+  line-height: 1.15;
 }
 
 .section-heading p {
-  color: #aaa398 !important;
-}
-
-.paper-section .section-heading p {
-  color: #292823 !important;
+  color: #aaa398;
 }
 
 .section-frame p {
+  margin-top: 0;
   margin-bottom: 22px;
 }
 
@@ -286,212 +318,289 @@ body a {
   line-height: 1.6;
 }
 
+.dark-rule {
+  color: #806832;
+}
+
 .quote {
+  max-width: 800px;
+
   margin: 45px auto 10px;
   padding: 30px 35px;
-  max-width: 800px;
-  text-align: center;
 
   border-top: 1px solid rgba(185,154,91,0.45);
   border-bottom: 1px solid rgba(185,154,91,0.45);
 
+  text-align: center;
+
   font-size: 25px;
   font-style: italic;
-  color: #806832 !important;
+  line-height: 1.6;
+
+  color: #806832;
 }
 
-/* =========================
-   CHARACTER INFO
-========================= */
+
+/* CHARACTER INFO */
 
 .character-section {
   text-align: center;
 }
 
 .info-grid {
+  width: 100%;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 .info-card {
   padding: 30px 20px;
 
-  border: 1px solid rgba(185,154,91,0.3) !important;
-  background: rgba(255,255,255,0.025) !important;
+  border: 1px solid rgba(185,154,91,0.30);
+
+  background: rgba(255,255,255,0.025);
+
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: rgba(215,189,124,0.60);
+  transform: translateY(-3px);
 }
 
 .info-card span {
   display: block;
-  font-family: "Cinzel", serif !important;
+
+  margin-bottom: 8px;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 10px;
   letter-spacing: 3px;
-  color: #b99a5b !important;
-  margin-bottom: 8px;
+
+  color: #b99a5b;
 }
 
 .info-card strong {
   display: block;
-  font-family: "Cinzel", serif !important;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 15px;
   font-weight: 500;
-  color: #ddd6c9 !important;
+  line-height: 1.5;
+
+  color: #ddd6c9;
 }
 
-/* =========================
-   HERITAGE
-========================= */
+
+/* HERITAGE */
 
 .heritage-grid {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+
   margin: 50px 0;
 }
 
 .heritage-card {
   padding: 40px;
+
   border: 1px solid rgba(80,70,50,0.25);
+
   text-align: center;
-  background: rgba(255,255,255,0.05);
+
+  background: rgba(255,255,255,0.08);
+
+  transition: all 0.3s ease;
+}
+
+.heritage-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(128,104,50,0.55);
 }
 
 .heritage-icon {
   display: block;
-  font-size: 42px;
+
   margin-bottom: 15px;
+
+  font-size: 42px;
 }
 
 .heritage-card h3,
 .lore-columns h3,
 .personality-grid h3 {
-  font-family: "Cinzel", serif !important;
-  color: #806832 !important;
+  margin: 0 0 12px;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 20px;
-  margin-bottom: 12px;
+
+  color: #806832;
 }
 
 .heritage-ending {
   text-align: center;
-  font-style: italic;
+
   font-size: 23px;
+  font-style: italic;
 }
 
-/* =========================
-   APPEARANCE
-========================= */
+
+/* APPEARANCE */
 
 .lore-columns {
+  width: 100%;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 35px;
 }
 
 .lore-columns > div {
-  border-top: 1px solid rgba(185,154,91,0.45);
   padding-top: 25px;
+
+  border-top: 1px solid rgba(185,154,91,0.45);
 }
 
 .lore-columns h3 {
-  color: #d7bd7c !important;
+  color: #d7bd7c;
 }
 
 .lore-columns p {
-  color: #aaa398 !important;
+  margin: 0;
+
+  color: #aaa398;
 }
 
-/* =========================
-   ABILITIES
-========================= */
+
+/* ABILITIES */
 
 .ability-grid {
+  width: 100%;
   max-width: 1150px;
-  margin: auto;
+  margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 18px;
 }
 
 .ability-card {
   padding: 28px 18px;
+
+  border: 1px solid rgba(185,154,91,0.25);
+
+  background: rgba(255,255,255,0.025);
+
   text-align: center;
 
-  border: 1px solid rgba(185,154,91,0.25) !important;
-  background: rgba(255,255,255,0.02) !important;
+  transition: all 0.3s ease;
+}
+
+.ability-card:hover {
+  border-color: rgba(215,189,124,0.60);
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.04);
 }
 
 .ability-card span {
   display: block;
-  font-size: 30px;
+
   margin-bottom: 10px;
+
+  font-size: 30px;
 }
 
 .ability-card h3 {
-  font-family: "Cinzel", serif !important;
+  margin: 0 0 10px;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 15px;
-  color: #d7bd7c !important;
-  margin-bottom: 10px;
+
+  color: #d7bd7c;
 }
 
 .ability-card p {
+  margin: 0;
+
   font-size: 16px;
   line-height: 1.5;
-  color: #aaa398 !important;
+
+  color: #aaa398;
 }
 
-/* =========================
-   WEAPON
-========================= */
+
+/* WEAPON */
 
 .weapon-box {
+  width: 100%;
   max-width: 850px;
   margin: 50px auto 0;
+
   text-align: center;
 }
 
 .weapon-symbol {
-  font-size: 55px;
-  color: #806832 !important;
   display: block;
+
   margin-bottom: 20px;
+
+  font-size: 55px;
+
+  color: #806832;
 }
 
-/* =========================
-   TIMELINE
-========================= */
+
+/* TIMELINE */
 
 .timeline {
-  max-width: 900px;
-  margin: auto;
   position: relative;
+
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .timeline::before {
   content: "";
+
   position: absolute;
+
   left: 31px;
   top: 0;
   bottom: 0;
+
   width: 1px;
+
   background: rgba(185,154,91,0.45);
 }
 
 .timeline-item {
+  position: relative;
+
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 35px;
+
   margin-bottom: 55px;
-  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-item > span {
+  position: relative;
+  z-index: 2;
+
   width: 64px;
   height: 64px;
 
@@ -499,168 +608,203 @@ body a {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #b99a5b !important;
+  border: 1px solid #b99a5b;
   border-radius: 50%;
 
-  background: #090b0c !important;
+  background: #090b0c;
 
-  font-family: "Cinzel", serif !important;
-  color: #d7bd7c !important;
+  font-family: "Cinzel", Georgia, serif;
 
-  z-index: 2;
+  color: #d7bd7c;
 }
 
 .timeline-item h3 {
-  font-family: "Cinzel", serif !important;
-  color: #d7bd7c !important;
+  margin: 0 0 8px;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 23px;
-  margin-bottom: 8px;
+
+  color: #d7bd7c;
 }
 
 .timeline-item p {
-  color: #aaa398 !important;
+  margin: 0;
+
+  color: #aaa398;
 }
 
-/* =========================
-   VEYRA
-========================= */
+
+/* VEYRA */
 
 .veyra-box {
+  width: 100%;
   max-width: 800px;
-  margin: auto;
-  text-align: center;
+  margin: 0 auto;
 
   padding: 55px 45px;
 
-  border: 1px solid rgba(185,154,91,0.45) !important;
+  border: 1px solid rgba(185,154,91,0.45);
+
+  text-align: center;
+
   background: rgba(255,255,255,0.015);
 }
 
 .veyra-symbol {
-  font-size: 70px;
   margin-bottom: 10px;
+
+  font-size: 70px;
 }
 
 .veyra-box h3 {
-  font-family: "Cinzel", serif !important;
+  margin: 0;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 38px;
-  color: #d7bd7c !important;
+
+  color: #d7bd7c;
 }
 
 .veyra-subtitle {
-  font-family: "Cinzel", serif !important;
+  margin: 5px 0 30px;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 12px;
   letter-spacing: 2px;
-  color: #88847b !important;
-  margin-bottom: 30px;
+
+  color: #88847b;
 }
 
 .veyra-box p {
-  color: #aaa398 !important;
+  color: #aaa398;
 }
 
-/* =========================
-   PERSONALITY
-========================= */
+
+/* PERSONALITY */
 
 .personality-grid {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+
   margin-top: 45px;
 }
 
 .personality-grid > div {
   padding-top: 25px;
+
   border-top: 1px solid rgba(80,70,50,0.3);
 }
 
-.personality-grid h3 {
-  color: #806832 !important;
+.personality-grid p {
+  margin: 0;
 }
 
-/* =========================
-   FINAL
-========================= */
+
+/* FINAL */
 
 .final-section {
   min-height: 80vh;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  padding: 100px 20px;
 
   text-align: center;
-  padding: 100px 20px;
 }
 
 .final-content {
+  width: 100%;
   max-width: 800px;
 }
 
 .final-content h2 {
-  font-family: "Cinzel", serif !important;
-  font-size: clamp(45px,8vw,90px);
-  color: #eee8db !important;
+  margin: 0;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(45px, 8vw, 90px);
+  font-weight: 600;
   letter-spacing: 5px;
+
+  color: #eee8db;
 }
 
 .final-content p {
-  color: #aaa398 !important;
+  margin: 0 0 18px;
+
   font-size: 22px;
-  margin-bottom: 18px;
+
+  color: #aaa398;
 }
 
 .final-content .final-line {
-  color: #d7bd7c !important;
-  font-family: "Cinzel", serif !important;
+  margin-top: 45px;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: 25px;
   letter-spacing: 4px;
-  margin-top: 45px;
+
+  color: #d7bd7c;
 }
 
-/* =========================
-   FOOTER
-========================= */
+
+/* FOOTER */
 
 footer {
   padding: 65px 20px;
-  text-align: center;
 
-  background: #050607 !important;
   border-top: 1px solid rgba(185,154,91,0.45);
+
+  background: #040506;
+
+  text-align: center;
 }
 
 .footer-ornament {
-  color: #b99a5b !important;
-  font-size: 25px;
   margin-bottom: 15px;
+
+  font-size: 25px;
+
+  color: #b99a5b;
 }
 
 footer h2 {
-  font-family: "Cinzel", serif !important;
+  margin: 0;
+
+  font-family: "Cinzel", Georgia, serif;
   letter-spacing: 6px;
-  color: #d7bd7c !important;
+
+  color: #d7bd7c;
 }
 
 footer p {
-  color: #77746c !important;
-  letter-spacing: 3px;
+  margin: 5px 0;
+
   font-size: 13px;
+  letter-spacing: 3px;
+
+  color: #77746c;
 }
 
 footer small {
   display: block;
+
   margin-top: 20px;
-  color: #5f5d57 !important;
+
+  font-size: 10px;
   letter-spacing: 3px;
+
+  color: #5f5d57;
 }
 
-/* =========================
-   MOBILE
-========================= */
 
-@media (max-width: 900px) {
+/* TABLET */
+
+@media screen and (max-width: 1000px) {
 
   .nav {
     display: none;
@@ -670,26 +814,35 @@ footer small {
     display: block;
   }
 
-  .info-grid,
-  .heritage-grid,
-  .lore-columns,
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lore-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .personality-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .ability-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+
+/* MOBILE */
+
+@media screen and (max-width: 600px) {
 
   body {
-    font-size: 17px !important;
+    font-size: 17px;
   }
 
   .site-header {
-    padding: 16px 5%;
+    min-height: 65px;
+    padding: 15px 5%;
   }
 
   .brand-name {
@@ -699,6 +852,11 @@ footer small {
 
   .brand-subtitle {
     font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .hero {
+    padding: 125px 20px 90px;
   }
 
   .hero h1 {
@@ -715,6 +873,11 @@ footer small {
     font-size: 20px;
   }
 
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
   .paper-section,
   .dark-section,
   .character-section,
@@ -724,7 +887,7 @@ footer small {
 
   .section-frame h2,
   .section-heading h2 {
-    font-size: 35px;
+    font-size: 34px;
   }
 
   .section-frame .lead {
@@ -740,6 +903,15 @@ footer small {
 
   .ability-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ability-card {
+    padding: 22px 12px;
+  }
+
+  .ability-card p {
+    font-size: 15px;
   }
 
   .timeline-item {
@@ -754,6 +926,7 @@ footer small {
   .timeline-item > span {
     width: 48px;
     height: 48px;
+
     font-size: 13px;
   }
 
@@ -765,4 +938,14 @@ footer small {
     padding: 25px 18px;
     font-size: 21px;
   }
+
+  .final-section {
+    min-height: 70vh;
+    padding: 80px 20px;
+  }
+
+  .final-content h2 {
+    font-size: 45px;
+  }
+
 }
