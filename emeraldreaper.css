@@ -1,1 +1,1004 @@
+/* ═══════════════════════════════════════════════
+   AETHERIA — COLESIN HARTLEY
+   THE EMERALD REAPER
+   ═══════════════════════════════════════════════ */
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+:root {
+  --black: #050806;
+  --deep-black: #020403;
+  --forest: #07150f;
+  --dark-green: #0b2117;
+  --emerald: #16b86a;
+  --bright-emerald: #35e98b;
+  --soft-emerald: #78f5b1;
+  --silver: #d9e4df;
+  --muted: #9eaaa5;
+  --white: #edf5f1;
+  --line: rgba(53, 233, 139, 0.35);
+  --shadow: rgba(0, 0, 0, 0.75);
+}
+
+
+/* ═══════════════════════════════════════════════
+   GLOBAL
+   ═══════════════════════════════════════════════ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(22, 184, 106, 0.12), transparent 35%),
+    linear-gradient(180deg, #020403 0%, #07110c 45%, #020403 100%);
+  color: var(--silver);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.08;
+  background-image:
+    radial-gradient(circle at 20% 30%, white 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, white 0 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, white 0 1px, transparent 1px);
+  background-size: 170px 170px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+.brand-name,
+.nav {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.08em;
+}
+
+::selection {
+  background: var(--emerald);
+  color: var(--black);
+}
+
+
+/* ═══════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 6%;
+  background: rgba(2, 4, 3, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(53, 233, 139, 0.18);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: var(--bright-emerald);
+  font-size: 20px;
+  text-shadow: 0 0 15px rgba(53, 233, 139, 0.5);
+}
+
+.brand-subtitle {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  font-size: 11px;
+}
+
+.nav a {
+  color: var(--silver);
+  transition: 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--bright-emerald);
+  text-shadow: 0 0 12px rgba(53, 233, 139, 0.6);
+}
+
+
+/* ═══════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════ */
+
+.mountain-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 20px 100px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(1, 5, 3, 0.62),
+      rgba(1, 5, 3, 0.92)
+    ),
+    radial-gradient(
+      circle at center,
+      rgba(22, 184, 106, 0.22),
+      transparent 55%
+    );
+}
+
+.mountain-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(53, 233, 139, 0.04) 50%,
+      transparent 80%
+    );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+}
+
+.owl-symbol {
+  font-size: 62px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(53, 233, 139, 0.65));
+}
+
+.eyebrow {
+  color: var(--bright-emerald);
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  margin-bottom: 22px;
+}
+
+.hero-content h1 {
+  color: var(--white);
+  font-size: clamp(48px, 8vw, 105px);
+  line-height: 0.95;
+  text-shadow:
+    0 0 20px rgba(53, 233, 139, 0.18),
+    0 8px 35px black;
+}
+
+.gold-rule {
+  color: var(--bright-emerald);
+  margin: 28px 0;
+  letter-spacing: 0.3em;
+  text-shadow: 0 0 12px rgba(53, 233, 139, 0.5);
+}
+
+.motto {
+  color: var(--silver);
+  font-size: 22px;
+  font-style: italic;
+}
+
+.location {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 35px;
+  color: var(--muted);
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   PAPER / LIGHT SECTIONS
+   ═══════════════════════════════════════════════ */
+
+.paper-section {
+  position: relative;
+  padding: 110px 7%;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(22, 184, 106, 0.08),
+      transparent 40%
+    ),
+    #dfe8e3;
+  color: #17221c;
+}
+
+.section-frame {
+  max-width: 950px;
+  margin: auto;
+  padding: 55px;
+  border: 1px solid rgba(22, 184, 106, 0.35);
+  box-shadow:
+    inset 0 0 60px rgba(22, 184, 106, 0.04),
+    0 20px 70px rgba(0, 0, 0, 0.15);
+}
+
+.eyebrow.dark {
+  color: #168d56;
+}
+
+.dark-rule {
+  color: #168d56;
+  text-shadow: none;
+}
+
+.section-frame h2,
+.dark-heading h2 {
+  color: #0b1711;
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: 25px;
+  color: #24352c;
+}
+
+.emphasis {
+  color: #087744;
+  font-size: 25px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* ═══════════════════════════════════════════════
+   DARK LORE
+   ═══════════════════════════════════════════════ */
+
+.dark-lore {
+  padding: 120px 7%;
+  background:
+    radial-gradient(
+      circle at center top,
+      rgba(22, 184, 106, 0.12),
+      transparent 45%
+    ),
+    #050907;
+}
+
+.lore-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.lore-container h2 {
+  color: var(--white);
+  font-size: clamp(32px, 5vw, 60px);
+  margin-bottom: 10px;
+}
+
+.lore-container p {
+  max-width: 850px;
+  margin: 0 auto 22px;
+  color: #bdc9c3;
+}
+
+
+/* ═══════════════════════════════════════════════
+   CARDS
+   ═══════════════════════════════════════════════ */
+
+.ruin-grid,
+.climate-grid,
+.people-grid,
+.hollow-grid,
+.magic-list {
+  display: grid;
+  gap: 22px;
+}
+
+.ruin-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+}
+
+.ruin-card,
+.climate-card,
+.people-card,
+.hollow-grid > div {
+  padding: 30px 25px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(22, 184, 106, 0.08),
+      rgba(0, 0, 0, 0.25)
+    );
+  transition: 0.35s ease;
+}
+
+.ruin-card:hover,
+.climate-card:hover,
+.people-card:hover,
+.hollow-grid > div:hover {
+  transform: translateY(-6px);
+  border-color: var(--bright-emerald);
+  box-shadow:
+    0 0 30px rgba(53, 233, 139, 0.12);
+}
+
+.ruin-card span {
+  color: var(--bright-emerald);
+  font-family: "Cinzel", serif;
+  font-size: 25px;
+}
+
+.ruin-card h3,
+.climate-card h3,
+.people-card h3,
+.hollow-grid h3 {
+  color: var(--white);
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.ruin-card p,
+.climate-card p,
+.people-card p,
+.hollow-grid p {
+  font-size: 17px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   BLOCKQUOTES
+   ═══════════════════════════════════════════════ */
+
+blockquote {
+  margin: 55px auto 0;
+  max-width: 800px;
+  padding: 30px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--soft-emerald);
+  font-size: 24px;
+  font-style: italic;
+}
+
+
+/* ═══════════════════════════════════════════════
+   LANDSCAPE
+   ═══════════════════════════════════════════════ */
+
+.dark-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.climate-grid {
+  max-width: 1100px;
+  margin: auto;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.climate-card {
+  background: rgba(255, 255, 255, 0.45);
+  border-color: rgba(22, 184, 106, 0.28);
+}
+
+.climate-card h3 {
+  color: #0c1b13;
+}
+
+.climate-card p {
+  color: #435249;
+}
+
+.climate-icon {
+  display: block;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   PEOPLE
+   ═══════════════════════════════════════════════ */
+
+.people-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 55px;
+}
+
+.people-card span {
+  display: block;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.people-card p {
+  color: #aebbb4;
+}
+
+
+/* ═══════════════════════════════════════════════
+   SPECIAL DARK SECTIONS
+   ═══════════════════════════════════════════════ */
+
+.star-iron,
+.dragon-section,
+.watchers,
+.valkyrie,
+.mountain-law,
+.mountain-ending {
+  position: relative;
+  padding: 130px 7%;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(22, 184, 106, 0.13),
+      transparent 48%
+    ),
+    #020504;
+  text-align: center;
+}
+
+.star-content,
+.dragon-content,
+.watchers-content,
+.valkyrie-content,
+.law-content,
+.ending-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.star-symbol,
+.watcher-eye,
+.owl-mark,
+.final-owl {
+  display: block;
+  font-size: 55px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 18px rgba(53, 233, 139, 0.45));
+}
+
+.star-content h2,
+.dragon-content h2,
+.watchers-content h2,
+.valkyrie-content h2,
+.law-content h2,
+.ending-content h2 {
+  color: var(--white);
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 21px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   WARNING BOXES
+   ═══════════════════════════════════════════════ */
+
+.warning,
+.dragon-warning,
+.ancient-warning {
+  margin: 45px auto;
+  padding: 25px;
+  max-width: 750px;
+  border: 1px solid rgba(53, 233, 139, 0.35);
+  background: rgba(22, 184, 106, 0.06);
+  color: var(--soft-emerald);
+}
+
+.warning p,
+.dragon-warning p {
+  margin: 8px 0 0;
+}
+
+.final-warning,
+.final-legend {
+  color: var(--soft-emerald);
+  font-size: 23px;
+  font-style: italic;
+}
+
+
+/* ═══════════════════════════════════════════════
+   WATCHER FACTS
+   ═══════════════════════════════════════════════ */
+
+.watcher-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 50px 0;
+}
+
+.watcher-facts div {
+  padding: 25px 15px;
+  border: 1px solid var(--line);
+  background: rgba(22, 184, 106, 0.05);
+}
+
+.watcher-facts strong,
+.watcher-facts span {
+  display: block;
+}
+
+.watcher-facts strong {
+  color: var(--bright-emerald);
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.watcher-facts span {
+  color: var(--silver);
+  margin-top: 8px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   ASHEN DEEP / HOLLOW GRID
+   ═══════════════════════════════════════════════ */
+
+.hollow-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+}
+
+.hollow-grid > div {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(22, 184, 106, 0.3);
+}
+
+.hollow-grid h3 {
+  color: #102019;
+}
+
+.hollow-grid p {
+  color: #4a5951;
+}
+
+.ancient-warning {
+  color: #137d4d;
+  border-color: rgba(22, 184, 106, 0.35);
+}
+
+
+/* ═══════════════════════════════════════════════
+   LEGEND WORDS
+   ═══════════════════════════════════════════════ */
+
+.legend-words {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 40px 0;
+}
+
+.legend-words span {
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  color: var(--bright-emerald);
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   LAW
+   ═══════════════════════════════════════════════ */
+
+.laws {
+  max-width: 750px;
+  margin: 45px auto;
+  text-align: left;
+}
+
+.laws p {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(53, 233, 139, 0.12);
+  color: #c7d3cd;
+}
+
+.final-law {
+  margin-top: 55px;
+  padding: 35px;
+  border: 1px solid var(--line);
+  background: rgba(22, 184, 106, 0.05);
+}
+
+.final-law span {
+  display: block;
+  color: var(--bright-emerald);
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+}
+
+.final-law strong {
+  display: block;
+  margin-top: 12px;
+  color: var(--white);
+  font-size: 25px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   ENDING
+   ═══════════════════════════════════════════════ */
+
+.mountain-ending {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ending-content p {
+  color: var(--muted);
+  font-size: 22px;
+}
+
+.ending-content h3 {
+  color: var(--bright-emerald);
+  font-size: 30px;
+  text-shadow: 0 0 20px rgba(53, 233, 139, 0.4);
+}
+
+.final-symbol {
+  margin-top: 35px;
+  color: var(--bright-emerald);
+  font-size: 30px;
+  letter-spacing: 0.25em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════ */
+
+footer {
+  padding: 70px 20px;
+  text-align: center;
+  background: #010201;
+  border-top: 1px solid rgba(53, 233, 139, 0.2);
+}
+
+footer div {
+  color: var(--bright-emerald);
+  font-size: 25px;
+}
+
+footer h2 {
+  color: var(--white);
+  margin-top: 12px;
+}
+
+footer p,
+footer small {
+  color: var(--muted);
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   MOBILE
+   ═══════════════════════════════════════════════ */
+
+@media (max-width: 850px) {
+
+  .site-header {
+    padding: 16px 5%;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .section-frame {
+    padding: 30px 22px;
+  }
+
+  .ruin-grid,
+  .climate-grid,
+  .people-grid,
+  .hollow-grid,
+  .watcher-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-section,
+  .dark-lore,
+  .star-iron,
+  .dragon-section,
+  .watchers,
+  .valkyrie,
+  .mountain-law {
+    padding: 80px 5%;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .motto {
+    font-size: 19px;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   EXTRA EMERALD GLOW
+   ═══════════════════════════════════════════════ */
+
+h1,
+h2 {
+  text-shadow: 0 0 25px rgba(53, 233, 139, 0.08);
+}
+
+strong {
+  color: var(--bright-emerald);
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ═══════════════════════════════════════
+   CENTER EVERYTHING
+   ═══════════════════════════════════════ */
+
+body {
+  text-align: center;
+}
+
+/* Header */
+.site-header {
+  justify-content: center;
+  text-align: center;
+}
+
+.brand {
+  text-align: center;
+}
+
+.nav {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Main sections */
+.hero-content,
+.section-frame,
+.lore-container,
+.star-content,
+.dragon-content,
+.watchers-content,
+.broken-content,
+.valkyrie-content,
+.law-content,
+.ending-content {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+p,
+.eyebrow,
+.motto,
+.subtitle,
+.location,
+.lead,
+.emphasis,
+.short-line,
+.final-warning,
+.final-legend,
+.mystery {
+  text-align: center;
+}
+
+/* Decorative rules */
+.gold-rule {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards */
+.ruin-grid,
+.climate-grid,
+.people-grid,
+.hollow-grid,
+.magic-list,
+.watcher-facts,
+.laws,
+.legend-words {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Individual cards */
+.ruin-card,
+.climate-card,
+.people-card,
+.hollow-grid > div,
+.watcher-facts > div {
+  text-align: center;
+}
+
+/* Icons / symbols */
+.owl-symbol,
+.star-symbol,
+.watcher-eye,
+.owl-mark,
+.final-owl,
+.final-symbol,
+.climate-icon {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blockquotes */
+blockquote {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Warning boxes */
+.warning,
+.dragon-warning,
+.ancient-warning,
+.survivor,
+.final-law {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+}
+
+footer div,
+footer h2,
+footer p,
+footer small {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Scroll text */
+.scroll-hint {
+  text-align: center;
+}
+
+/* Lists / flex elements */
+.legend-words,
+.magic-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Make sure content doesn't hug the sides */
+section {
+  text-align: center;
+}
+
+section > div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ═══════════════════════════════════════
+   LOWER PAGE CONTENT
+   ═══════════════════════════════════════ */
+
+main {
+  padding-top: 80px;
+}
+
+/* Keep the hero content comfortably below the top */
+.reaper-hero {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Give the hero text more breathing room */
+.reaper-hero .hero-content {
+  padding-top: 40px;
+}
+
+/* Make sure headings aren't clipped */
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+/* Prevent text from being cut off */
+section {
+  overflow: visible;
+}
+
+/* Give sections breathing room */
+.paper-section,
+.dark-lore,
+.star-iron,
+.dragon-section,
+.watchers,
+.broken-peak,
+.valkyrie,
+.mountain-ending {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
