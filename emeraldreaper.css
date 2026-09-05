@@ -6,8 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
 :root {
-  --black: #050806;
-  --deep-black: #020403;
+  --black: #020403;
+  --deep-black: #010201;
   --forest: #07150f;
   --dark-green: #0b2117;
   --emerald: #16b86a;
@@ -16,8 +16,8 @@
   --silver: #d9e4df;
   --muted: #9eaaa5;
   --white: #edf5f1;
+  --dark-text: #17221c;
   --line: rgba(53, 233, 139, 0.35);
-  --shadow: rgba(0, 0, 0, 0.75);
 }
 
 
@@ -37,13 +37,25 @@ html {
 
 body {
   background:
-    radial-gradient(circle at 50% 0%, rgba(22, 184, 106, 0.12), transparent 35%),
-    linear-gradient(180deg, #020403 0%, #07110c 45%, #020403 100%);
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(22, 184, 106, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #010201 0%,
+      #07110c 50%,
+      #010201 100%
+    );
+
   color: var(--silver);
   font-family: "Cormorant Garamond", serif;
   font-size: 19px;
   line-height: 1.8;
+
   overflow-x: hidden;
+  text-align: center;
 }
 
 body::before {
@@ -52,11 +64,14 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 999;
-  opacity: 0.08;
+
+  opacity: 0.06;
+
   background-image:
     radial-gradient(circle at 20% 30%, white 0 1px, transparent 1px),
     radial-gradient(circle at 70% 60%, white 0 1px, transparent 1px),
     radial-gradient(circle at 40% 80%, white 0 1px, transparent 1px);
+
   background-size: 170px 170px;
 }
 
@@ -72,8 +87,7 @@ p {
 h1,
 h2,
 h3,
-.brand-name,
-.nav {
+.brand-name {
   font-family: "Cinzel", serif;
   letter-spacing: 0.08em;
 }
@@ -85,55 +99,92 @@ h3,
 
 
 /* ═══════════════════════════════════════════════
-   HEADER
+   HEADER — CENTERED
    ═══════════════════════════════════════════════ */
 
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
-  z-index: 100;
+
+  z-index: 1000;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 22px 6%;
-  background: rgba(2, 4, 3, 0.88);
+
+  padding: 20px;
+
+  background: rgba(2, 4, 3, 0.92);
+
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(53, 233, 139, 0.18);
+
+  border-bottom:
+    1px solid rgba(53, 233, 139, 0.18);
+
+  text-align: center;
 }
 
 .brand {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  text-align: center;
 }
 
 .brand-name {
   color: var(--bright-emerald);
-  font-size: 20px;
-  text-shadow: 0 0 15px rgba(53, 233, 139, 0.5);
+
+  font-size: 21px;
+
+  letter-spacing: 0.22em;
+
+  text-shadow:
+    0 0 15px rgba(53, 233, 139, 0.5);
 }
 
 .brand-subtitle {
+  margin-top: 5px;
+
   color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.3em;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.32em;
 }
+
+
+/* REMOVE NAVIGATION COMPLETELY */
 
 .nav {
-  display: flex;
-  gap: 28px;
-  font-size: 11px;
+  display: none !important;
 }
 
-.nav a {
-  color: var(--silver);
-  transition: 0.3s ease;
+
+/* ═══════════════════════════════════════════════
+   MAIN
+   ═══════════════════════════════════════════════ */
+
+main {
+  padding-top: 75px;
 }
 
-.nav a:hover {
-  color: var(--bright-emerald);
-  text-shadow: 0 0 12px rgba(53, 233, 139, 0.6);
+section {
+  position: relative;
+
+  text-align: center;
+
+  scroll-margin-top: 80px;
+}
+
+section > div {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -141,128 +192,248 @@ h3,
    HERO
    ═══════════════════════════════════════════════ */
 
-.mountain-hero {
+.reaper-hero {
   min-height: 100vh;
+
   position: relative;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   text-align: center;
-  padding: 140px 20px 100px;
+
+  padding:
+    130px 20px
+    100px;
+
   overflow: hidden;
 
   background:
-    linear-gradient(
-      rgba(1, 5, 3, 0.62),
-      rgba(1, 5, 3, 0.92)
-    ),
     radial-gradient(
       circle at center,
       rgba(22, 184, 106, 0.22),
-      transparent 55%
+      transparent 45%
+    ),
+
+    linear-gradient(
+      135deg,
+      #010302,
+      #07150f,
+      #020403
     );
 }
 
-.mountain-hero::before {
+.reaper-hero::before {
   content: "";
+
   position: absolute;
+
   inset: 0;
+
+  pointer-events: none;
+
   background:
-    linear-gradient(
-      120deg,
+    radial-gradient(
+      circle at 50% 50%,
       transparent 20%,
-      rgba(53, 233, 139, 0.04) 50%,
-      transparent 80%
+      rgba(0, 0, 0, 0.55) 100%
     );
+}
+
+.reaper-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(53, 233, 139, 0.08),
+      transparent 65%
+    );
+
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
+
   z-index: 2;
-  max-width: 950px;
+
+  width: 100%;
+  max-width: 1000px;
+
+  margin: auto;
+
+  text-align: center;
 }
 
-.owl-symbol {
-  font-size: 62px;
+.reaper-symbol {
+  font-size: 65px;
+
   margin-bottom: 20px;
-  filter: drop-shadow(0 0 20px rgba(53, 233, 139, 0.65));
+
+  filter:
+    drop-shadow(
+      0 0 20px
+      rgba(53, 233, 139, 0.7)
+    );
 }
 
 .eyebrow {
   color: var(--bright-emerald);
+
   font-family: "Cinzel", serif;
+
   font-size: 11px;
+
   letter-spacing: 0.35em;
+
   margin-bottom: 22px;
+
+  text-align: center;
 }
 
 .hero-content h1 {
   color: var(--white);
-  font-size: clamp(48px, 8vw, 105px);
+
+  font-size:
+    clamp(48px, 8vw, 105px);
+
   line-height: 0.95;
+
+  text-align: center;
+
   text-shadow:
-    0 0 20px rgba(53, 233, 139, 0.18),
-    0 8px 35px black;
+    0 0 25px
+    rgba(53, 233, 139, 0.18),
+
+    0 8px 35px
+    rgba(0, 0, 0, 0.9);
 }
 
 .gold-rule {
   color: var(--bright-emerald);
-  margin: 28px 0;
+
+  margin:
+    28px auto;
+
+  text-align: center;
+
   letter-spacing: 0.3em;
-  text-shadow: 0 0 12px rgba(53, 233, 139, 0.5);
+
+  text-shadow:
+    0 0 12px
+    rgba(53, 233, 139, 0.5);
 }
 
 .motto {
   color: var(--silver);
+
   font-size: 22px;
+
   font-style: italic;
+
+  text-align: center;
 }
 
 .location {
-  display: inline-block;
+  display: block;
+
   margin-top: 18px;
+
   color: var(--muted);
+
   font-family: "Cinzel", serif;
+
   font-size: 10px;
+
   letter-spacing: 0.25em;
+
+  text-align: center;
 }
 
 .scroll-hint {
   position: absolute;
+
   bottom: 35px;
+
+  left: 0;
+
+  width: 100%;
+
   color: var(--muted);
+
   font-family: "Cinzel", serif;
+
   font-size: 9px;
+
   letter-spacing: 0.25em;
+
+  text-align: center;
 }
 
 
 /* ═══════════════════════════════════════════════
-   PAPER / LIGHT SECTIONS
+   LIGHT / PAPER SECTIONS
    ═══════════════════════════════════════════════ */
 
 .paper-section {
   position: relative;
-  padding: 110px 7%;
+
+  padding:
+    110px 7%;
+
   background:
     radial-gradient(
       circle at 50% 0%,
       rgba(22, 184, 106, 0.08),
       transparent 40%
     ),
+
     #dfe8e3;
-  color: #17221c;
+
+  color: var(--dark-text);
+
+  text-align: center;
 }
 
 .section-frame {
+  width: 100%;
+
   max-width: 950px;
-  margin: auto;
+
+  margin:
+    0 auto;
+
   padding: 55px;
-  border: 1px solid rgba(22, 184, 106, 0.35);
+
+  border:
+    1px solid
+    rgba(22, 184, 106, 0.35);
+
   box-shadow:
-    inset 0 0 60px rgba(22, 184, 106, 0.04),
-    0 20px 70px rgba(0, 0, 0, 0.15);
+    inset
+    0 0 60px
+    rgba(22, 184, 106, 0.04),
+
+    0 20px 70px
+    rgba(0, 0, 0, 0.15);
+
+  text-align: center;
 }
 
 .eyebrow.dark {
@@ -271,27 +442,110 @@ h3,
 
 .dark-rule {
   color: #168d56;
+
   text-shadow: none;
 }
 
-.section-frame h2,
-.dark-heading h2 {
+.section-frame h2 {
   color: #0b1711;
-  font-size: clamp(30px, 5vw, 52px);
+
+  font-size:
+    clamp(30px, 5vw, 52px);
+
   line-height: 1.1;
+
   margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.section-frame p {
+  text-align: center;
 }
 
 .lead {
   font-size: 25px;
+
   color: #24352c;
+
+  text-align: center;
 }
 
 .emphasis {
   color: #087744;
+
   font-size: 25px;
+
   font-weight: 700;
+
   font-style: italic;
+
+  text-align: center;
+}
+
+
+/* ═══════════════════════════════════════════════
+   PROFILE INFORMATION
+   ═══════════════════════════════════════════════ */
+
+.profile-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 45px;
+}
+
+.profile-grid > div {
+  padding: 22px 15px;
+
+  border:
+    1px solid
+    rgba(22, 184, 106, 0.3);
+
+  background:
+    rgba(255, 255, 255, 0.3);
+
+  text-align: center;
+
+  transition:
+    0.3s ease;
+}
+
+.profile-grid > div:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    var(--emerald);
+
+  box-shadow:
+    0 0 25px
+    rgba(22, 184, 106, 0.12);
+}
+
+.profile-grid strong {
+  display: block;
+
+  color: #168d56;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  margin-bottom: 7px;
+}
+
+.profile-grid span {
+  display: block;
+
+  color: #26372e;
+
+  font-size: 17px;
 }
 
 
@@ -300,98 +554,649 @@ h3,
    ═══════════════════════════════════════════════ */
 
 .dark-lore {
-  padding: 120px 7%;
+  padding:
+    120px 7%;
+
   background:
     radial-gradient(
       circle at center top,
-      rgba(22, 184, 106, 0.12),
+      rgba(22, 184, 106, 0.13),
       transparent 45%
     ),
+
     #050907;
+
+  text-align: center;
 }
 
 .lore-container {
+  width: 100%;
+
   max-width: 1100px;
-  margin: auto;
+
+  margin:
+    0 auto;
+
   text-align: center;
 }
 
 .lore-container h2 {
   color: var(--white);
-  font-size: clamp(32px, 5vw, 60px);
+
+  font-size:
+    clamp(32px, 5vw, 60px);
+
   margin-bottom: 10px;
+
+  text-align: center;
 }
 
 .lore-container p {
   max-width: 850px;
-  margin: 0 auto 22px;
+
+  margin:
+    0 auto 22px;
+
   color: #bdc9c3;
+
+  text-align: center;
 }
 
 
 /* ═══════════════════════════════════════════════
-   CARDS
+   APPEARANCE GRID
    ═══════════════════════════════════════════════ */
 
-.ruin-grid,
-.climate-grid,
-.people-grid,
-.hollow-grid,
-.magic-list {
+.appearance-grid {
   display: grid;
-  gap: 22px;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+  margin:
+    50px auto;
 }
 
-.ruin-grid {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 50px;
-}
+.appearance-grid > div {
+  padding: 30px 20px;
 
-.ruin-card,
-.climate-card,
-.people-card,
-.hollow-grid > div {
-  padding: 30px 25px;
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    rgba(22, 184, 106, 0.3);
+
   background:
-    linear-gradient(
-      145deg,
-      rgba(22, 184, 106, 0.08),
-      rgba(0, 0, 0, 0.25)
-    );
-  transition: 0.35s ease;
+    rgba(22, 184, 106, 0.04);
+
+  text-align: center;
+
+  transition:
+    0.35s ease;
 }
 
-.ruin-card:hover,
-.climate-card:hover,
-.people-card:hover,
-.hollow-grid > div:hover {
-  transform: translateY(-6px);
-  border-color: var(--bright-emerald);
+.appearance-grid > div:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    var(--bright-emerald);
+
   box-shadow:
-    0 0 30px rgba(53, 233, 139, 0.12);
+    0 0 30px
+    rgba(53, 233, 139, 0.12);
 }
 
-.ruin-card span {
-  color: var(--bright-emerald);
-  font-family: "Cinzel", serif;
-  font-size: 25px;
+.appearance-grid span {
+  display: block;
+
+  font-size: 36px;
+
+  margin-bottom: 10px;
 }
 
-.ruin-card h3,
-.climate-card h3,
-.people-card h3,
-.hollow-grid h3 {
-  color: var(--white);
-  margin: 12px 0;
+.appearance-grid h3 {
+  color: #102019;
+
   font-size: 18px;
+
+  margin-bottom: 10px;
 }
 
-.ruin-card p,
-.climate-card p,
-.people-card p,
-.hollow-grid p {
-  font-size: 17px;
+.appearance-grid p {
+  color: #4a5951;
+
+  font-size: 16px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   KNIGHT SECTION
+   ═══════════════════════════════════════════════ */
+
+.knight-section,
+.betrayal-section,
+.reaper-section,
+.combat-section,
+.bond-section,
+.belief-section,
+.reputation-section,
+.reaper-ending {
+  position: relative;
+
+  padding:
+    130px 7%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(22, 184, 106, 0.13),
+      transparent 48%
+    ),
+
+    #020504;
+
+  text-align: center;
+}
+
+.knight-content,
+.betrayal-content,
+.reaper-content,
+.combat-content,
+.bond-content,
+.belief-content,
+.reputation-content,
+.ending-content {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin:
+    0 auto;
+
+  text-align: center;
+}
+
+.knight-content h2,
+.betrayal-content h2,
+.reaper-content h2,
+.combat-content h2,
+.bond-content h2,
+.belief-content h2,
+.reputation-content h2,
+.ending-content h2 {
+  color: var(--white);
+
+  font-size:
+    clamp(32px, 5vw, 60px);
+
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+
+/* ═══════════════════════════════════════════════
+   FACT / TRAIT GRIDS
+   ═══════════════════════════════════════════════ */
+
+.knight-facts,
+.trait-grid,
+.combat-grid,
+.bond-grid,
+.emotion-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+
+  margin:
+    50px auto;
+}
+
+.knight-facts > div,
+.combat-grid > div,
+.bond-grid > div,
+.emotion-grid > div {
+  padding: 28px 20px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    rgba(22, 184, 106, 0.05);
+
+  text-align: center;
+
+  transition:
+    0.3s ease;
+}
+
+.knight-facts > div:hover,
+.combat-grid > div:hover,
+.bond-grid > div:hover,
+.emotion-grid > div:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    var(--bright-emerald);
+
+  box-shadow:
+    0 0 25px
+    rgba(53, 233, 139, 0.12);
+}
+
+.knight-facts span,
+.combat-grid span,
+.bond-grid span {
+  display: block;
+
+  font-size: 34px;
+
+  margin-bottom: 8px;
+}
+
+.knight-facts strong,
+.bond-grid strong,
+.emotion-grid strong {
+  display: block;
+
+  color: var(--bright-emerald);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 11px;
+
+  letter-spacing: 0.15em;
+}
+
+.knight-facts p,
+.combat-grid p,
+.bond-grid p,
+.emotion-grid span {
+  color: #aebbb4;
+
+  font-size: 16px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   BETRAYAL
+   ═══════════════════════════════════════════════ */
+
+.betrayal-section {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(120, 0, 0, 0.12),
+      transparent 45%
+    ),
+
+    #030404;
+}
+
+.betrayal-warning {
+  max-width: 700px;
+
+  margin:
+    50px auto 0;
+
+  padding: 30px;
+
+  border:
+    1px solid
+    rgba(53, 233, 139, 0.3);
+
+  background:
+    rgba(22, 184, 106, 0.04);
+
+  text-align: center;
+}
+
+.betrayal-warning span {
+  display: block;
+
+  color: var(--muted);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.3em;
+}
+
+.betrayal-warning strong {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--bright-emerald);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 24px;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   EMERALD REAPER
+   ═══════════════════════════════════════════════ */
+
+.reaper-section {
+  min-height: 85vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(53, 233, 139, 0.16),
+      transparent 45%
+    ),
+
+    #010302;
+}
+
+.reaper-content {
+  max-width: 900px;
+
+  margin:
+    0 auto;
+}
+
+.reaper-mark {
+  font-size: 65px;
+
+  margin-bottom: 20px;
+
+  filter:
+    drop-shadow(
+      0 0 25px
+      rgba(53, 233, 139, 0.75)
+    );
+}
+
+.legend-box {
+  max-width: 650px;
+
+  margin:
+    50px auto;
+
+  padding: 35px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    rgba(22, 184, 106, 0.05);
+
+  text-align: center;
+}
+
+.legend-box span {
+  display: block;
+
+  color: var(--muted);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  margin-top: 12px;
+}
+
+.legend-box strong {
+  display: block;
+
+  color: var(--bright-emerald);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 28px;
+
+  letter-spacing: 0.12em;
+
+  margin-bottom: 15px;
+}
+
+
+/* ═══════════════════════════════════════════════
+   EMOTION GRID
+   ═══════════════════════════════════════════════ */
+
+.emotion-grid {
+  grid-template-columns:
+    repeat(3, 1fr);
+}
+
+
+/* ═══════════════════════════════════════════════
+   COMBAT
+   ═══════════════════════════════════════════════ */
+
+.combat-section {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(53, 233, 139, 0.1),
+      transparent 48%
+    ),
+
+    #030604;
+}
+
+.combat-grid {
+  grid-template-columns:
+    repeat(4, 1fr);
+}
+
+.combat-grid h3 {
+  color: var(--white);
+
+  font-size: 18px;
+
+  margin:
+    10px 0;
+}
+
+
+/* ═══════════════════════════════════════════════
+   DRAGON / VAELITH
+   ═══════════════════════════════════════════════ */
+
+.dragon-section {
+  position: relative;
+
+  padding:
+    130px 7%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(22, 184, 106, 0.18),
+      transparent 50%
+    ),
+
+    #020504;
+
+  text-align: center;
+}
+
+.dragon-content {
+  max-width: 900px;
+
+  margin:
+    0 auto;
+}
+
+.dragon-content .lead {
+  color: var(--soft-emerald);
+
+  font-size: 25px;
+
+  font-style: italic;
+}
+
+.dragon-traits {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin:
+    45px auto;
+}
+
+.dragon-traits span {
+  padding:
+    10px 18px;
+
+  border:
+    1px solid
+    var(--line);
+
+  color: var(--bright-emerald);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   DRAGON BOND
+   ═══════════════════════════════════════════════ */
+
+.bond-grid {
+  grid-template-columns:
+    repeat(4, 1fr);
+}
+
+
+/* ═══════════════════════════════════════════════
+   BELIEFS
+   ═══════════════════════════════════════════════ */
+
+.belief-section {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(22, 184, 106, 0.12),
+      transparent 48%
+    ),
+
+    #020403;
+}
+
+.belief-list {
+  max-width: 700px;
+
+  margin:
+    50px auto;
+
+  text-align: center;
+}
+
+.belief-list p {
+  color: #c8d4ce;
+
+  font-size: 22px;
+
+  font-style: italic;
+
+  padding:
+    10px 0;
+
+  border-bottom:
+    1px solid
+    rgba(53, 233, 139, 0.1);
+}
+
+.final-belief {
+  max-width: 750px;
+
+  margin:
+    50px auto 0;
+
+  padding: 35px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    rgba(22, 184, 106, 0.05);
+}
+
+.final-belief span {
+  display: block;
+
+  color: var(--bright-emerald);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.3em;
+}
+
+.final-belief strong {
+  display: block;
+
+  margin-top: 15px;
+
+  color: var(--white);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 22px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   REPUTATION
+   ═══════════════════════════════════════════════ */
+
+.reputation-section {
+  min-height: 70vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.reputation-mark {
+  font-size: 60px;
+
+  margin-bottom: 20px;
+
+  filter:
+    drop-shadow(
+      0 0 20px
+      rgba(53, 233, 139, 0.6)
+    );
 }
 
 
@@ -400,281 +1205,30 @@ h3,
    ═══════════════════════════════════════════════ */
 
 blockquote {
-  margin: 55px auto 0;
   max-width: 800px;
-  padding: 30px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  color: var(--soft-emerald);
+
+  margin:
+    55px auto 0;
+
+  padding:
+    30px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  color:
+    var(--soft-emerald);
+
   font-size: 24px;
+
   font-style: italic;
-}
 
-
-/* ═══════════════════════════════════════════════
-   LANDSCAPE
-   ═══════════════════════════════════════════════ */
-
-.dark-heading {
   text-align: center;
-  margin-bottom: 55px;
-}
-
-.climate-grid {
-  max-width: 1100px;
-  margin: auto;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.climate-card {
-  background: rgba(255, 255, 255, 0.45);
-  border-color: rgba(22, 184, 106, 0.28);
-}
-
-.climate-card h3 {
-  color: #0c1b13;
-}
-
-.climate-card p {
-  color: #435249;
-}
-
-.climate-icon {
-  display: block;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-
-/* ═══════════════════════════════════════════════
-   PEOPLE
-   ═══════════════════════════════════════════════ */
-
-.people-grid {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 55px;
-}
-
-.people-card span {
-  display: block;
-  font-size: 35px;
-  margin-bottom: 10px;
-}
-
-.people-card p {
-  color: #aebbb4;
-}
-
-
-/* ═══════════════════════════════════════════════
-   SPECIAL DARK SECTIONS
-   ═══════════════════════════════════════════════ */
-
-.star-iron,
-.dragon-section,
-.watchers,
-.valkyrie,
-.mountain-law,
-.mountain-ending {
-  position: relative;
-  padding: 130px 7%;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(22, 184, 106, 0.13),
-      transparent 48%
-    ),
-    #020504;
-  text-align: center;
-}
-
-.star-content,
-.dragon-content,
-.watchers-content,
-.valkyrie-content,
-.law-content,
-.ending-content {
-  max-width: 900px;
-  margin: auto;
-}
-
-.star-symbol,
-.watcher-eye,
-.owl-mark,
-.final-owl {
-  display: block;
-  font-size: 55px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 18px rgba(53, 233, 139, 0.45));
-}
-
-.star-content h2,
-.dragon-content h2,
-.watchers-content h2,
-.valkyrie-content h2,
-.law-content h2,
-.ending-content h2 {
-  color: var(--white);
-  font-size: clamp(32px, 5vw, 60px);
-  line-height: 1.1;
-}
-
-.subtitle {
-  color: var(--muted);
-  font-style: italic;
-  font-size: 21px;
-}
-
-
-/* ═══════════════════════════════════════════════
-   WARNING BOXES
-   ═══════════════════════════════════════════════ */
-
-.warning,
-.dragon-warning,
-.ancient-warning {
-  margin: 45px auto;
-  padding: 25px;
-  max-width: 750px;
-  border: 1px solid rgba(53, 233, 139, 0.35);
-  background: rgba(22, 184, 106, 0.06);
-  color: var(--soft-emerald);
-}
-
-.warning p,
-.dragon-warning p {
-  margin: 8px 0 0;
-}
-
-.final-warning,
-.final-legend {
-  color: var(--soft-emerald);
-  font-size: 23px;
-  font-style: italic;
-}
-
-
-/* ═══════════════════════════════════════════════
-   WATCHER FACTS
-   ═══════════════════════════════════════════════ */
-
-.watcher-facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 50px 0;
-}
-
-.watcher-facts div {
-  padding: 25px 15px;
-  border: 1px solid var(--line);
-  background: rgba(22, 184, 106, 0.05);
-}
-
-.watcher-facts strong,
-.watcher-facts span {
-  display: block;
-}
-
-.watcher-facts strong {
-  color: var(--bright-emerald);
-  font-family: "Cinzel", serif;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-}
-
-.watcher-facts span {
-  color: var(--silver);
-  margin-top: 8px;
-}
-
-
-/* ═══════════════════════════════════════════════
-   ASHEN DEEP / HOLLOW GRID
-   ═══════════════════════════════════════════════ */
-
-.hollow-grid {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 50px;
-}
-
-.hollow-grid > div {
-  background: rgba(255, 255, 255, 0.35);
-  border-color: rgba(22, 184, 106, 0.3);
-}
-
-.hollow-grid h3 {
-  color: #102019;
-}
-
-.hollow-grid p {
-  color: #4a5951;
-}
-
-.ancient-warning {
-  color: #137d4d;
-  border-color: rgba(22, 184, 106, 0.35);
-}
-
-
-/* ═══════════════════════════════════════════════
-   LEGEND WORDS
-   ═══════════════════════════════════════════════ */
-
-.legend-words {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin: 40px 0;
-}
-
-.legend-words span {
-  padding: 10px 18px;
-  border: 1px solid var(--line);
-  color: var(--bright-emerald);
-  font-family: "Cinzel", serif;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-}
-
-
-/* ═══════════════════════════════════════════════
-   LAW
-   ═══════════════════════════════════════════════ */
-
-.laws {
-  max-width: 750px;
-  margin: 45px auto;
-  text-align: left;
-}
-
-.laws p {
-  padding: 15px 20px;
-  border-bottom: 1px solid rgba(53, 233, 139, 0.12);
-  color: #c7d3cd;
-}
-
-.final-law {
-  margin-top: 55px;
-  padding: 35px;
-  border: 1px solid var(--line);
-  background: rgba(22, 184, 106, 0.05);
-}
-
-.final-law span {
-  display: block;
-  color: var(--bright-emerald);
-  font-family: "Cinzel", serif;
-  font-size: 10px;
-  letter-spacing: 0.3em;
-}
-
-.final-law strong {
-  display: block;
-  margin-top: 12px;
-  color: var(--white);
-  font-size: 25px;
 }
 
 
@@ -682,28 +1236,80 @@ blockquote {
    ENDING
    ═══════════════════════════════════════════════ */
 
-.mountain-ending {
-  min-height: 80vh;
+.reaper-ending {
+  min-height: 90vh;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(53, 233, 139, 0.16),
+      transparent 45%
+    ),
+
+    #010201;
+}
+
+.ending-content {
+  max-width: 850px;
+
+  margin:
+    0 auto;
+}
+
+.final-reaper {
+  font-size: 35px;
+
+  color: var(--bright-emerald);
+
+  margin-bottom: 35px;
+
+  filter:
+    drop-shadow(
+      0 0 18px
+      rgba(53, 233, 139, 0.6)
+    );
 }
 
 .ending-content p {
   color: var(--muted);
+
   font-size: 22px;
+
+  text-align: center;
+}
+
+.ending-content h2 {
+  color: var(--white);
+
+  font-size:
+    clamp(34px, 5vw, 60px);
+
+  line-height: 1.2;
 }
 
 .ending-content h3 {
   color: var(--bright-emerald);
+
   font-size: 30px;
-  text-shadow: 0 0 20px rgba(53, 233, 139, 0.4);
+
+  text-shadow:
+    0 0 20px
+    rgba(53, 233, 139, 0.4);
 }
 
 .final-symbol {
   margin-top: 35px;
+
   color: var(--bright-emerald);
+
   font-size: 30px;
+
   letter-spacing: 0.25em;
 }
 
@@ -713,390 +1319,61 @@ blockquote {
    ═══════════════════════════════════════════════ */
 
 footer {
-  padding: 70px 20px;
+  padding:
+    70px 20px;
+
   text-align: center;
-  background: #010201;
-  border-top: 1px solid rgba(53, 233, 139, 0.2);
+
+  background:
+    #010201;
+
+  border-top:
+    1px solid
+    rgba(53, 233, 139, 0.2);
 }
 
 footer div {
   color: var(--bright-emerald);
+
   font-size: 25px;
 }
 
 footer h2 {
   color: var(--white);
+
   margin-top: 12px;
 }
 
 footer p,
 footer small {
   color: var(--muted);
+
   font-family: "Cinzel", serif;
+
   font-size: 9px;
+
   letter-spacing: 0.25em;
 }
 
 
 /* ═══════════════════════════════════════════════
-   MOBILE
+   UNIVERSAL CENTERING
    ═══════════════════════════════════════════════ */
 
-@media (max-width: 850px) {
-
-  .site-header {
-    padding: 16px 5%;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .section-frame {
-    padding: 30px 22px;
-  }
-
-  .ruin-grid,
-  .climate-grid,
-  .people-grid,
-  .hollow-grid,
-  .watcher-facts {
-    grid-template-columns: 1fr;
-  }
-
-  .paper-section,
-  .dark-lore,
-  .star-iron,
-  .dragon-section,
-  .watchers,
-  .valkyrie,
-  .mountain-law {
-    padding: 80px 5%;
-  }
-
-  body {
-    font-size: 18px;
-  }
-
-  .hero-content h1 {
-    font-size: 52px;
-  }
-
-  .motto {
-    font-size: 19px;
-  }
-}
-
-
-/* ═══════════════════════════════════════════════
-   EXTRA EMERALD GLOW
-   ═══════════════════════════════════════════════ */
-
-h1,
-h2 {
-  text-shadow: 0 0 25px rgba(53, 233, 139, 0.08);
-}
-
-strong {
-  color: var(--bright-emerald);
-}
-
-section {
-  scroll-margin-top: 80px;
-}
-
-/* ═══════════════════════════════════════
-   CENTER EVERYTHING
-   ═══════════════════════════════════════ */
-
-body {
-  text-align: center;
-}
-
-/* Header */
-.site-header {
-  justify-content: center;
-  text-align: center;
-}
-
-.brand {
-  text-align: center;
-}
-
-.nav {
-  justify-content: center;
-  text-align: center;
-}
-
-/* Main sections */
 .hero-content,
 .section-frame,
 .lore-container,
-.star-content,
-.dragon-content,
-.watchers-content,
-.broken-content,
-.valkyrie-content,
-.law-content,
-.ending-content {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-/* Headings */
-h1,
-h2,
-h3,
-p,
-.eyebrow,
-.motto,
-.subtitle,
-.location,
-.lead,
-.emphasis,
-.short-line,
-.final-warning,
-.final-legend,
-.mystery {
-  text-align: center;
-}
-
-/* Decorative rules */
-.gold-rule {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Cards */
-.ruin-grid,
-.climate-grid,
-.people-grid,
-.hollow-grid,
-.magic-list,
-.watcher-facts,
-.laws,
-.legend-words {
-  justify-content: center;
-  text-align: center;
-}
-
-/* Individual cards */
-.ruin-card,
-.climate-card,
-.people-card,
-.hollow-grid > div,
-.watcher-facts > div {
-  text-align: center;
-}
-
-/* Icons / symbols */
-.owl-symbol,
-.star-symbol,
-.watcher-eye,
-.owl-mark,
-.final-owl,
-.final-symbol,
-.climate-icon {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Blockquotes */
-blockquote {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Warning boxes */
-.warning,
-.dragon-warning,
-.ancient-warning,
-.survivor,
-.final-law {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-}
-
-footer div,
-footer h2,
-footer p,
-footer small {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Scroll text */
-.scroll-hint {
-  text-align: center;
-}
-
-/* Lists / flex elements */
-.legend-words,
-.magic-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Make sure content doesn't hug the sides */
-section {
-  text-align: center;
-}
-
-section > div {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ═══════════════════════════════════════
-   LOWER PAGE CONTENT
-   ═══════════════════════════════════════ */
-
-main {
-  padding-top: 80px;
-}
-
-/* Keep the hero content comfortably below the top */
-.reaper-hero {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-/* Give the hero text more breathing room */
-.reaper-hero .hero-content {
-  padding-top: 40px;
-}
-
-/* Make sure headings aren't clipped */
-h1,
-h2,
-h3 {
-  line-height: 1.25;
-}
-
-/* Prevent text from being cut off */
-section {
-  overflow: visible;
-}
-
-/* Give sections breathing room */
-.paper-section,
-.dark-lore,
-.star-iron,
-.dragon-section,
-.watchers,
-.broken-peak,
-.valkyrie,
-.mountain-ending {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
-/* ═══════════════════════════════════════
-   EMERALD REAPER — CENTER EVERYTHING
-═══════════════════════════════════════ */
-
-.reaper-hero,
-.reaper-hero .hero-content,
-.paper-section,
-.section-frame,
-.dark-lore,
-.lore-container,
-.knight-section,
 .knight-content,
-.betrayal-section,
 .betrayal-content,
-.reaper-section,
 .reaper-content,
-.combat-section,
 .combat-content,
-.dragon-section,
 .dragon-content,
-.bond-section,
 .bond-content,
-.belief-section,
 .belief-content,
-.reputation-section,
 .reputation-content,
-.reaper-ending,
 .ending-content {
   text-align: center;
 }
-
-
-/* ═══════════════════════════════════════
-   CENTER HERO
-═══════════════════════════════════════ */
-
-.reaper-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reaper-hero .hero-content {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.reaper-symbol,
-.reaper-mark,
-.reputation-mark,
-.final-reaper {
-  display: block;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* ═══════════════════════════════════════
-   CENTER HEADINGS
-═══════════════════════════════════════ */
-
-.hero-content h1,
-.section-frame h2,
-.lore-container h2,
-.knight-content h2,
-.betrayal-content h2,
-.reaper-content h2,
-.combat-content h2,
-.dragon-content h2,
-.bond-content h2,
-.belief-content h2,
-.reputation-content h2,
-.ending-content h2,
-.ending-content h3 {
-  text-align: center;
-}
-
-
-/* ═══════════════════════════════════════
-   CENTER DIVIDERS
-═══════════════════════════════════════ */
-
-.gold-rule {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* ═══════════════════════════════════════
-   CENTER PARAGRAPHS
-═══════════════════════════════════════ */
 
 .hero-content p,
 .section-frame p,
@@ -1115,58 +1392,110 @@ section {
 }
 
 
-/* ═══════════════════════════════════════
-   CENTER GRIDS
-═══════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   MOBILE
+   ═══════════════════════════════════════════════ */
 
-.profile-grid,
-.appearance-grid,
-.knight-facts,
-.trait-grid,
-.emotion-grid,
-.combat-grid,
-.dragon-traits,
-.bond-grid,
-.belief-list {
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width: 850px) {
+
+  .site-header {
+    padding:
+      16px 5%;
+  }
+
+  .brand-name {
+    font-size: 17px;
+
+    letter-spacing: 0.15em;
+  }
+
+  main {
+    padding-top: 68px;
+  }
+
+  .section-frame {
+    padding:
+      35px 22px;
+  }
+
+  .profile-grid,
+  .appearance-grid,
+  .knight-facts,
+  .trait-grid,
+  .combat-grid,
+  .bond-grid,
+  .emotion-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .reaper-hero,
+  .paper-section,
+  .dark-lore,
+  .knight-section,
+  .betrayal-section,
+  .reaper-section,
+  .combat-section,
+  .dragon-section,
+  .bond-section,
+  .belief-section,
+  .reputation-section,
+  .reaper-ending {
+    padding:
+      80px 5%;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .motto {
+    font-size: 19px;
+  }
+
+  .section-frame h2,
+  .knight-content h2,
+  .betrayal-content h2,
+  .reaper-content h2,
+  .combat-content h2,
+  .bond-content h2,
+  .belief-content h2,
+  .reputation-content h2 {
+    font-size: 34px;
+  }
+
+  .lead {
+    font-size: 21px;
+  }
+
+  .emphasis {
+    font-size: 21px;
+  }
+
+  blockquote {
+    font-size: 20px;
+
+    padding:
+      22px 15px;
+  }
 }
 
 
-/* ═══════════════════════════════════════
-   CENTER QUOTES
-═══════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   FINAL EMERALD GLOW
+   ═══════════════════════════════════════════════ */
 
-blockquote {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+h1,
+h2 {
+  text-shadow:
+    0 0 25px
+    rgba(53, 233, 139, 0.08);
 }
 
-
-/* ═══════════════════════════════════════
-   CENTER WARNING / SPECIAL BOXES
-═══════════════════════════════════════ */
-
-.betrayal-warning,
-.legend-box,
-.final-belief {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-
-/* ═══════════════════════════════════════
-   CENTER FOOTER
-═══════════════════════════════════════ */
-
-footer {
-  text-align: center;
-}
-
-footer h2,
-footer p,
-footer small {
-  text-align: center;
+strong {
+  color: var(--bright-emerald);
 }
