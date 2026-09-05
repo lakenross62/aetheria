@@ -1,14 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
-
 /* =========================================================
-   EIRWEN VALE — THE IRON VALKYRIE
-   COMPLETE STANDALONE STYLESHEET
+   IRON VALKYRIE — EIRWEN VALE
+   COMPLETE CSS
    ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+:root {
+  --black: #08090a;
+  --deep-black: #030405;
+  --paper: #e7e0d1;
+  --paper-dark: #d5cbb8;
+  --white: #eee9df;
+  --text: #d2ccc0;
+  --dark-text: #282722;
+  --gold: #b99a5b;
+  --gold-light: #dbc184;
+  --muted: #8b887f;
+  --line: rgba(185,154,91,0.45);
+}
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -17,12 +31,20 @@ html {
 }
 
 body {
-  background: #080a0b !important;
-  color: #ddd6c8 !important;
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: 18px;
+  background: var(--black);
+  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
   line-height: 1.8;
   overflow-x: hidden;
+}
+
+body,
+section,
+header,
+footer,
+div {
+  max-width: 100%;
 }
 
 a {
@@ -36,24 +58,25 @@ a {
    ========================================================= */
 
 .site-header {
-  position: fixed !important;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  min-height: 75px;
+  min-height: 76px;
   z-index: 9999;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 15px 5%;
+  padding: 16px 5%;
 
-  background: rgba(5, 7, 8, 0.97) !important;
-  border-bottom: 1px solid rgba(190, 160, 95, 0.45);
+  background: rgba(3,4,5,0.96);
+  border-bottom: 1px solid var(--line);
 
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .brand {
@@ -63,85 +86,72 @@ a {
 }
 
 .brand-name {
-  color: #d8bd7b !important;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: 21px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 5px;
+  color: var(--gold-light);
 }
 
 .brand-subtitle {
-  color: #918c81 !important;
-  font-size: 10px;
-  letter-spacing: 3px;
   margin-top: 5px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #8e897e;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 24px;
 }
 
 .nav a {
-  color: #bcb5a8 !important;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  color: #c7c0b3;
+  transition: all .3s ease;
 }
 
 .nav a:hover {
-  color: #dfc786 !important;
-  text-shadow: 0 0 12px rgba(215, 189, 124, 0.4);
+  color: var(--gold-light);
 }
 
 .menu-toggle {
   display: none;
   border: 0;
-  background: transparent !important;
-  color: #d8bd7b !important;
+  background: transparent;
+  color: var(--gold-light);
   font-size: 27px;
   cursor: pointer;
 }
 
 
 /* =========================================================
-   GLOBAL SECTIONS
+   GENERAL DARK SECTIONS
    ========================================================= */
 
 .hero,
-.character-section,
 .dark-section,
+.character-section,
 .timeline-section,
 .final-section {
   background:
     radial-gradient(
       circle at 50% 20%,
-      rgba(177, 145, 78, 0.12),
-      transparent 35%
+      rgba(185,154,91,.10),
+      transparent 38%
     ),
     linear-gradient(
       180deg,
-      #080a0b 0%,
-      #0d1011 50%,
-      #07090a 100%
-    ) !important;
+      #090b0c 0%,
+      #050607 100%
+    );
 
-  color: #d9d2c5 !important;
-}
-
-.paper-section {
-  background:
-    radial-gradient(
-      circle at 15% 15%,
-      rgba(120, 100, 70, 0.08),
-      transparent 35%
-    ),
-    #e8e1d2 !important;
-
-  color: #292823 !important;
+  color: var(--text);
 }
 
 
@@ -150,73 +160,81 @@ a {
    ========================================================= */
 
 .hero {
-  position: relative;
   min-height: 100vh;
+  width: 100%;
+
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 150px 25px 110px;
-
   text-align: center;
 
-  border-bottom: 1px solid rgba(185, 154, 91, 0.25);
+  padding: 150px 25px 110px;
 }
 
 .hero-content {
   width: 100%;
-  max-width: 1000px;
+  max-width: 950px;
   margin: auto;
 }
 
 .eyebrow {
-  color: #d7bd7c !important;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
-  font-weight: bold;
+  margin-bottom: 22px;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 25px;
-}
 
-.eyebrow.dark {
-  color: #806832 !important;
+  color: var(--gold-light);
 }
 
 .hero h1 {
-  color: #eee8db !important;
-  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+
+  font-family: "Cinzel", Georgia, serif;
   font-size: clamp(55px, 10vw, 125px);
-  font-weight: normal;
-  line-height: 0.95;
-  letter-spacing: 8px;
+  font-weight: 600;
+  line-height: .94;
+  letter-spacing: 7px;
+
+  color: var(--white);
+
   text-shadow:
-    0 0 25px rgba(215, 189, 124, 0.15),
-    0 5px 25px rgba(0, 0, 0, 0.7);
+    0 0 25px rgba(185,154,91,.12),
+    0 0 70px rgba(185,154,91,.08);
 }
 
 .hero-name {
-  color: #d7bd7c !important;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 19px;
-  font-weight: bold;
-  letter-spacing: 8px;
   margin-top: 30px;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 19px;
+  letter-spacing: 8px;
+
+  color: var(--gold-light);
 }
 
 .gold-rule {
-  color: #d7bd7c !important;
-  font-size: 23px;
-  letter-spacing: 10px;
   margin: 28px auto;
+
+  font-family: Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 10px;
+
+  color: var(--gold-light);
 }
 
 .intro {
-  color: #c4bdae !important;
-  font-size: 23px;
-  line-height: 1.7;
   margin-bottom: 35px;
+
+  font-size: 23px;
+  line-height: 1.6;
+
+  color: #c2bbae;
 }
 
 .gold-button {
@@ -224,24 +242,21 @@ a {
 
   padding: 13px 30px;
 
-  border: 1px solid #b99a5b;
+  border: 1px solid var(--gold);
 
-  color: #d7bd7c !important;
-  background: transparent !important;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
-  font-weight: bold;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  transition: all 0.3s ease;
+  color: var(--gold-light);
+
+  transition: all .3s ease;
 }
 
 .gold-button:hover {
-  background: #b99a5b !important;
-  color: #080a0b !important;
-  box-shadow: 0 0 25px rgba(185, 154, 91, 0.3);
+  background: var(--gold);
+  color: #050607;
 }
 
 .scroll-hint {
@@ -250,23 +265,34 @@ a {
   left: 0;
   right: 0;
 
-  color: #77746c !important;
+  text-align: center;
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 10px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 9px;
   letter-spacing: 3px;
+
+  color: #67645e;
 }
 
 
 /* =========================================================
-   SECTION LAYOUT
+   PAPER SECTIONS
    ========================================================= */
 
-.paper-section,
-.dark-section,
-.character-section,
-.timeline-section {
+.paper-section {
+  width: 100%;
+
   padding: 110px 7%;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(90,75,50,.08),
+      transparent 30%
+    ),
+    var(--paper);
+
+  color: var(--dark-text);
 }
 
 .section-frame {
@@ -275,25 +301,18 @@ a {
   margin: auto;
 }
 
-.section-heading {
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto 60px;
-  text-align: center;
+.eyebrow.dark {
+  color: #806832;
 }
 
-.section-heading h2,
-.section-frame h2 {
-  color: inherit;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(35px, 5vw, 62px);
-  font-weight: normal;
-  line-height: 1.15;
+.section-frame h2,
+.section-heading h2 {
   margin-bottom: 25px;
-}
 
-.section-heading p {
-  color: #aaa398 !important;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(34px, 5vw, 62px);
+  font-weight: 500;
+  line-height: 1.15;
 }
 
 .section-frame p {
@@ -306,33 +325,46 @@ a {
 }
 
 .dark-rule {
-  color: #806832 !important;
+  color: #806832;
 }
 
 .quote {
-  max-width: 800px;
+  max-width: 850px;
   margin: 45px auto 10px;
-  padding: 30px 35px;
+  padding: 28px 30px;
 
-  border-top: 1px solid rgba(185, 154, 91, 0.45);
-  border-bottom: 1px solid rgba(185, 154, 91, 0.45);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 
-  color: #806832 !important;
+  text-align: center;
 
   font-size: 24px;
   font-style: italic;
-  line-height: 1.6;
 
-  text-align: center;
+  color: #806832;
 }
 
 
 /* =========================================================
-   CHARACTER INFORMATION
+   CHARACTER SECTION
    ========================================================= */
 
 .character-section {
+  width: 100%;
+  padding: 110px 7%;
   text-align: center;
+}
+
+.section-heading {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.section-heading p:not(.eyebrow) {
+  color: #aaa398;
 }
 
 .info-grid {
@@ -346,42 +378,39 @@ a {
 }
 
 .info-card {
-  padding: 30px 20px;
+  min-height: 115px;
 
-  border: 1px solid rgba(185, 154, 91, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  background: rgba(255, 255, 255, 0.025) !important;
+  padding: 25px 18px;
 
-  transition: all 0.3s ease;
-}
+  border: 1px solid rgba(185,154,91,.3);
 
-.info-card:hover {
-  border-color: rgba(215, 189, 124, 0.7);
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255,255,255,.025);
 }
 
 .info-card span {
   display: block;
 
-  color: #b99a5b !important;
+  margin-bottom: 7px;
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 10px;
-  font-weight: bold;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 9px;
   letter-spacing: 3px;
 
-  margin-bottom: 8px;
+  color: var(--gold);
 }
 
 .info-card strong {
   display: block;
 
-  color: #ddd6c9 !important;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  font-weight: normal;
+  color: #ddd6c9;
 }
 
 
@@ -390,6 +419,8 @@ a {
    ========================================================= */
 
 .heritage-grid {
+  width: 100%;
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -400,36 +431,27 @@ a {
 .heritage-card {
   padding: 40px;
 
-  border: 1px solid rgba(80, 70, 50, 0.25);
-
-  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(80,70,50,.25);
 
   text-align: center;
-
-  transition: all 0.3s ease;
-}
-
-.heritage-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(128, 104, 50, 0.6);
 }
 
 .heritage-icon {
   display: block;
-  font-size: 42px;
+
   margin-bottom: 15px;
+
+  font-size: 42px;
 }
 
 .heritage-card h3,
-.lore-columns h3,
 .personality-grid h3 {
-  color: #806832 !important;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 20px;
-  font-weight: bold;
-
   margin-bottom: 12px;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 20px;
+
+  color: #806832;
 }
 
 .heritage-ending {
@@ -442,6 +464,11 @@ a {
 /* =========================================================
    APPEARANCE
    ========================================================= */
+
+.dark-section {
+  width: 100%;
+  padding: 110px 7%;
+}
 
 .lore-columns {
   width: 100%;
@@ -456,15 +483,20 @@ a {
 .lore-columns > div {
   padding-top: 25px;
 
-  border-top: 1px solid rgba(185, 154, 91, 0.45);
+  border-top: 1px solid var(--line);
 }
 
 .lore-columns h3 {
-  color: #d7bd7c !important;
+  margin-bottom: 10px;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 20px;
+
+  color: var(--gold-light);
 }
 
 .lore-columns p {
-  color: #aaa398 !important;
+  color: #aaa398;
 }
 
 
@@ -483,43 +515,44 @@ a {
 }
 
 .ability-card {
-  padding: 28px 18px;
-
-  border: 1px solid rgba(185, 154, 91, 0.25);
-
-  background: rgba(255, 255, 255, 0.025) !important;
+  padding: 28px 16px;
 
   text-align: center;
 
-  transition: all 0.3s ease;
+  border: 1px solid rgba(185,154,91,.25);
+
+  background: rgba(255,255,255,.025);
+
+  transition: transform .3s ease, border-color .3s ease;
 }
 
 .ability-card:hover {
-  border-color: rgba(215, 189, 124, 0.65);
   transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(185,154,91,.65);
 }
 
 .ability-card span {
   display: block;
-  font-size: 30px;
+
   margin-bottom: 10px;
+
+  font-size: 30px;
 }
 
 .ability-card h3 {
-  color: #d7bd7c !important;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  font-weight: bold;
-
   margin-bottom: 10px;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 14px;
+
+  color: var(--gold-light);
 }
 
 .ability-card p {
-  color: #aaa398 !important;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
+
+  color: #aaa398;
 }
 
 
@@ -538,11 +571,11 @@ a {
 .weapon-symbol {
   display: block;
 
-  color: #806832 !important;
+  margin-bottom: 20px;
 
   font-size: 55px;
 
-  margin-bottom: 20px;
+  color: #806832;
 }
 
 
@@ -563,23 +596,25 @@ a {
 
   position: absolute;
 
-  left: 31px;
   top: 0;
   bottom: 0;
+  left: 31px;
 
   width: 1px;
 
-  background: rgba(185, 154, 91, 0.45);
+  background: var(--line);
 }
 
 .timeline-item {
-  position: relative;
+  width: 100%;
 
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 35px;
 
   margin-bottom: 55px;
+
+  position: relative;
 }
 
 .timeline-item > span {
@@ -590,29 +625,29 @@ a {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #b99a5b;
+  border: 1px solid var(--gold);
   border-radius: 50%;
 
-  background: #080a0b !important;
+  background: #08090a;
 
-  color: #d7bd7c !important;
+  font-family: "Cinzel", Georgia, serif;
 
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--gold-light);
 
   z-index: 2;
 }
 
 .timeline-item h3 {
-  color: #d7bd7c !important;
+  margin-bottom: 8px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: 23px;
 
-  margin-bottom: 8px;
+  color: var(--gold-light);
 }
 
 .timeline-item p {
-  color: #aaa398 !important;
+  color: #aaa398;
 }
 
 
@@ -627,34 +662,33 @@ a {
 
   padding: 55px 45px;
 
-  border: 1px solid rgba(185, 154, 91, 0.45);
-
   text-align: center;
 
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+
+  background: rgba(255,255,255,.015);
 }
 
 .veyra-symbol {
-  font-size: 70px;
   margin-bottom: 10px;
+  font-size: 70px;
 }
 
 .veyra-box h3 {
-  color: #d7bd7c !important;
-
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: 38px;
-  font-weight: normal;
+
+  color: var(--gold-light);
 }
 
 .veyra-subtitle {
-  color: #88847b !important;
+  margin-bottom: 30px;
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 11px;
   letter-spacing: 2px;
 
-  margin-bottom: 30px;
+  color: #88847b;
 }
 
 
@@ -663,6 +697,8 @@ a {
    ========================================================= */
 
 .personality-grid {
+  width: 100%;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -673,7 +709,7 @@ a {
 .personality-grid > div {
   padding-top: 25px;
 
-  border-top: 1px solid rgba(80, 70, 50, 0.3);
+  border-top: 1px solid rgba(80,70,50,.3);
 }
 
 
@@ -682,13 +718,14 @@ a {
    ========================================================= */
 
 .final-section {
+  width: 100%;
   min-height: 80vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 100px 25px;
+  padding: 110px 25px;
 
   text-align: center;
 }
@@ -699,32 +736,31 @@ a {
 }
 
 .final-content h2 {
-  color: #eee8db !important;
-
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: clamp(45px, 8vw, 90px);
-  font-weight: normal;
+  line-height: 1;
 
   letter-spacing: 5px;
+
+  color: var(--white);
 }
 
 .final-content p {
-  color: #aaa398 !important;
+  margin-bottom: 18px;
 
   font-size: 22px;
 
-  margin-bottom: 18px;
+  color: #aaa398;
 }
 
 .final-content .final-line {
-  color: #d7bd7c !important;
+  margin-top: 45px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: 25px;
-
   letter-spacing: 4px;
 
-  margin-top: 45px;
+  color: var(--gold-light);
 }
 
 
@@ -733,51 +769,50 @@ a {
    ========================================================= */
 
 footer {
+  width: 100%;
+
   padding: 65px 20px;
 
-  background: #050607 !important;
-
-  border-top: 1px solid rgba(185, 154, 91, 0.45);
-
   text-align: center;
+
+  background: var(--deep-black);
+
+  border-top: 1px solid var(--line);
 }
 
 .footer-ornament {
-  color: #b99a5b !important;
+  margin-bottom: 15px;
 
   font-size: 25px;
 
-  margin-bottom: 15px;
+  color: var(--gold);
 }
 
 footer h2 {
-  color: #d7bd7c !important;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-weight: normal;
-
+  font-family: "Cinzel", Georgia, serif;
   letter-spacing: 6px;
+
+  color: var(--gold-light);
 }
 
 footer p {
-  color: #77746c !important;
+  margin-top: 5px;
 
   font-size: 13px;
-
   letter-spacing: 3px;
+
+  color: #77746c;
 }
 
 footer small {
   display: block;
 
-  color: #5f5d57 !important;
+  margin-top: 20px;
 
-  font-size: 11px;
-
+  font-size: 10px;
   letter-spacing: 3px;
 
-  margin-top: 20px;
+  color: #5f5d57;
 }
 
 
@@ -785,21 +820,19 @@ footer small {
    TABLET
    ========================================================= */
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
 
   .nav {
-    gap: 15px;
+    display: none;
   }
 
-  .nav a {
-    font-size: 10px;
+  .menu-toggle {
+    display: block;
   }
 
-  .info-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lore-columns {
+  .info-grid,
+  .lore-columns,
+  .personality-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -807,9 +840,6 @@ footer small {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .personality-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 
@@ -817,15 +847,14 @@ footer small {
    MOBILE
    ========================================================= */
 
-@media screen and (max-width: 700px) {
+@media (max-width: 600px) {
 
   body {
     font-size: 17px;
   }
 
   .site-header {
-    min-height: 65px;
-    padding: 13px 5%;
+    padding: 14px 5%;
   }
 
   .brand-name {
@@ -834,30 +863,22 @@ footer small {
   }
 
   .brand-subtitle {
-    font-size: 8px;
+    font-size: 7px;
     letter-spacing: 2px;
   }
 
-  .nav {
-    display: none !important;
-  }
-
-  .menu-toggle {
-    display: block !important;
-  }
-
   .hero {
-    padding: 120px 20px 90px;
+    padding: 130px 18px 100px;
   }
 
   .hero h1 {
-    font-size: 50px;
-    letter-spacing: 4px;
+    font-size: 48px;
+    letter-spacing: 3px;
   }
 
   .hero-name {
-    font-size: 15px;
-    letter-spacing: 5px;
+    font-size: 14px;
+    letter-spacing: 4px;
   }
 
   .intro {
@@ -873,7 +894,7 @@ footer small {
 
   .section-frame h2,
   .section-heading h2 {
-    font-size: 35px;
+    font-size: 34px;
   }
 
   .section-frame .lead {
@@ -889,15 +910,6 @@ footer small {
 
   .ability-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .ability-card {
-    padding: 22px 12px;
-  }
-
-  .ability-card p {
-    font-size: 15px;
   }
 
   .timeline-item {
@@ -912,7 +924,7 @@ footer small {
   .timeline-item > span {
     width: 48px;
     height: 48px;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .veyra-box {
@@ -925,36 +937,7 @@ footer small {
   }
 
   .final-section {
-    padding: 80px 20px;
+    padding: 90px 20px;
   }
 
-  .final-content p {
-    font-size: 19px;
-  }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media screen and (max-width: 420px) {
-
-  .hero h1 {
-    font-size: 42px;
-    letter-spacing: 3px;
-  }
-
-  .ability-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gold-rule {
-    letter-spacing: 6px;
-  }
-
-  .section-frame h2,
-  .section-heading h2 {
-    font-size: 30px;
-  }
 }
