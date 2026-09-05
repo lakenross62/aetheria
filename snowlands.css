@@ -1200,4 +1200,139 @@ footer small {
     gap: 5px;
   }
 
+} 
+
+/* ═══════════════════════════════
+   CENTER EVERYTHING
+═══════════════════════════════ */
+
+body {
+  text-align: center;
+}
+
+/* Main containers */
+.hero-content,
+.section-frame,
+.lore-container,
+.aurora-content,
+.frostwood-content,
+.spirit-content,
+.silver-content,
+.law-content,
+.ending-content,
+.magic-content,
+.dragon-content,
+.deep-content,
+.heart-content,
+.aurora-content,
+.climate-grid,
+.region-grid,
+.people-grid,
+.creature-grid,
+.ruin-grid,
+.magic-list {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Headings and text */
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+/* Paper sections */
+.paper-section .section-frame {
+  text-align: center;
+}
+
+/* Cards */
+.region-card,
+.people-card,
+.creature-card,
+.climate-card,
+.ruin-card {
+  text-align: center;
+}
+
+/* Grids */
+.region-grid,
+.people-grid,
+.creature-grid,
+.climate-grid,
+.ruin-grid {
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* Card contents */
+.region-card > *,
+.people-card > *,
+.creature-card > *,
+.climate-card > *,
+.ruin-card > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Lists */
+.magic-list {
+  justify-items: center;
+}
+
+.magic-list div {
+  text-align: center;
+  width: 100%;
+}
+
+/* Header */
+.site-header {
+  justify-content: center;
+}
+
+.brand {
+  text-align: center;
+}
+
+.nav {
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+}
+
+/* Keep the hero perfectly centered */
+.snow-hero {
+  text-align: center;
+}
+
+.hero-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .section-frame {
+    width: 100%;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .region-grid,
+  .people-grid,
+  .creature-grid,
+  .climate-grid,
+  .ruin-grid,
+  .magic-list {
+    justify-items: center;
+  }
+
 }
