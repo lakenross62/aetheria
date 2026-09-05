@@ -1,43 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
-:root {
-  --black: #090b0c;
-  --deep-black: #040506;
-  --paper: #e8e1d2;
-  --paper-dark: #d8cfbc;
-  --text: #d9d2c3;
-  --dark-text: #292823;
-  --gold: #b99a5b;
-  --gold-light: #d7bd7c;
-  --gray: #77746c;
-  --line: rgba(185,154,91,0.45);
-}
-
-/* RESET */
+/* =========================================================
+   EIRWEN VALE — THE IRON VALKYRIE
+   COMPLETE STANDALONE STYLESHEET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  margin: 0;
-  padding: 0;
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: #090b0c !important;
-  color: #d9d2c3;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 19px;
+  background: #080a0b !important;
+  color: #ddd6c8 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 18px;
   line-height: 1.8;
-}
-
-body,
-body * {
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 a {
@@ -46,10 +31,12 @@ a {
 }
 
 
-/* HEADER */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .site-header {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
@@ -61,13 +48,12 @@ a {
   align-items: center;
   justify-content: space-between;
 
-  padding: 18px 6%;
+  padding: 15px 5%;
 
-  background: rgba(4,5,6,0.96);
-  border-bottom: 1px solid rgba(185,154,91,0.45);
+  background: rgba(5, 7, 8, 0.97) !important;
+  border-bottom: 1px solid rgba(190, 160, 95, 0.45);
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 
 .brand {
@@ -77,19 +63,18 @@ a {
 }
 
 .brand-name {
-  font-family: "Cinzel", Georgia, serif;
-  font-size: 22px;
-  font-weight: 600;
+  color: #d8bd7b !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: bold;
   letter-spacing: 5px;
-  color: #d7bd7c;
 }
 
 .brand-subtitle {
-  margin-top: 5px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 11px;
+  color: #918c81 !important;
+  font-size: 10px;
   letter-spacing: 3px;
-  color: #aaa398;
+  margin-top: 5px;
 }
 
 .nav {
@@ -99,137 +84,139 @@ a {
 }
 
 .nav a {
-  font-family: "Cinzel", Georgia, serif;
-  font-size: 11px;
+  color: #bcb5a8 !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #d9d2c3;
   transition: all 0.3s ease;
 }
 
 .nav a:hover {
-  color: #d7bd7c;
+  color: #dfc786 !important;
+  text-shadow: 0 0 12px rgba(215, 189, 124, 0.4);
 }
 
 .menu-toggle {
   display: none;
   border: 0;
-  outline: 0;
-  background: transparent;
-  color: #d7bd7c;
-  font-size: 26px;
+  background: transparent !important;
+  color: #d8bd7b !important;
+  font-size: 27px;
   cursor: pointer;
 }
 
 
-/* GENERAL SECTIONS */
+/* =========================================================
+   GLOBAL SECTIONS
+   ========================================================= */
 
 .hero,
-.dark-section,
 .character-section,
+.dark-section,
 .timeline-section,
 .final-section {
   background:
     radial-gradient(
       circle at 50% 20%,
-      rgba(185,154,91,0.10),
-      transparent 40%
+      rgba(177, 145, 78, 0.12),
+      transparent 35%
     ),
-    #090b0c;
+    linear-gradient(
+      180deg,
+      #080a0b 0%,
+      #0d1011 50%,
+      #07090a 100%
+    ) !important;
+
+  color: #d9d2c5 !important;
 }
 
 .paper-section {
   background:
     radial-gradient(
-      circle at 20% 20%,
-      rgba(100,85,60,0.10),
+      circle at 15% 15%,
+      rgba(120, 100, 70, 0.08),
       transparent 35%
     ),
-    #e8e1d2;
+    #e8e1d2 !important;
 
-  color: #292823;
+  color: #292823 !important;
 }
 
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
   position: relative;
-
   min-height: 100vh;
-  width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  padding: 150px 25px 110px;
+
   text-align: center;
 
-  padding: 150px 25px 100px;
+  border-bottom: 1px solid rgba(185, 154, 91, 0.25);
 }
 
 .hero-content {
   width: 100%;
-  max-width: 950px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .eyebrow {
-  margin: 0 0 22px;
-
-  font-family: "Cinzel", Georgia, serif;
+  color: #d7bd7c !important;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: bold;
   letter-spacing: 5px;
   text-transform: uppercase;
-
-  color: #d7bd7c;
+  margin-bottom: 25px;
 }
 
 .eyebrow.dark {
-  color: #806832;
+  color: #806832 !important;
 }
 
 .hero h1 {
-  margin: 0;
-
-  font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(58px, 10vw, 125px);
-  font-weight: 600;
+  color: #eee8db !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(55px, 10vw, 125px);
+  font-weight: normal;
   line-height: 0.95;
   letter-spacing: 8px;
-
-  color: #eee8db;
-
   text-shadow:
-    0 0 20px rgba(185,154,91,0.08),
-    0 0 50px rgba(185,154,91,0.10);
+    0 0 25px rgba(215, 189, 124, 0.15),
+    0 5px 25px rgba(0, 0, 0, 0.7);
 }
 
 .hero-name {
-  margin: 30px 0 0;
-
-  font-family: "Cinzel", Georgia, serif;
+  color: #d7bd7c !important;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 19px;
+  font-weight: bold;
   letter-spacing: 8px;
-
-  color: #d7bd7c;
+  margin-top: 30px;
 }
 
 .gold-rule {
+  color: #d7bd7c !important;
+  font-size: 23px;
+  letter-spacing: 10px;
   margin: 28px auto;
-
-  color: #d7bd7c;
-  font-size: 22px;
-  letter-spacing: 12px;
 }
 
 .intro {
-  margin: 0 0 35px;
-
-  font-size: 24px;
+  color: #c4bdae !important;
+  font-size: 23px;
   line-height: 1.7;
-
-  color: #c5beb0;
+  margin-bottom: 35px;
 }
 
 .gold-button {
@@ -239,20 +226,22 @@ a {
 
   border: 1px solid #b99a5b;
 
-  font-family: "Cinzel", Georgia, serif;
+  color: #d7bd7c !important;
+  background: transparent !important;
+
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 12px;
+  font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
-
-  color: #d7bd7c;
 
   transition: all 0.3s ease;
 }
 
 .gold-button:hover {
-  background: #b99a5b;
-  color: #090b0c;
-  box-shadow: 0 0 25px rgba(185,154,91,0.25);
+  background: #b99a5b !important;
+  color: #080a0b !important;
+  box-shadow: 0 0 25px rgba(185, 154, 91, 0.3);
 }
 
 .scroll-hint {
@@ -261,55 +250,53 @@ a {
   left: 0;
   right: 0;
 
-  text-align: center;
+  color: #77746c !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 10px;
   letter-spacing: 3px;
-
-  color: #77746c;
 }
 
 
-/* SECTION SPACING */
+/* =========================================================
+   SECTION LAYOUT
+   ========================================================= */
 
 .paper-section,
 .dark-section,
 .character-section,
 .timeline-section {
-  padding: 115px 7%;
+  padding: 110px 7%;
 }
 
 .section-frame {
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .section-heading {
   width: 100%;
   max-width: 950px;
   margin: 0 auto 60px;
-
   text-align: center;
 }
 
 .section-heading h2,
 .section-frame h2 {
-  margin: 0 0 25px;
-
-  font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(36px, 5vw, 62px);
-  font-weight: 500;
+  color: inherit;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(35px, 5vw, 62px);
+  font-weight: normal;
   line-height: 1.15;
+  margin-bottom: 25px;
 }
 
 .section-heading p {
-  color: #aaa398;
+  color: #aaa398 !important;
 }
 
 .section-frame p {
-  margin-top: 0;
   margin-bottom: 22px;
 }
 
@@ -319,29 +306,30 @@ a {
 }
 
 .dark-rule {
-  color: #806832;
+  color: #806832 !important;
 }
 
 .quote {
   max-width: 800px;
-
   margin: 45px auto 10px;
   padding: 30px 35px;
 
-  border-top: 1px solid rgba(185,154,91,0.45);
-  border-bottom: 1px solid rgba(185,154,91,0.45);
+  border-top: 1px solid rgba(185, 154, 91, 0.45);
+  border-bottom: 1px solid rgba(185, 154, 91, 0.45);
 
-  text-align: center;
+  color: #806832 !important;
 
-  font-size: 25px;
+  font-size: 24px;
   font-style: italic;
   line-height: 1.6;
 
-  color: #806832;
+  text-align: center;
 }
 
 
-/* CHARACTER INFO */
+/* =========================================================
+   CHARACTER INFORMATION
+   ========================================================= */
 
 .character-section {
   text-align: center;
@@ -350,7 +338,7 @@ a {
 .info-grid {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -360,47 +348,48 @@ a {
 .info-card {
   padding: 30px 20px;
 
-  border: 1px solid rgba(185,154,91,0.30);
+  border: 1px solid rgba(185, 154, 91, 0.3);
 
-  background: rgba(255,255,255,0.025);
+  background: rgba(255, 255, 255, 0.025) !important;
 
   transition: all 0.3s ease;
 }
 
 .info-card:hover {
-  border-color: rgba(215,189,124,0.60);
+  border-color: rgba(215, 189, 124, 0.7);
   transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .info-card span {
   display: block;
 
-  margin-bottom: 8px;
+  color: #b99a5b !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 10px;
+  font-weight: bold;
   letter-spacing: 3px;
 
-  color: #b99a5b;
+  margin-bottom: 8px;
 }
 
 .info-card strong {
   display: block;
 
-  font-family: "Cinzel", Georgia, serif;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.5;
+  color: #ddd6c9 !important;
 
-  color: #ddd6c9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: normal;
 }
 
 
-/* HERITAGE */
+/* =========================================================
+   HERITAGE
+   ========================================================= */
 
 .heritage-grid {
-  width: 100%;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -411,53 +400,53 @@ a {
 .heritage-card {
   padding: 40px;
 
-  border: 1px solid rgba(80,70,50,0.25);
+  border: 1px solid rgba(80, 70, 50, 0.25);
+
+  background: rgba(255, 255, 255, 0.12);
 
   text-align: center;
-
-  background: rgba(255,255,255,0.08);
 
   transition: all 0.3s ease;
 }
 
 .heritage-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(128,104,50,0.55);
+  border-color: rgba(128, 104, 50, 0.6);
 }
 
 .heritage-icon {
   display: block;
-
-  margin-bottom: 15px;
-
   font-size: 42px;
+  margin-bottom: 15px;
 }
 
 .heritage-card h3,
 .lore-columns h3,
 .personality-grid h3 {
-  margin: 0 0 12px;
+  color: #806832 !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
+  font-weight: bold;
 
-  color: #806832;
+  margin-bottom: 12px;
 }
 
 .heritage-ending {
   text-align: center;
-
   font-size: 23px;
   font-style: italic;
 }
 
 
-/* APPEARANCE */
+/* =========================================================
+   APPEARANCE
+   ========================================================= */
 
 .lore-columns {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -467,26 +456,26 @@ a {
 .lore-columns > div {
   padding-top: 25px;
 
-  border-top: 1px solid rgba(185,154,91,0.45);
+  border-top: 1px solid rgba(185, 154, 91, 0.45);
 }
 
 .lore-columns h3 {
-  color: #d7bd7c;
+  color: #d7bd7c !important;
 }
 
 .lore-columns p {
-  margin: 0;
-
-  color: #aaa398;
+  color: #aaa398 !important;
 }
 
 
-/* ABILITIES */
+/* =========================================================
+   ABILITIES
+   ========================================================= */
 
 .ability-grid {
   width: 100%;
   max-width: 1150px;
-  margin: 0 auto;
+  margin: auto;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -496,9 +485,9 @@ a {
 .ability-card {
   padding: 28px 18px;
 
-  border: 1px solid rgba(185,154,91,0.25);
+  border: 1px solid rgba(185, 154, 91, 0.25);
 
-  background: rgba(255,255,255,0.025);
+  background: rgba(255, 255, 255, 0.025) !important;
 
   text-align: center;
 
@@ -506,39 +495,37 @@ a {
 }
 
 .ability-card:hover {
-  border-color: rgba(215,189,124,0.60);
+  border-color: rgba(215, 189, 124, 0.65);
   transform: translateY(-4px);
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .ability-card span {
   display: block;
-
-  margin-bottom: 10px;
-
   font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .ability-card h3 {
-  margin: 0 0 10px;
+  color: #d7bd7c !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
+  font-weight: bold;
 
-  color: #d7bd7c;
+  margin-bottom: 10px;
 }
 
 .ability-card p {
-  margin: 0;
-
+  color: #aaa398 !important;
   font-size: 16px;
   line-height: 1.5;
-
-  color: #aaa398;
 }
 
 
-/* WEAPON */
+/* =========================================================
+   WEAPON
+   ========================================================= */
 
 .weapon-box {
   width: 100%;
@@ -551,22 +538,24 @@ a {
 .weapon-symbol {
   display: block;
 
-  margin-bottom: 20px;
+  color: #806832 !important;
 
   font-size: 55px;
 
-  color: #806832;
+  margin-bottom: 20px;
 }
 
 
-/* TIMELINE */
+/* =========================================================
+   TIMELINE
+   ========================================================= */
 
 .timeline {
-  position: relative;
-
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto;
+
+  position: relative;
 }
 
 .timeline::before {
@@ -580,7 +569,7 @@ a {
 
   width: 1px;
 
-  background: rgba(185,154,91,0.45);
+  background: rgba(185, 154, 91, 0.45);
 }
 
 .timeline-item {
@@ -593,14 +582,7 @@ a {
   margin-bottom: 55px;
 }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
 .timeline-item > span {
-  position: relative;
-  z-index: 2;
-
   width: 64px;
   height: 64px;
 
@@ -611,80 +593,76 @@ a {
   border: 1px solid #b99a5b;
   border-radius: 50%;
 
-  background: #090b0c;
+  background: #080a0b !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  color: #d7bd7c !important;
 
-  color: #d7bd7c;
+  font-family: Georgia, "Times New Roman", serif;
+
+  z-index: 2;
 }
 
 .timeline-item h3 {
-  margin: 0 0 8px;
+  color: #d7bd7c !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 23px;
 
-  color: #d7bd7c;
+  margin-bottom: 8px;
 }
 
 .timeline-item p {
-  margin: 0;
-
-  color: #aaa398;
+  color: #aaa398 !important;
 }
 
 
-/* VEYRA */
+/* =========================================================
+   VEYRA
+   ========================================================= */
 
 .veyra-box {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
 
   padding: 55px 45px;
 
-  border: 1px solid rgba(185,154,91,0.45);
+  border: 1px solid rgba(185, 154, 91, 0.45);
 
   text-align: center;
 
-  background: rgba(255,255,255,0.015);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .veyra-symbol {
-  margin-bottom: 10px;
-
   font-size: 70px;
+  margin-bottom: 10px;
 }
 
 .veyra-box h3 {
-  margin: 0;
+  color: #d7bd7c !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 38px;
-
-  color: #d7bd7c;
+  font-weight: normal;
 }
 
 .veyra-subtitle {
-  margin: 5px 0 30px;
+  color: #88847b !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 12px;
   letter-spacing: 2px;
 
-  color: #88847b;
-}
-
-.veyra-box p {
-  color: #aaa398;
+  margin-bottom: 30px;
 }
 
 
-/* PERSONALITY */
+/* =========================================================
+   PERSONALITY
+   ========================================================= */
 
 .personality-grid {
-  width: 100%;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -695,15 +673,13 @@ a {
 .personality-grid > div {
   padding-top: 25px;
 
-  border-top: 1px solid rgba(80,70,50,0.3);
-}
-
-.personality-grid p {
-  margin: 0;
+  border-top: 1px solid rgba(80, 70, 50, 0.3);
 }
 
 
-/* FINAL */
+/* =========================================================
+   FINAL SECTION
+   ========================================================= */
 
 .final-section {
   min-height: 80vh;
@@ -712,7 +688,7 @@ a {
   align-items: center;
   justify-content: center;
 
-  padding: 100px 20px;
+  padding: 100px 25px;
 
   text-align: center;
 }
@@ -723,95 +699,100 @@ a {
 }
 
 .final-content h2 {
-  margin: 0;
+  color: #eee8db !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(45px, 8vw, 90px);
-  font-weight: 600;
-  letter-spacing: 5px;
+  font-weight: normal;
 
-  color: #eee8db;
+  letter-spacing: 5px;
 }
 
 .final-content p {
-  margin: 0 0 18px;
+  color: #aaa398 !important;
 
   font-size: 22px;
 
-  color: #aaa398;
+  margin-bottom: 18px;
 }
 
 .final-content .final-line {
-  margin-top: 45px;
+  color: #d7bd7c !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 25px;
+
   letter-spacing: 4px;
 
-  color: #d7bd7c;
+  margin-top: 45px;
 }
 
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer {
   padding: 65px 20px;
 
-  border-top: 1px solid rgba(185,154,91,0.45);
+  background: #050607 !important;
 
-  background: #040506;
+  border-top: 1px solid rgba(185, 154, 91, 0.45);
 
   text-align: center;
 }
 
 .footer-ornament {
-  margin-bottom: 15px;
+  color: #b99a5b !important;
 
   font-size: 25px;
 
-  color: #b99a5b;
+  margin-bottom: 15px;
 }
 
 footer h2 {
-  margin: 0;
+  color: #d7bd7c !important;
 
-  font-family: "Cinzel", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-weight: normal;
+
   letter-spacing: 6px;
-
-  color: #d7bd7c;
 }
 
 footer p {
-  margin: 5px 0;
+  color: #77746c !important;
 
   font-size: 13px;
-  letter-spacing: 3px;
 
-  color: #77746c;
+  letter-spacing: 3px;
 }
 
 footer small {
   display: block;
 
-  margin-top: 20px;
+  color: #5f5d57 !important;
 
-  font-size: 10px;
+  font-size: 11px;
+
   letter-spacing: 3px;
 
-  color: #5f5d57;
+  margin-top: 20px;
 }
 
 
-/* TABLET */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media screen and (max-width: 1000px) {
 
   .nav {
-    display: none;
+    gap: 15px;
   }
 
-  .menu-toggle {
-    display: block;
+  .nav a {
+    font-size: 10px;
   }
 
   .info-grid {
@@ -822,19 +803,21 @@ footer small {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .personality-grid {
+  .ability-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ability-grid {
+  .personality-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 
   body {
     font-size: 17px;
@@ -842,11 +825,11 @@ footer small {
 
   .site-header {
     min-height: 65px;
-    padding: 15px 5%;
+    padding: 13px 5%;
   }
 
   .brand-name {
-    font-size: 17px;
+    font-size: 16px;
     letter-spacing: 3px;
   }
 
@@ -855,8 +838,16 @@ footer small {
     letter-spacing: 2px;
   }
 
+  .nav {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+  }
+
   .hero {
-    padding: 125px 20px 90px;
+    padding: 120px 20px 90px;
   }
 
   .hero h1 {
@@ -873,11 +864,6 @@ footer small {
     font-size: 20px;
   }
 
-  .eyebrow {
-    font-size: 9px;
-    letter-spacing: 3px;
-  }
-
   .paper-section,
   .dark-section,
   .character-section,
@@ -887,7 +873,7 @@ footer small {
 
   .section-frame h2,
   .section-heading h2 {
-    font-size: 34px;
+    font-size: 35px;
   }
 
   .section-frame .lead {
@@ -926,7 +912,6 @@ footer small {
   .timeline-item > span {
     width: 48px;
     height: 48px;
-
     font-size: 13px;
   }
 
@@ -940,12 +925,36 @@ footer small {
   }
 
   .final-section {
-    min-height: 70vh;
     padding: 80px 20px;
   }
 
-  .final-content h2 {
-    font-size: 45px;
+  .final-content p {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+
+  .hero h1 {
+    font-size: 42px;
+    letter-spacing: 3px;
   }
 
+  .ability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gold-rule {
+    letter-spacing: 6px;
+  }
+
+  .section-frame h2,
+  .section-heading h2 {
+    font-size: 30px;
+  }
 }
