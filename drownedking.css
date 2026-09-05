@@ -1,1 +1,991 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap');
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background: #080b0d;
+  color: #dedbd2;
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.9;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 82px;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5, 8, 10, 0.94);
+  border-bottom: 1px solid rgba(184, 151, 83, 0.35);
+  backdrop-filter: blur(12px);
+  z-index: 999;
+}
+
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.brand-name {
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  color: #c9a45d;
+}
+
+
+.brand-subtitle {
+  font-family: "Cinzel", serif;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  color: #777;
+}
+
+
+.nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+.nav a {
+  font-family: "Cinzel", serif;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+
+.nav a:hover {
+  color: #c9a45d;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.eyebrow {
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  color: #c9a45d;
+  margin-bottom: 22px;
+}
+
+
+.eyebrow.dark {
+  color: #92713a;
+}
+
+
+h1,
+h2,
+h3 {
+  font-family: "Cinzel", serif;
+  line-height: 1.2;
+}
+
+
+h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 3px;
+}
+
+
+p {
+  max-width: 850px;
+  margin: 0 auto 24px;
+}
+
+
+.gold-rule {
+  color: #c9a45d;
+  letter-spacing: 5px;
+  margin: 25px 0;
+}
+
+
+.dark-rule {
+  color: #92713a;
+}
+
+
+.lead {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+
+.emphasis {
+  color: #c9a45d;
+  font-family: "Cinzel", serif;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+}
+
+
+.dramatic-line {
+  font-family: "Cinzel", serif;
+  color: #c9a45d;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin: 45px auto;
+}
+
+
+.final-warning {
+  color: #b88c52;
+  font-family: "Cinzel", serif;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.darius-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(2, 7, 10, 0.68),
+      rgba(2, 7, 10, 0.9)
+    ),
+    radial-gradient(
+      circle at center,
+      #16323b 0%,
+      #071014 45%,
+      #020405 100%
+    );
+}
+
+
+.darius-hero::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(
+      ellipse at 50% 70%,
+      rgba(41, 104, 119, 0.22),
+      transparent 55%
+    );
+  animation: oceanPulse 8s ease-in-out infinite;
+}
+
+
+@keyframes oceanPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: .6;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 140px 20px 100px;
+}
+
+
+.sea-symbol {
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+
+.hero-content h1 {
+  font-size: clamp(4rem, 12vw, 9rem);
+  letter-spacing: 10px;
+  color: #e3ded3;
+}
+
+
+.hero-content h2 {
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  letter-spacing: 7px;
+  color: #c9a45d;
+}
+
+
+.motto {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #b9b6ae;
+}
+
+
+.location {
+  font-family: "Cinzel", serif;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: #777;
+}
+
+
+.scroll-hint {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: #777;
+}
+
+
+/* =========================
+   PAPER
+========================= */
+
+.paper-section {
+  background:
+    radial-gradient(
+      circle at top,
+      #f0eadc,
+      #d8d0c0
+    );
+  color: #242421;
+  padding: 120px 7%;
+  text-align: center;
+}
+
+
+.section-frame {
+  max-width: 1050px;
+  margin: auto;
+  padding: 55px 8%;
+  border: 1px solid rgba(86, 67, 35, 0.35);
+  position: relative;
+}
+
+
+.section-frame::before,
+.section-frame::after {
+  content: "✦";
+  position: absolute;
+  color: #92713a;
+  font-size: 1.3rem;
+}
+
+
+.section-frame::before {
+  top: 18px;
+  left: 25px;
+}
+
+
+.section-frame::after {
+  bottom: 18px;
+  right: 25px;
+}
+
+
+/* =========================
+   DARK LORE
+========================= */
+
+.dark-lore {
+  background:
+    radial-gradient(
+      circle at center,
+      #172126,
+      #080c0f 70%
+    );
+  padding: 120px 7%;
+  text-align: center;
+}
+
+
+.lore-container {
+  max-width: 1050px;
+  margin: auto;
+}
+
+
+.quote-box {
+  margin: 55px auto;
+  padding: 35px;
+  border-top: 1px solid #9b793e;
+  border-bottom: 1px solid #9b793e;
+}
+
+
+.quote-box span {
+  display: block;
+  font-family: "Cinzel", serif;
+  color: #c9a45d;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+
+.title-list,
+.smoke-list,
+.grim-traits,
+.code-list,
+.anger-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+
+.title-list span,
+.smoke-list span,
+.grim-traits span {
+  border: 1px solid rgba(201, 164, 93, .35);
+  padding: 12px 18px;
+  font-family: "Cinzel", serif;
+  font-size: .65rem;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   STAR / OCEAN
+========================= */
+
+.star-iron {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #102b34,
+      #030709 75%
+    );
+  padding: 130px 7%;
+  text-align: center;
+}
+
+
+.star-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+
+.star-symbol {
+  font-size: 3rem;
+}
+
+
+.reveal {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.reveal span {
+  font-family: "Cinzel", serif;
+  color: #c9a45d;
+  letter-spacing: 5px;
+}
+
+
+.reveal strong {
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+}
+
+
+/* =========================
+   DEATH / ABYSS
+========================= */
+
+.broken-peak,
+.abyss-section {
+  background:
+    radial-gradient(
+      circle at center,
+      #111a1e,
+      #020405 75%
+    );
+  padding: 130px 7%;
+  text-align: center;
+}
+
+
+.broken-content,
+.abyss-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 60px auto;
+}
+
+
+.memory-grid div {
+  padding: 30px 15px;
+  border: 1px solid rgba(201, 164, 93, .25);
+}
+
+
+.memory-grid span {
+  display: block;
+  color: #c9a45d;
+  font-family: "Cinzel", serif;
+  margin-bottom: 12px;
+}
+
+
+.memory-grid h3 {
+  font-size: .75rem;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   APPEARANCE
+========================= */
+
+.appearance-grid,
+.ability-grid,
+.reputation-grid,
+.ship-facts,
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 45px auto;
+  max-width: 900px;
+}
+
+
+.appearance-grid > div,
+.ability-grid > div,
+.reputation-grid > div,
+.ship-facts > div {
+  padding: 28px;
+  border: 1px solid rgba(86, 67, 35, .3);
+}
+
+
+.appearance-grid span,
+.reputation-grid h3 {
+  font-family: "Cinzel", serif;
+  color: #92713a;
+  letter-spacing: 3px;
+  font-size: .8rem;
+}
+
+
+.ability-grid > div {
+  font-family: "Cinzel", serif;
+  font-size: .7rem;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   SMOKE
+========================= */
+
+.smoke-section {
+  background:
+    radial-gradient(
+      circle at center,
+      #111b20,
+      #010203 70%
+    );
+  padding: 130px 7%;
+  text-align: center;
+}
+
+
+.smoke-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+
+.smoke-symbol {
+  font-size: 3rem;
+}
+
+
+.warning,
+.abyss-warning {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid rgba(201, 164, 93, .4);
+  background: rgba(0, 0, 0, .2);
+}
+
+
+.warning {
+  color: #c9a45d;
+}
+
+
+.warning p,
+.abyss-warning p {
+  margin-top: 15px;
+}
+
+
+/* =========================
+   POWERS
+========================= */
+
+.power-card {
+  padding: 35px 25px;
+  margin: 20px auto;
+  max-width: 850px;
+  border: 1px solid rgba(201, 164, 93, .22);
+  background: rgba(255, 255, 255, .015);
+}
+
+
+.power-card > span {
+  font-size: 2rem;
+}
+
+
+.power-card h3 {
+  color: #c9a45d;
+  margin: 12px 0;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   BLACKWATER CALL
+========================= */
+
+.abyss-call {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #102a32,
+      #020506 75%
+    );
+  padding: 130px 7%;
+  text-align: center;
+}
+
+
+.abyss-call-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+
+.call-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 40px auto;
+}
+
+
+.call-list span {
+  font-family: "Cinzel", serif;
+  color: #9dbbc1;
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   SHIP
+========================= */
+
+.ship-section {
+  background:
+    linear-gradient(
+      rgba(3, 8, 10, .96),
+      rgba(5, 11, 14, .98)
+    );
+  padding: 130px 7%;
+  text-align: center;
+}
+
+
+.ship-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+.ship-symbol {
+  font-size: 3rem;
+}
+
+
+.ship-facts {
+  max-width: 800px;
+}
+
+
+.ship-facts strong,
+.ship-facts span {
+  display: block;
+}
+
+
+.ship-facts strong {
+  font-family: "Cinzel", serif;
+  color: #777;
+  font-size: .65rem;
+  letter-spacing: 2px;
+}
+
+
+.ship-facts span {
+  color: #c9a45d;
+  font-family: "Cinzel", serif;
+  margin-top: 8px;
+}
+
+
+/* =========================
+   ARTIFACTS
+========================= */
+
+.artifact-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+.artifact-grid span {
+  border: 1px solid rgba(86, 67, 35, .3);
+  padding: 18px 8px;
+  font-family: "Cinzel", serif;
+  font-size: .6rem;
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   GRIM
+========================= */
+
+.grim-section {
+  background:
+    radial-gradient(
+      circle at center,
+      #20242a,
+      #060708 75%
+    );
+  padding: 130px 7%;
+  text-align: center;
+}
+
+
+.grim-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+
+.grim-symbol {
+  font-size: 3rem;
+}
+
+
+/* =========================
+   CODE
+========================= */
+
+.code-list {
+  max-width: 800px;
+  margin: 45px auto;
+  flex-direction: column;
+}
+
+
+.code-list div {
+  padding: 16px;
+  border-bottom: 1px solid rgba(86, 67, 35, .25);
+  font-family: "Cinzel", serif;
+  font-size: .72rem;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+
+/* =========================
+   STORM
+========================= */
+
+.storm-section {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #17242a,
+      #020405 75%
+    );
+  padding: 130px 7%;
+  text-align: center;
+}
+
+
+.storm-content {
+  max-width: 950px;
+  margin: auto;
+}
+
+
+.anger-grid {
+  max-width: 850px;
+  margin: 45px auto;
+}
+
+
+.anger-grid span {
+  border: 1px solid rgba(151, 106, 65, .4);
+  padding: 15px 20px;
+  font-family: "Cinzel", serif;
+  font-size: .65rem;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   ABYSS
+========================= */
+
+.abyss-symbol {
+  font-size: 3rem;
+}
+
+
+.abyss-warning span {
+  font-family: "Cinzel", serif;
+  color: #c9a45d;
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   REPUTATION
+========================= */
+
+.reputation-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+.reputation-grid p {
+  font-size: .9rem;
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.darius-ending {
+  min-height: 90vh;
+  background:
+    radial-gradient(
+      ellipse at center,
+      #12313a,
+      #030607 70%
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 130px 7%;
+}
+
+
+.ending-content {
+  max-width: 900px;
+}
+
+
+.ending-content > p {
+  color: #aaa;
+}
+
+
+.ending-content h2 {
+  color: #e0ddd5;
+}
+
+
+.final-symbol {
+  font-size: 2rem;
+  color: #c9a45d;
+  margin: 30px 0;
+}
+
+
+.final-quote {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 35px;
+  border-top: 1px solid #92713a;
+  border-bottom: 1px solid #92713a;
+  color: #c9a45d;
+  font-family: "Cinzel", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #020303;
+  padding: 70px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(201, 164, 93, .2);
+}
+
+
+footer h2 {
+  font-size: 1.6rem;
+  color: #c9a45d;
+  letter-spacing: 5px;
+}
+
+
+footer p {
+  font-family: "Cinzel", serif;
+  font-size: .65rem;
+  letter-spacing: 4px;
+  color: #777;
+}
+
+
+footer small {
+  color: #555;
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .site-header {
+    position: relative;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: .55rem;
+  }
+
+  .hero-content {
+    padding-top: 80px;
+  }
+
+  .memory-grid,
+  .appearance-grid,
+  .ability-grid,
+  .reputation-grid,
+  .ship-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .artifact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-frame {
+    padding: 45px 7%;
+  }
+
+  .paper-section,
+  .dark-lore,
+  .star-iron,
+  .broken-peak,
+  .smoke-section,
+  .ship-section,
+  .grim-section,
+  .storm-section,
+  .abyss-section,
+  .abyss-call {
+    padding: 90px 5%;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .hero-content h1 {
+    letter-spacing: 5px;
+  }
+
+  .artifact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title-list span,
+  .smoke-list span,
+  .grim-traits span {
+    width: 100%;
+  }
+
+}
