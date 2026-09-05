@@ -1002,3 +1002,171 @@ section {
   padding-top: 90px;
   padding-bottom: 90px;
 }
+
+/* ═══════════════════════════════════════
+   EMERALD REAPER — CENTER EVERYTHING
+═══════════════════════════════════════ */
+
+.reaper-hero,
+.reaper-hero .hero-content,
+.paper-section,
+.section-frame,
+.dark-lore,
+.lore-container,
+.knight-section,
+.knight-content,
+.betrayal-section,
+.betrayal-content,
+.reaper-section,
+.reaper-content,
+.combat-section,
+.combat-content,
+.dragon-section,
+.dragon-content,
+.bond-section,
+.bond-content,
+.belief-section,
+.belief-content,
+.reputation-section,
+.reputation-content,
+.reaper-ending,
+.ending-content {
+  text-align: center;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER HERO
+═══════════════════════════════════════ */
+
+.reaper-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reaper-hero .hero-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reaper-symbol,
+.reaper-mark,
+.reputation-mark,
+.final-reaper {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER HEADINGS
+═══════════════════════════════════════ */
+
+.hero-content h1,
+.section-frame h2,
+.lore-container h2,
+.knight-content h2,
+.betrayal-content h2,
+.reaper-content h2,
+.combat-content h2,
+.dragon-content h2,
+.bond-content h2,
+.belief-content h2,
+.reputation-content h2,
+.ending-content h2,
+.ending-content h3 {
+  text-align: center;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER DIVIDERS
+═══════════════════════════════════════ */
+
+.gold-rule {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER PARAGRAPHS
+═══════════════════════════════════════ */
+
+.hero-content p,
+.section-frame p,
+.lore-container p,
+.knight-content p,
+.betrayal-content p,
+.reaper-content p,
+.combat-content p,
+.dragon-content p,
+.bond-content p,
+.belief-content p,
+.reputation-content p,
+.ending-content p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER GRIDS
+═══════════════════════════════════════ */
+
+.profile-grid,
+.appearance-grid,
+.knight-facts,
+.trait-grid,
+.emotion-grid,
+.combat-grid,
+.dragon-traits,
+.bond-grid,
+.belief-list {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER QUOTES
+═══════════════════════════════════════ */
+
+blockquote {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER WARNING / SPECIAL BOXES
+═══════════════════════════════════════ */
+
+.betrayal-warning,
+.legend-box,
+.final-belief {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+/* ═══════════════════════════════════════
+   CENTER FOOTER
+═══════════════════════════════════════ */
+
+footer {
+  text-align: center;
+}
+
+footer h2,
+footer p,
+footer small {
+  text-align: center;
+}
